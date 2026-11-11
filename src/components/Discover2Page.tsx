@@ -55,8 +55,8 @@ export function Discover2Page({ onBackHome, onOpenModal }: Discover2PageProps) {
       track.style.setProperty('--d2-text-opacity', '1')
       track.style.setProperty('--d2-text-y', '0px')
       track.style.setProperty('--d2-expand-p', '0')
-      track.style.setProperty('--d2-full-content-opacity', '0')
-      track.style.setProperty('--d2-full-content-y', '0px')
+      track.style.setProperty('--d2-sheet-y', '100%')
+      track.style.setProperty('--d2-sheet-opacity', '0')
       track.dataset.fullHidden = 'true'
       return
     }
@@ -69,25 +69,25 @@ export function Discover2Page({ onBackHome, onOpenModal }: Discover2PageProps) {
       const scrollableDistance = Math.max(1, track.offsetHeight - window.innerHeight)
       const scrolled = clamp01(-rect.top / scrollableDistance)
 
-      // 0% -> 36%: initial split text, alert tab & circular buttons fade smoothly out
-      const textFadeProgress = clamp01((scrolled - 0.03) / 0.34)
+      // Phase 1 (0% -> 34%): initial split text fades out & video expands to full width/height
+      const textFadeProgress = clamp01((scrolled - 0.02) / 0.28)
       const textOpacity = 1 - textFadeProgress
       const textTranslateY = -(textFadeProgress * 44)
+      const expandProgress = clamp01(scrolled / 0.34)
 
-      // 0% -> 46%: right-side video frame expands smoothly to full-screen with green overlay
-      const expandProgress = clamp01(scrolled / 0.46)
-
-      // 42% -> 72%: centered Scene 01 hero text & CTAs fade smoothly in over green-tinted video
-      const fullRevealProgress = clamp01((scrolled - 0.42) / 0.3)
-      const fullContentY = (1 - fullRevealProgress) * 28
+      // Phase 2 (34% -> 46%): full video remains clearly visible before the green layer slides up
+      // Phase 3 (46% -> 82%): translucent green overlay sheet glides up over video with text on top
+      const sheetProgress = clamp01((scrolled - 0.46) / 0.36)
+      const sheetY = (1 - sheetProgress) * 100
+      const sheetOpacity = clamp01(sheetProgress * 1.45)
 
       track.style.setProperty('--d2-text-opacity', textOpacity.toFixed(4))
       track.style.setProperty('--d2-text-y', `${textTranslateY.toFixed(1)}px`)
       track.style.setProperty('--d2-expand-p', expandProgress.toFixed(4))
-      track.style.setProperty('--d2-full-content-opacity', fullRevealProgress.toFixed(4))
-      track.style.setProperty('--d2-full-content-y', `${fullContentY.toFixed(1)}px`)
+      track.style.setProperty('--d2-sheet-y', `${sheetY.toFixed(2)}%`)
+      track.style.setProperty('--d2-sheet-opacity', sheetOpacity.toFixed(4))
       track.dataset.textHidden = textOpacity < 0.08 ? 'true' : 'false'
-      track.dataset.fullHidden = fullRevealProgress < 0.08 ? 'true' : 'false'
+      track.dataset.fullHidden = sheetOpacity < 0.08 ? 'true' : 'false'
     }
 
     const onScroll = () => {
@@ -175,7 +175,6 @@ export function Discover2Page({ onBackHome, onOpenModal }: Discover2PageProps) {
                 <span className="gb-d2-crest-badge">
                   <img src="/genbright-logo.png" alt="GenBright World School" />
                 </span>
-                <span className="gb-d2-crest-rule" aria-hidden="true" />
                 <span className="gb-d2-crest-name">
                   <span>MOKILA · HYDERABAD</span>
                 </span>
@@ -389,7 +388,6 @@ export function Discover2Page({ onBackHome, onOpenModal }: Discover2PageProps) {
               <source src={currentReel.fallbackUrl} type="video/mp4" />
             </video>
             <div className="gb-d2-video-vignette" aria-hidden="true" />
-            <div className="gb-d2-video-expand-overlay" aria-hidden="true" />
 
             <button
               type="button"
@@ -448,10 +446,10 @@ export function Discover2Page({ onBackHome, onOpenModal }: Discover2PageProps) {
             <h1 className="gb-d2-hero-serif">Only Once.</h1>
           </div>
 
-          {/* Centered Scene 01 Copy & CTAs Revealed Over Expanded Green-Tinted Video */}
-          <div className="gb-d2-expanded-content">
-            <div className="gb-container gb-hero-overlay">
-              <div className="gb-hero-overlay__inner">
+          {/* Rising Translucent Green Overlay Sheet With Scene 01 Text & CTAs */}
+          <div className="gb-d2-green-sheet">
+            <div className="gb-container gb-d2-green-sheet__inner">
+              <div className="gb-hero-overlay__inner gb-d2-green-sheet__content">
                 <h2 className="gb-hero-overlay__title gb-d2-expanded-title">
                   <span className="gb-hero-overlay__title-light gb-d2-expanded-title-light">
                     {heroScene.titleDark}
@@ -478,6 +476,18 @@ export function Discover2Page({ onBackHome, onOpenModal }: Discover2PageProps) {
                   </button>
                 </div>
               </div>
+
+              <button
+                type="button"
+                className="gb-d2-sheet-down-btn"
+                onClick={() => scrollToDiscover2Section('scene-02')}
+                aria-label="Scroll to next story section"
+              >
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                  <line x1="12" y1="5" x2="12" y2="19" />
+                  <polyline points="19 12 12 19 5 12" />
+                </svg>
+              </button>
             </div>
           </div>
         </div>

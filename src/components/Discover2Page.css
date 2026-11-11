@@ -15,14 +15,14 @@
    -------------------------------------------------------------------------- */
 .gb-d2-hero-track {
   position: relative;
-  height: 280svh;
+  height: 320svh;
   width: 100%;
   background: #829b70;
   --d2-text-opacity: 1;
   --d2-text-y: 0px;
   --d2-expand-p: 0;
-  --d2-full-content-opacity: 0;
-  --d2-full-content-y: 28px;
+  --d2-sheet-y: 100%;
+  --d2-sheet-opacity: 0;
 }
 
 .gb-d2-hero-sticky {
@@ -35,12 +35,11 @@
 }
 
 .gb-d2-hero-track[data-text-hidden='true'] .gb-d2-hero-type,
-.gb-d2-hero-track[data-text-hidden='true'] .gb-d2-circle-actions,
 .gb-d2-hero-track[data-text-hidden='true'] .gb-d2-alert-tab {
   pointer-events: none;
 }
 
-.gb-d2-hero-track[data-full-hidden='true'] .gb-d2-expanded-content {
+.gb-d2-hero-track[data-full-hidden='true'] .gb-d2-green-sheet {
   pointer-events: none;
 }
 
@@ -99,8 +98,8 @@
   display: inline-flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.25rem;
-  margin-top: 0.55rem;
+  gap: 0.4rem;
+  margin-top: 1.5rem;
   background: transparent;
   border: none;
   padding: 0;
@@ -118,9 +117,11 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background: transparent;
-  border: none;
-  padding: 0;
+  background: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  border-radius: 12px;
+  padding: 0.45rem 0.9rem;
+  box-shadow: 0 10px 26px rgba(19, 44, 32, 0.18);
 }
 
 .gb-d2-crest-badge img {
@@ -128,12 +129,6 @@
   width: auto;
   object-fit: contain;
   display: block;
-}
-
-.gb-d2-crest-rule {
-  width: 100%;
-  height: 1px;
-  background: rgba(255, 255, 255, 0.48);
 }
 
 .gb-d2-crest-name {
@@ -421,72 +416,64 @@
   pointer-events: none;
 }
 
-.gb-d2-video-expand-overlay {
+/* Rising Translucent Sage-Green Overlay Sheet Appearing After Full Video Reveal */
+.gb-d2-green-sheet {
   position: absolute;
-  inset: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  min-height: 60svh;
+  z-index: 4;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 2.5rem 0;
   background: linear-gradient(
     180deg,
-    rgba(66, 90, 51, 0.78) 0%,
-    rgba(104, 130, 86, 0.62) 45%,
-    rgba(66, 90, 51, 0.76) 100%
+    rgba(130, 155, 112, 0.85) 0%,
+    rgba(113, 138, 96, 0.9) 55%,
+    rgba(88, 114, 70, 0.94) 100%
   );
-  opacity: var(--d2-expand-p);
-  pointer-events: none;
-  will-change: opacity;
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  opacity: var(--d2-sheet-opacity);
+  transform: translate3d(0, var(--d2-sheet-y), 0);
+  will-change: transform, opacity;
 }
 
-/* Centered Scene 01 Copy & CTAs Over Expanded Full-Screen Green-Tinted Video */
-.gb-d2-expanded-content {
+.gb-d2-green-sheet__inner {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+}
+
+.gb-d2-green-sheet__content {
+  text-align: center;
+}
+
+.gb-d2-sheet-down-btn {
   position: absolute;
-  inset: 0;
-  z-index: 4;
+  right: 2rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 250, 240, 0.42);
+  background: rgba(19, 44, 32, 0.34);
+  color: #ffffff;
   display: grid;
   place-items: center;
-  padding-top: 5.5rem;
-  opacity: var(--d2-full-content-opacity);
-  transform: translate3d(0, var(--d2-full-content-y), 0);
-  will-change: opacity, transform;
+  cursor: pointer;
+  transition: transform 200ms ease, background-color 200ms ease, border-color 200ms ease;
 }
 
-#root .gb-app .gb-d2-expanded-title {
-  font-family: var(--font-display);
-  font-weight: 800;
-  letter-spacing: -0.02em;
-}
-
-.gb-d2-expanded-title-light {
-  color: #ffffff !important;
-}
-
-.gb-d2-expanded-title-gold {
-  color: #f8d86b !important;
-}
-
-.gb-d2-video-expand-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    180deg,
-    rgba(66, 90, 51, 0.78) 0%,
-    rgba(104, 130, 86, 0.62) 45%,
-    rgba(66, 90, 51, 0.76) 100%
-  );
-  opacity: var(--d2-expand-p);
-  pointer-events: none;
-  will-change: opacity;
-}
-
-/* Centered Scene 01 Copy & CTAs Over Expanded Full-Screen Green-Tinted Video */
-.gb-d2-expanded-content {
-  position: absolute;
-  inset: 0;
-  z-index: 4;
-  display: grid;
-  place-items: center;
-  padding-top: 5.5rem;
-  opacity: var(--d2-full-content-opacity);
-  transform: translate3d(0, var(--d2-full-content-y), 0);
-  will-change: opacity, transform;
+.gb-d2-sheet-down-btn:hover {
+  transform: translateY(-50%) scale(1.06);
+  background: var(--gb-forest);
+  border-color: var(--gb-gold-light);
 }
 
 #root .gb-app .gb-d2-expanded-title {
@@ -507,7 +494,7 @@
   position: absolute;
   left: 1.5rem;
   bottom: 1.5rem;
-  z-index: 5;
+  z-index: 6;
   width: 38px;
   height: 38px;
   border-radius: 50%;
@@ -615,62 +602,6 @@
   cursor: pointer;
 }
 
-.gb-d2-circle-actions {
-  position: absolute;
-  left: clamp(2.5rem, 12vw, 12.5rem);
-  bottom: 1.75rem;
-  z-index: 5;
-  display: flex;
-  align-items: flex-start;
-  gap: 2rem;
-  opacity: var(--d2-text-opacity);
-  transform: translate3d(0, var(--d2-text-y), 0);
-  will-change: opacity, transform;
-}
-
-.gb-d2-circle-action {
-  background: transparent;
-  border: none;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.5rem;
-  color: #ffffff;
-  cursor: pointer;
-}
-
-.gb-d2-circle-btn {
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  background: rgba(19, 44, 32, 0.14);
-  border: 1px solid rgba(255, 255, 255, 0.62);
-  color: #ffffff;
-  display: grid;
-  place-items: center;
-  transition: transform 200ms ease, border-color 200ms ease, background-color 200ms ease, color 200ms ease;
-}
-
-.gb-d2-circle-label {
-  font-size: 0.66rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.92);
-}
-
-.gb-d2-circle-action:hover .gb-d2-circle-btn {
-  transform: translateY(-3px);
-  border-color: var(--gb-ivory);
-  background: var(--gb-ivory);
-  color: var(--gb-forest);
-}
-
-.gb-d2-circle-action:hover .gb-d2-circle-label {
-  color: var(--gb-gold-light);
-}
-
 /* --------------------------------------------------------------------------
    HOME NAVBAR DISCOVER SPLIT DROPDOWN (MATCHES "LABEL | v" REFERENCE)
    -------------------------------------------------------------------------- */
@@ -722,6 +653,10 @@
    RESPONSIVE
    -------------------------------------------------------------------------- */
 @media (max-width: 1080px) {
+  .gb-d2-crest-lockup {
+    margin-top: 0.9rem;
+  }
+
   .gb-d2-ref-nav-stack {
     display: none;
   }
@@ -732,7 +667,7 @@
   }
 
   .gb-d2-video-frame {
-    top: calc(44% * (1 - var(--d2-expand-p)));
+    top: calc(36% * (1 - var(--d2-expand-p)));
     left: 0;
   }
 
@@ -741,11 +676,8 @@
     top: 23%;
   }
 
-  .gb-d2-circle-actions {
-    left: 1.5rem;
-    bottom: auto;
-    top: 34%;
-    gap: 1rem;
+  .gb-d2-sheet-down-btn {
+    display: none;
   }
 
   .gb-d2-alert-tab {
@@ -758,6 +690,11 @@
     padding: 0.85rem 1.1rem;
   }
 
+  .gb-d2-crest-badge {
+    padding: 0.35rem 0.65rem;
+    border-radius: 10px;
+  }
+
   .gb-d2-crest-badge img {
     height: 48px;
   }
@@ -766,8 +703,9 @@
     top: 24%;
   }
 
-  .gb-d2-circle-actions {
-    display: none;
+  .gb-d2-green-sheet {
+    min-height: 68svh;
+    padding: 2rem 0 4.5rem;
   }
 }
 
