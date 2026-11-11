@@ -9,6 +9,7 @@ import './App.css'
 export function App() {
   const [activeScene, setActiveScene] = useState<string>('scene-01')
   const [activeModal, setActiveModal] = useState<string | null>(null)
+  const [chatOpen, setChatOpen] = useState(false)
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -80,6 +81,57 @@ export function App() {
         modalId={activeModal}
         onClose={handleCloseModal}
       />
+
+      {chatOpen && (
+        <section className="gb-chat-widget" aria-label="GenBright chat">
+          <div className="gb-chat-widget__header">
+            <span className="gb-chat-widget__avatar" aria-hidden="true">G</span>
+            <div>
+              <strong>GenBright</strong>
+              <span>How can we help?</span>
+            </div>
+            <button
+              type="button"
+              className="gb-chat-widget__close"
+              onClick={() => setChatOpen(false)}
+              aria-label="Close chat"
+            >
+              ×
+            </button>
+          </div>
+          <p>Connect with our team about admissions or a campus visit.</p>
+          <button
+            type="button"
+            className="gb-chat-widget__action"
+            onClick={() => {
+              setChatOpen(false)
+              handleOpenModal('admissions')
+            }}
+          >
+            Talk to our admissions team
+          </button>
+          <button
+            type="button"
+            className="gb-chat-widget__action gb-chat-widget__action--secondary"
+            onClick={() => {
+              setChatOpen(false)
+              handleOpenModal('parent-portal')
+            }}
+          >
+            Parent portal help
+          </button>
+        </section>
+      )}
+      <button
+        type="button"
+        className={`gb-chat-widget__toggle ${chatOpen ? 'is-open' : ''}`}
+        onClick={() => setChatOpen((open) => !open)}
+        aria-expanded={chatOpen}
+        aria-label={chatOpen ? 'Close GenBright chat' : 'Open GenBright chat'}
+      >
+        <img src="/images/chat%20bot%20img.avif" alt="" aria-hidden="true" />
+      </button>
+
     </div>
   )
 }
