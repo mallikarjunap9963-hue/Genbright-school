@@ -3,23 +3,40 @@ import { Header } from './components/Header'
 import { StoryScenesList } from './components/StoryScenesList'
 import { Footer } from './components/Footer'
 import { InteractiveModal } from './components/InteractiveModal'
+import { BrandLoader } from './components/BrandLoader'
+import { Discover2Page } from './components/Discover2Page'
 import { STORY_SCENES } from './data/storyScenes'
 import './App.css'
 
+type ActiveView = 'home' | 'discover2'
+
+function getInitialView(): ActiveView {
+  if (typeof window === 'undefined') return 'home'
+  if (
+    window.location.pathname === '/discover-2' ||
+    window.location.hash.startsWith('#discover-2')
+  ) {
+    return 'discover2'
+  }
+  return 'home'
+}
+
 export function App() {
+  const [activeView, setActiveView] = useState<ActiveView>(getInitialView)
   const [activeScene, setActiveScene] = useState<string>('scene-01')
   const [activeModal, setActiveModal] = useState<string | null>(null)
   const [chatOpen, setChatOpen] = useState(false)
-  const [showIntro, setShowIntro] = useState(
+  const [showLoader, setShowLoader] = useState(
     () => !window.matchMedia('(prefers-reduced-motion: reduce)').matches
   )
 
-  useEffect(() => {
-    const introTimeout = window.setTimeout(() => setShowIntro(false), 1800)
-    return () => window.clearTimeout(introTimeout)
+  const handleLoaderComplete = useCallback(() => {
+    setShowLoader(false)
   }, [])
 
   useEffect(() => {
+    if (activeView !== 'home') return
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -40,7 +57,7 @@ export function App() {
     })
 
     return () => observer.disconnect()
-  }, [])
+  }, [activeView])
 
   const scrollToScene = useCallback((id: string) => {
     const cleanId = id.replace(/^#/, '')
@@ -59,6 +76,49 @@ export function App() {
     }
   }, [])
 
+  const handleOpenDiscover2 = useCallback(() => {
+    setActiveView('discover2')
+    setChatOpen(false)
+    window.scrollTo({ top: 0, behavior: 'auto' })
+    if (window.location.hash !== '#discover-2') {
+      window.history.pushState(null, '', '#discover-2')
+    }
+  }, [])
+
+  const handleBackHome = useCallback(
+    (targetScene?: string) => {
+      setActiveView('home')
+      if (window.location.hash === '#discover-2' || window.location.pathname === '/discover-2') {
+        window.history.pushState(null, '', '/')
+      }
+      if (targetScene && targetScene !== 'scene-01') {
+        window.setTimeout(() => scrollToScene(targetScene), 60)
+      } else {
+        window.scrollTo({ top: 0, behavior: 'smooth' })
+      }
+    },
+    [scrollToScene]
+  )
+
+  useEffect(() => {
+    const onNavSync = () => {
+      if (
+        window.location.pathname === '/discover-2' ||
+        window.location.hash.startsWith('#discover-2')
+      ) {
+        setActiveView('discover2')
+      } else {
+        setActiveView('home')
+      }
+    }
+    window.addEventListener('popstate', onNavSync)
+    window.addEventListener('hashchange', onNavSync)
+    return () => {
+      window.removeEventListener('popstate', onNavSync)
+      window.removeEventListener('hashchange', onNavSync)
+    }
+  }, [])
+
   const handleOpenModal = useCallback((modalId: string) => {
     setActiveModal(modalId)
   }, [])
@@ -69,26 +129,33 @@ export function App() {
 
   return (
     <div className="gb-app">
-      {showIntro && (
-        <div className="gb-site-intro" aria-hidden="true">
-          <img src="/genbright-logo.png" alt="" />
-        </div>
+      {showLoader && <BrandLoader onComplete={handleLoaderComplete} />}
+
+      {activeView === 'discover2' ? (
+        <Discover2Page
+          onBackHome={handleBackHome}
+          onOpenModal={handleOpenModal}
+        />
+      ) : (
+        <>
+          <Header
+            activeScene={activeScene}
+            onScrollTo={scrollToScene}
+            onOpenModal={handleOpenModal}
+            onOpenDiscover2={handleOpenDiscover2}
+          />
+
+          <StoryScenesList
+            onScrollTo={scrollToScene}
+            onOpenModal={handleOpenModal}
+          />
+
+          <Footer
+            onScrollTo={scrollToScene}
+            onOpenModal={handleOpenModal}
+          />
+        </>
       )}
-      <Header
-        activeScene={activeScene}
-        onScrollTo={scrollToScene}
-        onOpenModal={handleOpenModal}
-      />
-
-      <StoryScenesList
-        onScrollTo={scrollToScene}
-        onOpenModal={handleOpenModal}
-      />
-
-      <Footer
-        onScrollTo={scrollToScene}
-        onOpenModal={handleOpenModal}
-      />
 
       <InteractiveModal
         modalId={activeModal}
@@ -135,15 +202,17 @@ export function App() {
           </button>
         </section>
       )}
-      <button
-        type="button"
-        className={`gb-chat-widget__toggle ${chatOpen ? 'is-open' : ''}`}
-        onClick={() => setChatOpen((open) => !open)}
-        aria-expanded={chatOpen}
-        aria-label={chatOpen ? 'Close GenBright chat' : 'Open GenBright chat'}
-      >
-        <img src="/images/chat%20bot%20img.avif" alt="" aria-hidden="true" />
-      </button>
+      {activeView === 'home' && (
+        <button
+          type="button"
+          className={`gb-chat-widget__toggle ${chatOpen ? 'is-open' : ''}`}
+          onClick={() => setChatOpen((open) => !open)}
+          aria-expanded={chatOpen}
+          aria-label={chatOpen ? 'Close GenBright chat' : 'Open GenBright chat'}
+        >
+          <img src="/images/chat%20bot%20img.avif" alt="" aria-hidden="true" />
+        </button>
+      )}
 
     </div>
   )

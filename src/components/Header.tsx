@@ -1,15 +1,19 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { NAV_ITEMS, STORY_SCENES } from '../data/storyScenes'
 
 interface HeaderProps {
   activeScene: string
   onScrollTo: (id: string) => void
   onOpenModal: (modalId: string) => void
+  onOpenDiscover2: () => void
 }
 
-export function Header({ activeScene, onScrollTo, onOpenModal }: HeaderProps) {
+export function Header({ activeScene, onScrollTo, onOpenModal, onOpenDiscover2 }: HeaderProps) {
   const [scrolled, setScrolled] = useState(false)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [discoverMenuOpen, setDiscoverMenuOpen] = useState(false)
+  const discoverWrapRef = useRef<HTMLDivElement | null>(null)
+  const closeTimerRef = useRef<number | null>(null)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -19,6 +23,35 @@ export function Header({ activeScene, onScrollTo, onOpenModal }: HeaderProps) {
     window.addEventListener('scroll', handleScroll, { passive: true })
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
+
+  useEffect(() => {
+    const handleEscape = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setDiscoverMenuOpen(false)
+    }
+    const handleOutside = (e: MouseEvent) => {
+      if (discoverWrapRef.current && !discoverWrapRef.current.contains(e.target as Node)) {
+        setDiscoverMenuOpen(false)
+      }
+    }
+    window.addEventListener('keydown', handleEscape)
+    document.addEventListener('mousedown', handleOutside)
+    return () => {
+      window.removeEventListener('keydown', handleEscape)
+      document.removeEventListener('mousedown', handleOutside)
+    }
+  }, [])
+
+  const cancelDiscoverClose = () => {
+    if (closeTimerRef.current !== null) {
+      window.clearTimeout(closeTimerRef.current)
+      closeTimerRef.current = null
+    }
+  }
+
+  const scheduleDiscoverClose = () => {
+    cancelDiscoverClose()
+    closeTimerRef.current = window.setTimeout(() => setDiscoverMenuOpen(false), 160)
+  }
 
   const currentSceneObj =
     STORY_SCENES.find((s) => s.id === activeScene) || STORY_SCENES[0]
@@ -43,6 +76,88 @@ export function Header({ activeScene, onScrollTo, onOpenModal }: HeaderProps) {
         <nav className="gb-nav__links" aria-label="Story Navigation">
           {NAV_ITEMS.map((item) => {
             const isActive = item.scenes.includes(currentSceneObj.number)
+            if (item.label === 'Discover') {
+              return (
+                <div
+                  key={item.label}
+                  ref={discoverWrapRef}
+                  className="gb-nav__discover-wrap"
+                  onMouseEnter={() => {
+                    cancelDiscoverClose()
+                    setDiscoverMenuOpen(true)
+                  }}
+                  onMouseLeave={scheduleDiscoverClose}
+                >
+                  <div className="gb-nav__discover-split">
+                    <button
+                      type="button"
+                      className={`gb-nav__link ${isActive ? 'active' : ''}`}
+                      onClick={() => {
+                        setDiscoverMenuOpen(false)
+                        onScrollTo(item.target)
+                      }}
+                    >
+                      {item.label}
+                    </button>
+                    <button
+                      type="button"
+                      className={`gb-nav__discover-toggle ${discoverMenuOpen ? 'is-open' : ''}`}
+                      aria-label="Toggle Discover menu"
+                      aria-expanded={discoverMenuOpen}
+                      aria-haspopup="true"
+                      onFocus={() => {
+                        cancelDiscoverClose()
+                        setDiscoverMenuOpen(true)
+                      }}
+                      onClick={() => setDiscoverMenuOpen((open) => !open)}
+                    >
+                      <svg
+                        width="13"
+                        height="13"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2.2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        aria-hidden="true"
+                      >
+                        <polyline points="6 9 12 15 18 9" />
+                      </svg>
+                    </button>
+                  </div>
+
+                  {discoverMenuOpen && (
+                    <div className="gb-d2-dropdown gb-home-d2-dropdown" role="menu">
+                      <button
+                        type="button"
+                        role="menuitem"
+                        className="gb-d2-dropdown__item is-current"
+                        onClick={() => {
+                          setDiscoverMenuOpen(false)
+                          onScrollTo(item.target)
+                        }}
+                      >
+                        <strong>Discover 1</strong>
+                        <span>Explore the main school story</span>
+                      </button>
+                      <button
+                        type="button"
+                        role="menuitem"
+                        className="gb-d2-dropdown__item"
+                        onClick={() => {
+                          setDiscoverMenuOpen(false)
+                          onOpenDiscover2()
+                        }}
+                      >
+                        <strong>Discover 2</strong>
+                        <span>Full-screen campus video showcase</span>
+                      </button>
+                    </div>
+                  )}
+                </div>
+              )
+            }
             return (
               <button
                 key={item.label}
@@ -138,6 +253,16 @@ export function Header({ activeScene, onScrollTo, onOpenModal }: HeaderProps) {
                 <span>{item.label}</span>
               </button>
             ))}
+            <button
+              type="button"
+              className="gb-mobile-menu__link"
+              onClick={() => {
+                setMobileMenuOpen(false)
+                onOpenDiscover2()
+              }}
+            >
+              <span>Discover 2</span>
+            </button>
           </div>
           <div className="gb-mobile-menu__portals">
             <button

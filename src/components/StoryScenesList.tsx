@@ -204,6 +204,7 @@ const FOUNDERS_AND_LEADERS = [
 interface StoryScenesListProps {
   onScrollTo: (id: string) => void
   onOpenModal: (modalId: string) => void
+  excludeHero?: boolean
 }
 
 function SceneReferenceHeader({
@@ -272,7 +273,11 @@ function renderConceptIcon(pillarKey: string) {
   )
 }
 
-export const StoryScenesList = React.memo(function StoryScenesList({ onScrollTo, onOpenModal }: StoryScenesListProps) {
+export const StoryScenesList = React.memo(function StoryScenesList({
+  onScrollTo,
+  onOpenModal,
+  excludeHero = false,
+}: StoryScenesListProps) {
   const mainRef = useRef<HTMLElement | null>(null)
   const videoRef = useRef<HTMLVideoElement | null>(null)
   const centresCarouselRef = useRef<HTMLDivElement | null>(null)
@@ -404,9 +409,13 @@ export const StoryScenesList = React.memo(function StoryScenesList({ onScrollTo,
 
   const currentHeroReel = HERO_VIDEO_REELS[0]
 
+  const visibleScenes = excludeHero
+    ? STORY_SCENES.filter((scene) => scene.number !== '01')
+    : STORY_SCENES
+
   return (
     <main ref={mainRef} className="gb-story-main">
-      {STORY_SCENES.map((scene) => {
+      {visibleScenes.map((scene) => {
         const isImageScene = scene.hasImage
         const num = parseInt(scene.number, 10)
         const bgSurfaceClass =
