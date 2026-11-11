@@ -72,23 +72,52 @@
   width: auto;
   object-fit: contain;
   display: block;
-  animation: gbBrandLogoEnter 900ms cubic-bezier(0.2, 0.75, 0.25, 1) both;
 }
 
-@keyframes gbBrandLogoEnter {
+.gb-site-intro {
+  position: fixed;
+  z-index: 1000;
+  inset: 0;
+  display: grid;
+  overflow: hidden;
+  place-items: center;
+  background: var(--gb-ivory);
+  animation: gbSiteIntroFade 1800ms ease-out forwards;
+  pointer-events: none;
+}
+
+.gb-site-intro img {
+  width: min(72vw, 460px);
+  height: auto;
+  animation: gbSiteLogoZoom 1800ms cubic-bezier(0.2, 0.7, 0.2, 1) forwards;
+  will-change: transform, opacity;
+}
+
+@keyframes gbSiteLogoZoom {
   0% {
-    opacity: 0;
-    transform: scale(0.55);
+    opacity: 1;
+    transform: scale(0.65);
   }
 
-  72% {
+  68% {
     opacity: 1;
-    transform: scale(1.08);
+    transform: scale(4);
   }
 
   100% {
+    opacity: 0;
+    transform: scale(9);
+  }
+}
+
+@keyframes gbSiteIntroFade {
+  0%,
+  64% {
     opacity: 1;
-    transform: scale(1);
+  }
+
+  100% {
+    opacity: 0;
   }
 }
 
@@ -5270,7 +5299,8 @@
 @media (prefers-reduced-motion: reduce) {
 
   .gb-scene *,
-  .gb-brand__logo,
+  .gb-site-intro,
+  .gb-site-intro img,
   .gb-fixa-floating-badge,
   .gb-status-dot--emerald,
   .gb-kinetic-verb,

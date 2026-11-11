@@ -10,6 +10,14 @@ export function App() {
   const [activeScene, setActiveScene] = useState<string>('scene-01')
   const [activeModal, setActiveModal] = useState<string | null>(null)
   const [chatOpen, setChatOpen] = useState(false)
+  const [showIntro, setShowIntro] = useState(
+    () => !window.matchMedia('(prefers-reduced-motion: reduce)').matches
+  )
+
+  useEffect(() => {
+    const introTimeout = window.setTimeout(() => setShowIntro(false), 1800)
+    return () => window.clearTimeout(introTimeout)
+  }, [])
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -61,6 +69,11 @@ export function App() {
 
   return (
     <div className="gb-app">
+      {showIntro && (
+        <div className="gb-site-intro" aria-hidden="true">
+          <img src="/genbright-logo.png" alt="" />
+        </div>
+      )}
       <Header
         activeScene={activeScene}
         onScrollTo={scrollToScene}
