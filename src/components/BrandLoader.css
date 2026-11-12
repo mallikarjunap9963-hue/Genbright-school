@@ -1,215 +1,268 @@
 /* ==========================================================================
    GENBRIGHT BRAND LOADING ANIMATION
-   Reference Choreography: Immediate Logo -> Blooming Scalloped Spirograph
-   Rings -> Wavy Forest Curtain Reveal (Using GenBright Theme Palette)
+   Guilloché / Moiré Contour Wave Ribbon & Academic Seal Loader
+   Matched to the reference Shady Side Academy loading architecture
+   Rendered exclusively in GenBright World School Theme Colors
    ========================================================================== */
 
 .gb-loader {
   position: fixed;
   inset: 0;
-  z-index: 1200;
+  z-index: 999999;
   display: grid;
   place-items: center;
   overflow: hidden;
-  background: radial-gradient(circle at center, var(--gb-text-light) 0%, var(--gb-ivory) 78%);
+  background: radial-gradient(circle at center, #ffffff 0%, #faf8f2 60%, #f4eee1 100%);
   pointer-events: all;
-  animation: gbLoaderFadeOut 2600ms cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  animation: gbLoaderScreenExit 2800ms cubic-bezier(0.65, 0, 0.35, 1) forwards;
+  user-select: none;
 }
 
-.gb-loader__rings-svg {
+.gb-loader__svg {
   position: absolute;
   inset: 0;
-  width: 100%;
-  height: 100%;
+  margin: auto;
+  width: min(96vw, 96vh, 960px);
+  height: min(96vw, 96vh, 960px);
   pointer-events: none;
+  overflow: visible;
+  will-change: transform, opacity;
 }
 
-.gb-loader__rings-group {
+/* --------------------------------------------------------------------------
+   WAVE RIBBON (GUILLOCHÉ / MOIRÉ LAYERS - PROPORTIONALLY SCALED)
+   -------------------------------------------------------------------------- */
+.gb-loader__waves-group {
   transform-origin: 500px 500px;
-  animation: gbLoaderGroupRotate 2400ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  animation: gbLoaderRibbonSpin 2800ms cubic-bezier(0.2, 0.8, 0.25, 1) forwards;
 }
 
-.gb-loader__ring {
+.gb-loader__wave-line {
   transform-origin: 500px 500px;
   opacity: 0;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  vector-effect: non-scaling-stroke;
+  animation: gbLoaderWaveBloom 1650ms cubic-bezier(0.16, 1, 0.3, 1) forwards,
+             gbLoaderWaveOscillate 4200ms ease-in-out infinite alternate;
   will-change: transform, opacity;
 }
 
-.gb-loader__ring--cw {
-  animation: gbLoaderRingBloomCW 1750ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
-}
-
-.gb-loader__ring--ccw {
-  animation: gbLoaderRingBloomCCW 1750ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
-}
-
-.gb-loader__logo-wrap {
-  position: relative;
-  z-index: 2;
-  display: grid;
-  place-items: center;
-  animation: gbLoaderLogoStage 2100ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
-  will-change: transform, opacity;
-}
-
-.gb-loader__logo-halo {
-  position: absolute;
-  width: clamp(160px, 24vw, 230px);
-  height: clamp(160px, 24vw, 230px);
-  border-radius: 50%;
-  background: radial-gradient(
-    circle,
-    var(--gb-text-light) 0%,
-    rgba(255, 250, 240, 0.94) 56%,
-    rgba(247, 242, 221, 0) 100%
-  );
-  border: 1px solid rgba(22, 61, 50, 0.08);
-  box-shadow: 0 12px 42px rgba(22, 61, 50, 0.07);
-}
-
-.gb-loader__logo {
-  position: relative;
-  z-index: 1;
-  width: clamp(118px, 16vw, 174px);
-  height: auto;
-  object-fit: contain;
-  display: block;
-}
-
-.gb-loader__curtain-svg {
-  position: absolute;
-  inset: 0;
-  z-index: 3;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-}
-
-.gb-loader__curtain-outer {
-  transform-origin: 500px 500px;
-  transform: scale(0);
-  opacity: 0;
-  animation: gbLoaderCurtainSweep 1150ms cubic-bezier(0.65, 0, 0.35, 1) 1420ms forwards;
-  will-change: transform, opacity;
-}
-
-.gb-loader__curtain-inner {
-  transform-origin: 500px 500px;
-  transform: scale(0);
-  opacity: 0;
-  animation: gbLoaderCurtainInner 950ms cubic-bezier(0.55, 0, 0.25, 1) 1640ms forwards;
-  will-change: transform, opacity;
-}
-
-@keyframes gbLoaderLogoStage {
+@keyframes gbLoaderRibbonSpin {
   0% {
+    transform: rotate(0deg) scale(0.96);
+  }
+  50% {
+    transform: rotate(14deg) scale(1.01);
+  }
+  85% {
+    transform: rotate(24deg) scale(1.02);
     opacity: 1;
-    transform: scale(0.92);
+  }
+  100% {
+    transform: rotate(32deg) scale(1.14);
+    opacity: 0;
+  }
+}
+
+@keyframes gbLoaderWaveBloom {
+  0% {
+    opacity: 0;
+    transform: scale(0.72) rotate(-8deg);
+  }
+  24% {
+    opacity: 1;
+  }
+  85% {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }
+  100% {
+    opacity: 0.85;
+    transform: scale(1.05) rotate(4deg);
+  }
+}
+
+@keyframes gbLoaderWaveOscillate {
+  0% {
+    stroke-width: 1.15px;
+  }
+  100% {
+    stroke-width: 1.4px;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   CENTRAL ACADEMIC SEAL BADGE (ENLARGED)
+   -------------------------------------------------------------------------- */
+.gb-loader__seal-group {
+  transform-origin: 500px 500px;
+  animation: gbLoaderSealEntrance 2600ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  will-change: transform, opacity;
+}
+
+.gb-loader__seal-scallop {
+  transform-origin: 500px 500px;
+  animation: gbLoaderSealScallopWiggle 6000ms ease-in-out infinite alternate;
+}
+
+@keyframes gbLoaderSealScallopWiggle {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(8deg);
+  }
+}
+
+.gb-loader__seal-text {
+  font-family: var(--font-accent, 'Plus Jakarta Sans', system-ui, sans-serif);
+  font-size: 13.5px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  user-select: none;
+}
+
+.gb-loader__seal-text--bottom {
+  font-size: 11.5px;
+  letter-spacing: 0.28em;
+  opacity: 0.88;
+}
+
+@keyframes gbLoaderSealEntrance {
+  0% {
+    opacity: 0;
+    transform: scale(0.85);
   }
   18% {
     opacity: 1;
     transform: scale(1);
   }
-  72% {
+  84% {
     opacity: 1;
-    transform: scale(1.03);
-  }
-  86% {
-    opacity: 0;
-    transform: scale(0.9);
+    transform: scale(1.02);
   }
   100% {
     opacity: 0;
-    transform: scale(0.88);
+    transform: scale(1.12);
   }
 }
 
-@keyframes gbLoaderGroupRotate {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(26deg);
+/* --------------------------------------------------------------------------
+   ENLARGED CENTER GENBRIGHT LOGO CONTAINER (h-64 / h-72, reduced padding p-2)
+   -------------------------------------------------------------------------- */
+.gb-loader__logo-wrap {
+  position: relative;
+  z-index: 10;
+  display: grid;
+  place-items: center;
+  box-sizing: border-box;
+  animation: gbLoaderLogoPop 2600ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  pointer-events: none;
+}
+
+/* Fallback & responsive sizing matching h-64 w-64 up to h-72 w-72 with p-2 (0.5rem) */
+.gb-loader__logo-wrap.h-64,
+.gb-loader__logo-wrap {
+  width: clamp(240px, 30vw, 288px);
+  height: clamp(240px, 30vw, 288px);
+  padding: 0.5rem; /* p-2: reduced from p-4 */
+}
+
+@media (min-width: 768px) {
+  .gb-loader__logo-wrap.md\:h-72,
+  .gb-loader__logo-wrap {
+    width: 18rem; /* h-72 / w-72 */
+    height: 18rem;
+    padding: 0.5rem; /* p-2 */
   }
 }
 
-@keyframes gbLoaderRingBloomCW {
+.gb-loader__logo {
+  width: clamp(160px, 22vw, 218px);
+  max-width: 86%;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  filter: drop-shadow(0 6px 18px rgba(22, 61, 50, 0.1));
+}
+
+@keyframes gbLoaderLogoPop {
   0% {
     opacity: 0;
-    transform: scale(0.22) rotate(-14deg);
+    transform: scale(0.82);
   }
   20% {
     opacity: 1;
+    transform: scale(1);
   }
-  82% {
+  84% {
     opacity: 1;
-    transform: scale(1.38) rotate(24deg);
+    transform: scale(1.02);
   }
   100% {
-    opacity: 0.85;
-    transform: scale(1.52) rotate(32deg);
+    opacity: 0;
+    transform: scale(1.15);
   }
 }
 
-@keyframes gbLoaderRingBloomCCW {
+/* Utility classes support */
+.h-64 { height: 16rem; }
+.w-64 { width: 16rem; }
+.p-2 { padding: 0.5rem; }
+
+@media (min-width: 768px) {
+  .md\:h-72 { height: 18rem; }
+  .md\:w-72 { width: 18rem; }
+}
+
+/* --------------------------------------------------------------------------
+   REVEAL CURTAIN (CIRCULAR EXPANSION WIPE INTO SITE)
+   -------------------------------------------------------------------------- */
+.gb-loader__reveal-curtain {
+  position: absolute;
+  inset: 0;
+  z-index: 15;
+  pointer-events: none;
+  opacity: 0;
+  background: radial-gradient(
+    circle at center,
+    transparent 0%,
+    transparent 48%,
+    var(--gb-forest) 54%,
+    var(--gb-forest) 100%
+  );
+  animation: gbLoaderCurtainIris 1050ms cubic-bezier(0.7, 0, 0.3, 1) 1850ms forwards;
+}
+
+@keyframes gbLoaderCurtainIris {
   0% {
     opacity: 0;
-    transform: scale(0.22) rotate(14deg);
+    transform: scale(0.2);
   }
   20% {
+    opacity: 0.95;
+    transform: scale(0.85);
+  }
+  85% {
     opacity: 1;
-  }
-  82% {
-    opacity: 1;
-    transform: scale(1.38) rotate(-20deg);
-  }
-  100% {
-    opacity: 0.85;
-    transform: scale(1.52) rotate(-28deg);
-  }
-}
-
-@keyframes gbLoaderCurtainSweep {
-  0% {
-    opacity: 0.96;
-    transform: scale(0.05) rotate(0deg);
-  }
-  44% {
-    opacity: 1;
-    transform: scale(3.55) rotate(16deg);
-  }
-  68% {
-    opacity: 1;
-    transform: scale(3.75) rotate(22deg);
+    transform: scale(3.2);
   }
   100% {
     opacity: 0;
-    transform: scale(4.2) rotate(28deg);
+    transform: scale(4.4);
   }
 }
 
-@keyframes gbLoaderCurtainInner {
-  0% {
-    opacity: 0;
-    transform: scale(0.08) rotate(0deg);
-  }
-  38% {
-    opacity: 0.88;
-    transform: scale(2.2) rotate(-12deg);
-  }
-  100% {
-    opacity: 0;
-    transform: scale(4.4) rotate(-22deg);
-  }
-}
-
-@keyframes gbLoaderFadeOut {
+/* Overall Screen Fadeout */
+@keyframes gbLoaderScreenExit {
   0%,
-  76% {
+  82% {
     opacity: 1;
     visibility: visible;
   }
-  99% {
+  98% {
     opacity: 0;
     visibility: visible;
   }
@@ -220,9 +273,9 @@
   }
 }
 
+/* Accessibility: instant bypass on reduced motion preference */
 @media (prefers-reduced-motion: reduce) {
   .gb-loader {
     display: none !important;
   }
 }
-

@@ -13,108 +13,103 @@ const LEARNER_PROFILES = [
     subtitle: 'Creative, imaginative & poetic vision',
     tag: 'Creativity & Arts',
     description: 'Thrives in open-ended creative inquiry, visual storytelling, and connecting big ideas across disciplines.',
-    imageUrl:
-      '/images/girl.png',
-    imageAlt: 'Child looking thoughtfully outdoors with colorful face paint and creative imagination',
+    imageUrl: '/images/scene-03-learner-guitar-hd.jpg',
+    objectPosition: '42% 35%',
+    imageAlt: 'GenBright student happily playing an acoustic guitar',
   },
   {
     title: 'The Explorer',
     subtitle: 'Curious, experiential & outdoor discovery',
     tag: 'Living Ecology',
     description: 'Learns through direct physical inquiry, botanical exploration, and hands-on scientific experimentation.',
-    imageUrl:
-      'https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=1200&q=85',
-    imageAlt: 'Joyful children smiling and exploring together on green campus',
+    imageUrl: '/images/scene-03-learner-pickleball-hd.jpg',
+    objectPosition: '70% 32%',
+    imageAlt: 'Energetic GenBright student focused on outdoor pickleball rally',
   },
   {
     title: 'The Quiet Observer',
     subtitle: 'Reflective, precise & deep analytical focus',
     tag: 'Inquiry & Rigour',
     description: 'Absorbs subtle nuances, builds deep conceptual clarity, and approaches challenges with calm, focused determination.',
-    imageUrl:
-      'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=1200&q=85',
-    imageAlt: 'Student focused thoughtfully on books and learning materials',
+    imageUrl: '/images/scene-03-learner-reading-hd.jpg',
+    objectPosition: '50% 38%',
+    imageAlt: 'GenBright student reading thoughtfully in the library',
   },
   {
     title: 'The Energetic Questioner',
     subtitle: 'Bold, spirited & collaborative leadership',
     tag: 'Leadership & Voice',
     description: 'Sparks intellectual dialogue with passionate questions, rallies peer teams, and turns ideas into active movement.',
-    imageUrl:
-      'https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?auto=format&fit=crop&w=1200&q=85',
-    imageAlt: 'Energetic students collaborating and raising questions together in classroom',
+    imageUrl: '/images/scene-03-learner-hands-on-hd.jpg',
+    objectPosition: '50% 35%',
+    imageAlt: 'Energetic GenBright students collaborating hands-on on an inquiry project with focus and teamwork',
   },
 ]
 
 const CHILDHOOD_MOTION_GALLERY = [
   {
     id: 'motion-1',
-    title: 'Joyful Play',
-    imageUrl: '/images/gallery-motion-play.jpg',
-    imageAlt: 'Joyful elementary students running freely and laughing across sunlit botanical school grounds',
+    title: 'Joyful Collaboration & Craft',
+    imageUrl: '/images/scene-09-motion-paper-globe-hd.jpg',
+    imageAlt: 'Two smiling GenBright students happily crafting paper-mâché globes together outdoors in the sunlit courtyard',
   },
   {
     id: 'motion-2',
-    title: 'Hands-on Discovery',
-    imageUrl: '/images/gallery-motion-discovery.jpg',
-    imageAlt: 'Curious young student examining a green seedling and STEM robotics project with a bright smile',
+    title: 'Hands-on Problem Solving',
+    imageUrl: '/images/scene-09-motion-classroom-hd.jpg',
+    imageAlt: 'GenBright students engaged in hands-on problem solving and Montessori learning in the classroom',
   },
   {
     id: 'motion-3',
-    title: 'Botanical Farm',
-    imageUrl: '/images/gallery-motion-nature.jpg',
-    imageAlt: 'Children gently planting saplings in rich organic garden soil at the campus botanical farm',
+    title: 'Scientific Wonder & Inquiry',
+    imageUrl: '/images/scene-09-motion-science-inquiry-hd.jpg',
+    imageAlt: 'GenBright educator and student exploring human biology and anatomy charts in the science classroom',
   },
   {
     id: 'motion-4',
-    title: 'Creative Arts',
-    imageUrl: '/images/gallery-motion-arts.jpg',
-    imageAlt: 'Delighted young student painting vibrant watercolor brushstrokes on canvas in a sunlit art studio',
+    title: 'Student Work & Courage',
+    imageUrl: '/images/scene-09-motion-student-work-hd.jpg',
+    imageAlt: 'GenBright student proudly engaging with emotional wellbeing charts and creative student work display',
   },
   {
     id: 'motion-5',
-    title: 'Active Athletics',
-    imageUrl: '/images/gallery-motion-sports.jpg',
-    imageAlt: 'Energetic students smiling and playing soccer on lush outdoor green sports turf',
+    title: 'Active Athletics & Team Sports',
+    imageUrl: '/images/scene-09-motion-football-hd.jpg',
+    imageAlt: 'GenBright students and sports coach playing football together on the outdoor campus athletic field',
   },
 ]
 
 const CAMPUS_SLIDESHOW = [
   {
     id: 'camp-1',
-    imageUrl: '/images/joyful-children-outdoor.png',
-    alt: 'Children laughing and playing joyfully outdoors across the seven-acre campus',
+    imageUrl: '/images/scene-06-campus-sports-hd.jpg',
+    alt: 'GenBright students running and playing soccer on lush green campus turf',
   },
   {
     id: 'camp-2',
-    imageUrl: '/images/academically-prepared.png',
-    alt: 'Students engaged in collaborative inquiry and hands-on learning in modern Cambridge classroom',
+    imageUrl: '/images/scene-06-classroom-puzzle-hd.jpg',
+    alt: 'Student solving hands-on geometric puzzle board in Cambridge classroom',
   },
   {
     id: 'camp-3',
-    imageUrl: '/images/happy-children.png',
-    alt: 'Children hands in soil planting seeds and discovering living ecology on the campus farm',
+    imageUrl: '/images/scene-06-outdoor-craft-hd.jpg',
+    alt: 'Educators and students collaborating on hands-on project outdoors',
   },
   {
     id: 'camp-4',
-    imageUrl: '/images/section-02-children.jpg',
-    alt: 'Joyful GenBright students smiling together outdoors',
+    imageUrl: '/images/scene-06-cricket-nets-hd.jpg',
+    alt: 'Student practicing athletic skills at the campus sports cricket nets arena',
   },
   {
     id: 'camp-5',
-    imageUrl: '/images/section-04-whole-child.jpg',
-    alt: 'Children exploring and discovering in nature at GenBright World School',
-  },
-  {
-    id: 'camp-6',
-    imageUrl: '/images/standing.png',
-    alt: 'A school community member standing on campus',
+    imageUrl: '/images/scene-06-circle-assembly-hd.jpg',
+    alt: 'Students and educators gathered in an open circle for reflection and community dialogue',
   },
 ]
 
 const COMMUNITY_IMAGE = {
-  imageUrl: '/images/community-mentors-collaboration.jpg',
-  alt: 'Female scientist mentor and community educators collaborating with young learners around robotics and ecology workshop at GenBright',
+  imageUrl: '/images/scene-12-community-partners-hd.jpg',
+  alt: 'GenBright leadership, educators, mentors and students collaborating on creative projects in the campus community',
 }
 
 const HERO_QUICK_LINKS = [
@@ -164,7 +159,8 @@ const FOUNDERS_AND_LEADERS = [
     num: '01',
     name: 'Dhanyabharathi Kannan',
     designation: 'Founder & Educationist',
-    imageUrl: '/images/founder-dhanyabharathi.jpg',
+    imageUrl: '/images/scene-07-leader-01-hd.jpg',
+    objectPosition: '50% 15%',
     imageAlt: 'Dhanyabharathi Kannan, Founder & Educationist at GenBright World School',
   },
   {
@@ -172,32 +168,36 @@ const FOUNDERS_AND_LEADERS = [
     num: '02',
     name: 'Dr. Ananya Sundaram',
     designation: 'Head of Cambridge & Pedagogical Research',
-    imageUrl: '/images/educator-clean-portrait.jpg',
-    imageAlt: 'Dr. Ananya Sundaram, Head of Cambridge & Pedagogical Research',
+    imageUrl: '/images/scene-07-leader-02-hd.jpg',
+    objectPosition: '50% 15%',
+    imageAlt: 'Leadership team member at GenBright World School',
   },
   {
     id: 'leader-3',
     num: '03',
-    name: 'Vikramaditya Sen',
-    designation: 'Director of Living Ecology & Bio-design',
-    imageUrl: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=900&q=85',
-    imageAlt: 'Vikramaditya Sen, Director of Living Ecology & Bio-design',
+    name: 'Priyadarshini Ram',
+    designation: 'Director of Early Childhood & Curriculum',
+    imageUrl: '/images/scene-07-leader-03-hd.jpg',
+    objectPosition: '50% 15%',
+    imageAlt: 'Leadership team member at GenBright World School',
   },
   {
     id: 'leader-4',
     num: '04',
-    name: 'Sarah Jenkins',
+    name: 'Radhika Seshadri',
     designation: 'Dean of Whole-Child Well-Being & Pastoral Care',
-    imageUrl: '/images/standing.png',
-    imageAlt: 'Sarah Jenkins, Dean of Whole-Child Well-Being & Pastoral Care',
+    imageUrl: '/images/scene-07-leader-04-hd.jpg',
+    objectPosition: '50% 15%',
+    imageAlt: 'Leadership team member at GenBright World School',
   },
   {
     id: 'leader-5',
     num: '05',
-    name: 'Rajesh Ramanathan',
-    designation: 'Head of STEAM Innovation & Cambridge Sciences',
-    imageUrl: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=900&q=85',
-    imageAlt: 'Rajesh Ramanathan, Head of STEAM Innovation & Cambridge Sciences',
+    name: 'Sports & Campus Leadership',
+    designation: 'Director of Physical Education & Campus Sports',
+    imageUrl: '/images/scene-07-leader-05-hd.jpg',
+    objectPosition: '50% 32%',
+    imageAlt: 'GenBright World School campus building, athletics field and physical education leadership',
   },
 ]
 
@@ -618,24 +618,27 @@ export const StoryScenesList = React.memo(function StoryScenesList({
                       <div className="gb-scene02-layout__triptych" aria-label="Photo showcase of joyful GenBright children">
                         <div className="gb-scene02-triptych__col gb-scene02-triptych__col--side">
                           <img
-                            src="/images/section-02-children.jpg"
-                            alt="Joyful children smiling together"
+                            src="/images/scene-02-happy-craft-hd.jpg"
+                            alt="Happy GenBright students collaborating on a hands-on classroom model"
+                            style={{ objectPosition: '32% 35%' }}
                             loading="lazy"
                             decoding="async"
                           />
                         </div>
                         <div className="gb-scene02-triptych__col gb-scene02-triptych__col--center">
                           <img
-                            src="/images/joyful-children-outdoor.png"
-                            alt="Children laughing and playing outdoors on green campus"
+                            src="/images/scene-02-happy-blocks-hd.jpg"
+                            alt="GenBright student joyfully building with colorful classroom blocks"
+                            style={{ objectPosition: '50% 42%' }}
                             loading="lazy"
                             decoding="async"
                           />
                         </div>
                         <div className="gb-scene02-triptych__col gb-scene02-triptych__col--side">
                           <img
-                            src="/images/happy-children.png"
-                            alt="Children learning and having fun together"
+                            src="/images/scene-02-happy-swim-hd.jpg"
+                            alt="GenBright student swimming happily with a kickboard in the pool"
+                            style={{ objectPosition: '52% 55%' }}
                             loading="lazy"
                             decoding="async"
                           />
@@ -687,6 +690,7 @@ export const StoryScenesList = React.memo(function StoryScenesList({
                                 className="gb-learner-card__image"
                                 src={profile.imageUrl}
                                 alt={profile.imageAlt}
+                                style={{ objectPosition: profile.objectPosition }}
                                 loading="lazy"
                                 decoding="async"
                               />
@@ -730,8 +734,8 @@ export const StoryScenesList = React.memo(function StoryScenesList({
                       <div className="gb-scene04-top__visual">
                         <div className="gb-scene04-photo-frame">
                           <img
-                            src="/images/section-04-whole-child.jpg"
-                            alt="Children exploring, discovering and playing in nature at GenBright World School"
+                            src="/images/scene-04-whole-child-inquiry-hd.jpg"
+                            alt="Four GenBright students gathered together in classroom inquiry, observing and discussing a globe model"
                             className="gb-scene04-photo"
                             loading="lazy"
                             decoding="async"
@@ -777,9 +781,10 @@ export const StoryScenesList = React.memo(function StoryScenesList({
                     {/* LEFT FULL-HEIGHT CLASSROOM PHOTO */}
                     <div className="gb-scene05-dark-split__media">
                       <img
-                        src="/images/academically-prepared.png"
-                        alt="Teacher and students engaged in learning in modern Cambridge classroom"
+                        src="/images/academically-prepared-students-hd.jpg"
+                        alt="GenBright students reading and exploring books together in classroom"
                         className="gb-scene05-dark-split__img"
+                        style={{ objectPosition: '52% 35%' }}
                         loading="lazy"
                         decoding="async"
                       />
@@ -928,6 +933,7 @@ export const StoryScenesList = React.memo(function StoryScenesList({
                                 src={leader.imageUrl}
                                 alt={leader.imageAlt}
                                 className="gb-scene07-carousel-img"
+                                style={{ objectPosition: leader.objectPosition }}
                                 loading={idx === 0 ? 'eager' : 'lazy'}
                                 decoding="async"
                               />
@@ -1110,23 +1116,25 @@ export const StoryScenesList = React.memo(function StoryScenesList({
                   /* SCENE 11: GENBRIGHT LITTLE CIRCLE (EXACT 4-IMAGE PINWHEEL COLLAGE MATCHING USER REFERENCE) */
                   <div className="gb-scene11-pinwheel-stage">
                     <div className="gb-scene11-collage-container">
-                      {/* TOP-LEFT IMAGE: EARLY-YEARS READING & WONDER */}
+                      {/* TOP-LEFT IMAGE: EARLY-YEARS COLLABORATIVE MONTESSORI & PUZZLE LEARNING */}
                       <div className="gb-scene11-img-slot gb-scene11-img-slot--tl">
                         <img
-                          src="/images/girl.png"
-                          alt="Young child exploring creativity through outdoor painting"
+                          src="/images/scene-11-montessori-map-table-hd.jpg"
+                          alt="GenBright students collaborating on world map puzzles and Montessori materials in early childhood classroom"
                           className="gb-scene11-img"
+                          style={{ objectPosition: '50% 32%' }}
                           loading="lazy"
                           decoding="async"
                         />
                       </div>
 
-                      {/* TOP-RIGHT IMAGE: MONTESSORI SENSORY LEARNING & BLOCKS */}
+                      {/* TOP-RIGHT IMAGE: STRATEGIC PEER COLLABORATION & LOGIC PLAY */}
                       <div className="gb-scene11-img-slot gb-scene11-img-slot--tr">
                         <img
-                          src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=900&q=85"
-                          alt="Preschool discovery with hands-on early learning sensory blocks and materials"
+                          src="/images/scene-11-students-boardgame-hd.jpg"
+                          alt="Two GenBright students collaborating and playing a strategy board game in the classroom"
                           className="gb-scene11-img"
+                          style={{ objectPosition: 'center 42%' }}
                           loading="lazy"
                           decoding="async"
                         />
@@ -1135,8 +1143,8 @@ export const StoryScenesList = React.memo(function StoryScenesList({
                       {/* BOTTOM-LEFT IMAGE: NURTURING EDUCATORS & PRESCHOOL CIRCLE */}
                       <div className="gb-scene11-img-slot gb-scene11-img-slot--bl">
                         <img
-                          src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=900&q=85"
-                          alt="Early childhood educators nurturing toddlers and young learners"
+                          src="/images/scene-06-circle-assembly-hd.jpg"
+                          alt="Early childhood educators, mentors and preschool community in a collaborative circle"
                           className="gb-scene11-img"
                           loading="lazy"
                           decoding="async"
@@ -1146,8 +1154,8 @@ export const StoryScenesList = React.memo(function StoryScenesList({
                       {/* BOTTOM-RIGHT IMAGE: JOYFUL OUTDOOR NATURE PLAY & FRIENDSHIP */}
                       <div className="gb-scene11-img-slot gb-scene11-img-slot--br">
                         <img
-                          src="https://images.unsplash.com/photo-1516627145497-ae6968895b74?auto=format&fit=crop&w=1000&q=85"
-                          alt="Preschool children playing happily together outdoors across green lawns"
+                          src="/images/scene-06-outdoor-craft-hd.jpg"
+                          alt="Preschool children and educators collaborating on creative outdoor making"
                           className="gb-scene11-img"
                           loading="lazy"
                           decoding="async"
@@ -1228,6 +1236,7 @@ export const StoryScenesList = React.memo(function StoryScenesList({
                           src={COMMUNITY_IMAGE.imageUrl}
                           alt={COMMUNITY_IMAGE.alt}
                           className="gb-scene12-ref__img"
+                          style={{ objectPosition: 'center 26%' }}
                           loading="eager"
                           decoding="async"
                         />
@@ -1282,18 +1291,20 @@ export const StoryScenesList = React.memo(function StoryScenesList({
                     <div className="gb-scene13-media-wrap" aria-label="Educator journey and collaboration">
                       <div className="gb-scene13-media-card gb-scene13-media-card--1">
                         <img
-                          src="/images/educator-discovery-mentor.jpg"
-                          alt="Inspiring progressive educator mentoring elementary students around a botanical inquiry table"
+                          src="/images/scene-13-educator-mentoring-craft-hd.jpg"
+                          alt="GenBright educator guiding students in hands-on crafting and collaborative learning outdoors"
                           className="gb-scene13-img"
+                          style={{ objectPosition: '51% 38%' }}
                           loading="lazy"
                           decoding="async"
                         />
                       </div>
                       <div className="gb-scene13-media-card gb-scene13-media-card--2">
                         <img
-                          src="/images/educator-clean-portrait.jpg"
-                          alt="Passionate progressive school educator smiling warmly by modern campus windows"
+                          src="/images/scene-13-educator-mentorship-hd.jpg"
+                          alt="GenBright educator warmly mentoring an elementary student crafting a globe in outdoor workshop"
                           className="gb-scene13-img"
+                          style={{ objectPosition: '50% 32%' }}
                           loading="lazy"
                           decoding="async"
                         />

@@ -4,6 +4,12 @@
    Two-Tone Headlines (#14171A + #8C929C), Vibrant Icons & Modern Capsule Buttons
    ========================================================================== */
 
+/* Global Image Sharpness & High-DPI Visibility */
+img {
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: high-quality;
+}
+
 .container,
 .gb-container {
   width: 100%;
@@ -619,6 +625,10 @@
   height: 100%;
   object-fit: cover;
   object-position: center;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: high-quality;
+  backface-visibility: hidden;
+  transform: translateZ(0);
   transition: transform 0.65s cubic-bezier(0.22, 1, 0.36, 1), filter 0.65s ease;
 }
 
@@ -735,6 +745,10 @@
   width: 100%;
   aspect-ratio: 4 / 5;
   object-fit: cover;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: high-quality;
+  backface-visibility: hidden;
+  transform: translateZ(0);
   background: #ebece6;
   transition: transform 0.5s ease;
 }
@@ -2118,6 +2132,10 @@
   object-position: center 30%;
   display: block;
   transition: transform 0.4s ease;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: high-quality;
+  backface-visibility: hidden;
+  transform: translateZ(0);
 }
 
 .gb-scene04-photo-frame:hover .gb-scene04-photo {
@@ -2432,6 +2450,8 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: high-quality;
   display: block;
 }
 
@@ -3305,6 +3325,8 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: high-quality;
   transition: transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
@@ -5378,9 +5400,13 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center top;
+  object-position: center 15%;
   display: block;
   transition: transform 0.6s ease;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: high-quality;
+  backface-visibility: hidden;
+  transform: translateZ(0);
 }
 
 .gb-scene07-carousel-slide:hover .gb-scene07-carousel-img {
@@ -5737,7 +5763,7 @@
 }
 
 .gb-mosaic-card--big .gb-mosaic-card__img {
-  object-position: center bottom;
+  object-position: center 38%;
 }
 
 .gb-mosaic-subgrid {
@@ -5760,14 +5786,18 @@
   object-fit: cover;
   display: block;
   transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: high-quality;
+  backface-visibility: hidden;
+  transform: translateZ(0);
 }
 
 .gb-mosaic-subgrid .gb-mosaic-card:nth-child(1) .gb-mosaic-card__img {
-  object-position: center center;
+  object-position: center 55%;
 }
 
 .gb-mosaic-subgrid .gb-mosaic-card:nth-child(2) .gb-mosaic-card__img {
-  object-position: center top;
+  object-position: 55% 42%;
 }
 
 .gb-mosaic-subgrid .gb-mosaic-card:nth-child(3) .gb-mosaic-card__img {
@@ -5775,7 +5805,7 @@
 }
 
 .gb-mosaic-subgrid .gb-mosaic-card:nth-child(4) .gb-mosaic-card__img {
-  object-position: center 25%;
+  object-position: center 50%;
 }
 
 .gb-mosaic-card:hover .gb-mosaic-card__img {
@@ -6076,17 +6106,21 @@
   object-fit: cover;
   display: block;
   transition: transform 0.4s ease;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: high-quality;
+  backface-visibility: hidden;
+  transform: translateZ(0);
 }
 
 .gb-scene11-img-slot:hover .gb-scene11-img {
-  transform: scale(1.04);
+  transform: scale(1.04) translateZ(0);
 }
 
 /* Top-Left Slot: Early-years reading & wonder (Base layer behind glass card) */
 .gb-scene11-img-slot--tl {
   top: 0;
-  left: 0;
-  width: clamp(280px, 32vw, 370px);
+  left: -20px;
+  width: clamp(300px, 34vw, 390px);
   height: clamp(280px, 31vw, 350px);
   z-index: 1;
   border: none;
@@ -6094,7 +6128,7 @@
 }
 
 .gb-scene11-img-slot--tl .gb-scene11-img {
-  object-position: center top;
+  object-position: 42% 28%;
 }
 
 /* Top-Right Slot: Montessori sensory blocks & learning (Layered ON TOP of glass card on the opposite side) */
@@ -6123,7 +6157,7 @@
 }
 
 .gb-scene11-img-slot--bl .gb-scene11-img {
-  object-position: center center;
+  object-position: center 40%;
 }
 
 /* Bottom-Right Slot: Joyful outdoor nature play (wider landscape) */
@@ -7062,6 +7096,8 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: high-quality;
   display: block;
   transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
 }
@@ -7281,8 +7317,12 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center;
+  object-position: center 30%;
   display: block;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: high-quality;
+  backface-visibility: hidden;
+  transform: translateZ(0);
 }
 
 /* Horizontally Proportioned Dark Content Card placed across image */
@@ -7738,6 +7778,7 @@
 }
 
 .gb-scene13-media-card {
+  position: relative;
   border-radius: 20px;
   overflow: hidden;
   box-shadow: 0 12px 36px rgba(19, 44, 32, 0.08);
@@ -7752,6 +7793,8 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: high-quality;
   display: block;
   transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
 }
