@@ -745,7 +745,7 @@ img {
 .gb-learner-card__image {
   display: block;
   width: 100%;
-  aspect-ratio: 4 / 5;
+  aspect-ratio: 3 / 2;
   object-fit: cover;
   image-rendering: -webkit-optimize-contrast;
   image-rendering: high-quality;
@@ -793,7 +793,7 @@ img {
   }
 
   .gb-learner-card__image {
-    aspect-ratio: 4 / 5;
+    aspect-ratio: 3 / 2;
   }
 }
 
