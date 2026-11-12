@@ -41,8 +41,8 @@ const LEARNER_PROFILES = [
     tag: 'Leadership & Voice',
     description: 'Sparks intellectual dialogue with passionate questions, rallies peer teams, and turns ideas into active movement.',
     imageUrl: '/images/scene-03-learner-hands-on-hd.jpg',
-    objectPosition: '50% 35%',
-    imageAlt: 'Energetic GenBright students collaborating hands-on on an inquiry project with focus and teamwork',
+    objectPosition: 'center center',
+    imageAlt: 'GenBright students collaborating hands-on on a globe making project',
   },
 ]
 
