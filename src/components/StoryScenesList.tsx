@@ -530,8 +530,12 @@ export const StoryScenesList = React.memo(function StoryScenesList({
                         </div>
                       </div>
 
-                      <div className="gb-scene02-layout__triptych" aria-label="Photo showcase of joyful GenBright children">
-                        <div className="gb-scene02-triptych__col gb-scene02-triptych__col--side">
+                      <div
+                        className="gb-scene02-collage"
+                        role="group"
+                        aria-label="Photos of children learning, creating, and swimming at GenBright"
+                      >
+                        <figure className="gb-scene02-collage__photo gb-scene02-collage__photo--craft">
                           <img
                             src="/images/scene-02-happy-craft-hd.jpg"
                             alt="Happy GenBright students collaborating on a hands-on classroom model"
@@ -539,8 +543,8 @@ export const StoryScenesList = React.memo(function StoryScenesList({
                             loading="lazy"
                             decoding="async"
                           />
-                        </div>
-                        <div className="gb-scene02-triptych__col gb-scene02-triptych__col--center">
+                        </figure>
+                        <figure className="gb-scene02-collage__photo gb-scene02-collage__photo--blocks">
                           <img
                             src="/images/scene-02-happy-blocks-hd.jpg"
                             alt="GenBright student joyfully building with colorful classroom blocks"
@@ -548,8 +552,8 @@ export const StoryScenesList = React.memo(function StoryScenesList({
                             loading="lazy"
                             decoding="async"
                           />
-                        </div>
-                        <div className="gb-scene02-triptych__col gb-scene02-triptych__col--side">
+                        </figure>
+                        <figure className="gb-scene02-collage__photo gb-scene02-collage__photo--swim">
                           <img
                             src="/images/scene-02-happy-swim-hd.jpg"
                             alt="GenBright student swimming happily with a kickboard in the pool"
@@ -557,7 +561,7 @@ export const StoryScenesList = React.memo(function StoryScenesList({
                             loading="lazy"
                             decoding="async"
                           />
-                        </div>
+                        </figure>
                       </div>
                     </div>
                   </div>

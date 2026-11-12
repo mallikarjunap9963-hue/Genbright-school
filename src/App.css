@@ -512,131 +512,59 @@ img {
   gap: 0.85rem;
 }
 
-/* 3-Pill Staggered Image Showcase */
-.gb-scene02-layout__triptych {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: clamp(0.65rem, 1.3vw, 1.1rem);
+/* Scene 02: an image-only staggered collage. */
+.gb-scene02-collage {
+  position: relative;
   width: 100%;
   max-width: 480px;
+  aspect-ratio: 0.91;
   margin: 0 auto;
 }
 
-.gb-scene02-triptych__col {
-  position: relative;
-  overflow: hidden;
-  border-radius: 9999px;
-  background: #ebece6;
-  border: 3px solid #ffffff;
-  box-shadow: 0 16px 36px rgba(19, 44, 32, 0.12);
-  transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.5s ease;
-}
-
-@keyframes gbPillFloatLeft {
-
-  0%,
-  100% {
-    transform: translateY(0px) rotate(0deg);
-  }
-
-  50% {
-    transform: translateY(-14px) rotate(-0.5deg);
-  }
-}
-
-@keyframes gbPillFloatCenter {
-
-  0%,
-  100% {
-    transform: translateY(-8px) scale(1);
-  }
-
-  50% {
-    transform: translateY(6px) scale(1.015);
-  }
-}
-
-@keyframes gbPillFloatRight {
-
-  0%,
-  100% {
-    transform: translateY(0px) rotate(0deg);
-  }
-
-  50% {
-    transform: translateY(-16px) rotate(0.6deg);
-  }
-}
-
-@keyframes gbShimmerSweep {
-  0% {
-    transform: translateX(-150%) rotate(25deg);
-  }
-
-  100% {
-    transform: translateX(250%) rotate(25deg);
-  }
-}
-
-.gb-scene02-triptych__col--side:first-child {
-  flex: 1;
-  height: clamp(250px, 23vw, 310px);
-  animation: gbPillFloatLeft 6.5s ease-in-out infinite;
-}
-
-.gb-scene02-triptych__col--center {
-  flex: 1.08;
-  height: clamp(310px, 29vw, 380px);
-  box-shadow: 0 20px 44px rgba(19, 44, 32, 0.16);
-  z-index: 1;
-  animation: gbPillFloatCenter 7.5s ease-in-out infinite 0.5s;
-}
-
-.gb-scene02-triptych__col--side:last-child {
-  flex: 1;
-  height: clamp(250px, 23vw, 310px);
-  animation: gbPillFloatRight 8s ease-in-out infinite 1s;
-}
-
-.gb-scene02-triptych__col::after {
-  content: '';
+.gb-scene02-collage__photo {
   position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: linear-gradient(60deg,
-      transparent 42%,
-      rgba(255, 255, 255, 0.28) 50%,
-      transparent 58%);
-  pointer-events: none;
-  animation: gbShimmerSweep 8s cubic-bezier(0.4, 0, 0.2, 1) infinite;
-  z-index: 2;
+  z-index: 1;
+  margin: 0;
+  overflow: hidden;
+  border: 7px solid #fff;
+  border-radius: 24px;
+  background: #fff;
 }
 
-.gb-scene02-triptych__col:hover {
-  animation-play-state: paused;
-  transform: translateY(-10px) scale(1.03) !important;
-  box-shadow: 0 28px 60px rgba(19, 44, 32, 0.24);
-}
-
-.gb-scene02-triptych__col img {
+.gb-scene02-collage__photo img {
   display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center;
-  image-rendering: -webkit-optimize-contrast;
-  image-rendering: high-quality;
   backface-visibility: hidden;
-  transform: translateZ(0);
-  transition: transform 0.65s cubic-bezier(0.22, 1, 0.36, 1), filter 0.65s ease;
+  transform: scale(1.02);
+  transition: transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-.gb-scene02-triptych__col:hover img {
-  transform: scale(1.1);
-  filter: brightness(1.04);
+.gb-scene02-collage__photo:hover img {
+  transform: scale(1.08);
+}
+
+.gb-scene02-collage__photo--craft {
+  top: 5%;
+  left: 5%;
+  width: 49%;
+  height: 38%;
+}
+
+.gb-scene02-collage__photo--blocks {
+  top: 27%;
+  left: 29%;
+  z-index: 2;
+  width: 66%;
+  height: 43%;
+}
+
+.gb-scene02-collage__photo--swim {
+  right: 4%;
+  bottom: 4%;
+  width: 47%;
+  height: 37%;
 }
 
 /* ==========================================================================
@@ -803,17 +731,9 @@ img {
     gap: 2.25rem;
   }
 
-  .gb-scene02-layout__triptych {
-    max-width: 380px;
+  .gb-scene02-collage {
+    max-width: 420px;
     margin: 1rem auto 0;
-  }
-
-  .gb-scene02-triptych__col--side {
-    height: 250px;
-  }
-
-  .gb-scene02-triptych__col--center {
-    height: 310px;
   }
 }
 
