@@ -390,13 +390,13 @@ export const LEARNING_STAGES = [
 
 export const THIRTEEN_CENTRES = [
   { num: '01', name: 'Art', tag: 'Learning Centre 01', detail: '', imageUrl: '/images/scene-08-centre-art-hd.jpg' },
-  { num: '02', name: 'Making', tag: 'Learning Centre 02', detail: '', imageUrl: '/images/scene-08-centre-making-mentor.png' },
+  { num: '02', name: 'Making', tag: 'Learning Centre 02', detail: '', imageUrl: '/images/scene-08-centre-making-hd.jpg' },
   { num: '03', name: 'Ecology', tag: 'Learning Centre 03', detail: '', imageUrl: '/images/gallery-motion-nature.jpg' },
   { num: '04', name: 'AI', tag: 'Learning Centre 04', detail: '', imageUrl: '/images/scene-08-centre-ai-hd.jpg' },
   { num: '05', name: 'Community', tag: 'Learning Centre 05', detail: '', imageUrl: '/images/scene-08-centre-community-hd.jpg' },
   { num: '06', name: 'Mixed-Age Learning', tag: 'Learning Centre 06', detail: '', imageUrl: '/images/scene-08-centre-mixed-age-hd.jpg' },
   { num: '07', name: 'Assessment', tag: 'Learning Centre 07', detail: '', imageUrl: '/images/scene-08-centre-assessment-hd.jpg' },
-  { num: '08', name: 'Industry', tag: 'Learning Centre 08', detail: '', imageUrl: '/images/scene-06-classroom-puzzle-hd.jpg' },
+  { num: '08', name: 'Industry', tag: 'Learning Centre 08', detail: '', imageUrl: '/images/scene-08-centre-industry-hd.jpg' },
   { num: '09', name: 'Higher Education', tag: 'Learning Centre 09', detail: '', imageUrl: '/images/academically-prepared-students-hd.jpg' },
   { num: '10', name: 'Sports', tag: 'Learning Centre 10', detail: '', imageUrl: '/images/scene-08-centre-sports-hd.jpg' },
   { num: '11', name: 'Teacher Development', tag: 'Learning Centre 11', detail: '', imageUrl: '/images/scene-13-educator-mentoring-hd.jpg' },

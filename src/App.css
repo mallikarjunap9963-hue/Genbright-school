@@ -5382,7 +5382,7 @@ img {
 .gb-scene07-carousel-container {
   width: 100%;
   aspect-ratio: 4 / 4.8;
-  max-width: 500px;
+  max-width: 100%;
   position: relative;
 }
 
@@ -5416,7 +5416,7 @@ img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 15%;
+  object-position: center 18%;
   display: block;
   transition: transform 0.6s ease;
   image-rendering: -webkit-optimize-contrast;
@@ -5498,7 +5498,7 @@ img {
   bottom: 0;
   left: 0;
   right: 0;
-  padding: 1.5rem 1.6rem 3.2rem;
+  padding: 1.5rem 1.6rem 1.8rem;
   z-index: 2;
   text-align: left;
 }
@@ -5689,14 +5689,14 @@ img {
   flex-wrap: wrap;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1024px) {
   .gb-scene07-clean-layout {
     grid-template-columns: 1fr;
     gap: 2.25rem;
   }
 
   .gb-scene07-clean-media {
-    max-width: 480px;
+    max-width: 100%;
     aspect-ratio: 16 / 11;
   }
 }

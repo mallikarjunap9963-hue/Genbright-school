@@ -271,9 +271,6 @@ export function BrandLoader({ onComplete, durationMs = 2800 }: BrandLoaderProps)
           className="gb-loader__logo"
         />
       </div>
-
-      {/* Elegant Radial Curtain Wipe to Reveal Website */}
-      <div className="gb-loader__reveal-curtain" aria-hidden="true" />
     </div>
   )
 }

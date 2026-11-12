@@ -155,7 +155,7 @@ const FOUNDERS_AND_LEADERS = [
     name: 'Dhanyabharathi Kannan',
     designation: 'Founder & Educationist',
     imageUrl: '/images/scene-07-leader-01-hd.jpg',
-    objectPosition: '50% 15%',
+    objectPosition: '50% 18%',
     imageAlt: 'Dhanyabharathi Kannan, Founder & Educationist at GenBright World School',
   },
   {
@@ -275,13 +275,8 @@ export const StoryScenesList = React.memo(function StoryScenesList({
 }: StoryScenesListProps) {
   const mainRef = useRef<HTMLElement | null>(null)
   const videoRef = useRef<HTMLVideoElement | null>(null)
-  const centresCarouselRef = useRef<HTMLDivElement | null>(null)
-  const [canScrollCentresBack, setCanScrollCentresBack] = useState(false)
-  const [canScrollCentresForward, setCanScrollCentresForward] = useState(true)
   const [campusSlideIndex, setCampusSlideIndex] = useState(0)
   const [isCampusPaused, setIsCampusPaused] = useState(false)
-  const [leaderSlideIndex, setLeaderSlideIndex] = useState(0)
-  const [isLeaderPaused, setIsLeaderPaused] = useState(false)
 
   const handleQuickLink = (action: string) => {
     const [type, target] = action.split(':')
@@ -304,15 +299,6 @@ export const StoryScenesList = React.memo(function StoryScenesList({
     }, 4500)
     return () => clearInterval(timer)
   }, [isCampusPaused])
-
-  // Auto-slide leadership carousel with hover pause
-  useEffect(() => {
-    if (isLeaderPaused) return
-    const timer = setInterval(() => {
-      setLeaderSlideIndex((prev) => (prev + 1) % FOUNDERS_AND_LEADERS.length)
-    }, 4200)
-    return () => clearInterval(timer)
-  }, [isLeaderPaused])
 
   // Pause Hero video when not visible in viewport to prevent GPU/CPU background decoding lag
   useEffect(() => {
@@ -358,41 +344,6 @@ export const StoryScenesList = React.memo(function StoryScenesList({
     })
     return () => observer.disconnect()
   }, [])
-
-  useEffect(() => {
-    const carousel = centresCarouselRef.current
-    if (!carousel) return
-
-    const updateControls = () => {
-      setCanScrollCentresBack(carousel.scrollLeft > 1)
-      setCanScrollCentresForward(
-        carousel.scrollLeft + carousel.clientWidth < carousel.scrollWidth - 1
-      )
-    }
-
-    updateControls()
-    carousel.addEventListener('scroll', updateControls, { passive: true })
-    window.addEventListener('resize', updateControls)
-
-    return () => {
-      carousel.removeEventListener('scroll', updateControls)
-      window.removeEventListener('resize', updateControls)
-    }
-  }, [])
-
-
-
-  const scrollCentres = (direction: -1 | 1) => {
-    const carousel = centresCarouselRef.current
-    const firstSlide = carousel?.querySelector<HTMLElement>('.gb-centre-slide')
-    if (!carousel || !firstSlide) return
-
-    const gap = Number.parseFloat(getComputedStyle(carousel).columnGap) || 0
-    carousel.scrollBy({
-      left: direction * (firstSlide.offsetWidth + gap),
-      behavior: 'smooth',
-    })
-  }
 
   const handleCta = (cta: SceneCTA) => {
     if (cta.actionType === 'scroll') {
@@ -519,40 +470,9 @@ export const StoryScenesList = React.memo(function StoryScenesList({
                       </div>
                     </div>
 
-                    <div className="gb-centres-carousel" role="region" aria-label="13 Learning Centres carousel">
-                      {/* TOP CONTROLS: MOVED ABOVE CAROUSEL TRACK WITH CRISP SVG ICONS */}
-                      <div className="gb-centres-carousel__controls gb-centres-carousel__controls--top">
-                        <button
-                          type="button"
-                          className="gb-centres-carousel__button"
-                          onClick={() => scrollCentres(-1)}
-                          disabled={!canScrollCentresBack}
-                          aria-label="Previous learning centre"
-                          aria-controls="learning-centres-carousel"
-                        >
-                          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                            <line x1="19" y1="12" x2="5" y2="12" />
-                            <polyline points="12 19 5 12 12 5" />
-                          </svg>
-                        </button>
-                        <button
-                          type="button"
-                          className="gb-centres-carousel__button"
-                          onClick={() => scrollCentres(1)}
-                          disabled={!canScrollCentresForward}
-                          aria-label="Next learning centre"
-                          aria-controls="learning-centres-carousel"
-                        >
-                          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                            <line x1="5" y1="12" x2="19" y2="12" />
-                            <polyline points="12 5 19 12 12 19" />
-                          </svg>
-                        </button>
-                      </div>
-
+                    <div className="gb-centres-carousel" role="region" aria-label="13 Learning Centres">
                       <div
                         className="gb-centres-carousel__track"
-                        ref={centresCarouselRef}
                         id="learning-centres-carousel"
                         role="list"
                         aria-label="Learning centre cards"
@@ -569,7 +489,7 @@ export const StoryScenesList = React.memo(function StoryScenesList({
                               className="gb-centre-slide__image"
                               src={centre.imageUrl}
                               alt={`${centre.name} learning centre`}
-                              loading={index < 3 ? 'eager' : 'lazy'}
+                              loading={index < 5 ? 'eager' : 'lazy'}
                               decoding="async"
                             />
                             <div className="gb-centre-slide__content">
@@ -908,61 +828,32 @@ export const StoryScenesList = React.memo(function StoryScenesList({
                     </div>
                   </div>
                 ) : scene.number === '07' ? (
-                  /* SCENE 07: WHO ARE THE PEOPLE BEHIND THIS SCHOOL (5-IMAGE SLIDING CAROUSEL WITH NAME, DESIGNATION & NUMBER BESIDE TEXT) */
+                  /* SCENE 07: WHO ARE THE PEOPLE BEHIND THIS SCHOOL (STATIC SINGLE FOUNDER IMAGE) */
                   <div className="gb-scene07-clean-layout">
-                    {/* LEFT 5-IMAGE SLIDING CAROUSEL */}
+                    {/* LEFT SINGLE FOUNDER IMAGE (STATIC, NO SLIDING) */}
                     <div
                       className="gb-scene07-carousel-container"
-                      aria-label="People behind this school carousel"
-                      onMouseEnter={() => setIsLeaderPaused(true)}
-                      onMouseLeave={() => setIsLeaderPaused(false)}
+                      aria-label="People behind this school"
                     >
                       <div className="gb-scene07-carousel-frame">
-                        <div
-                          className="gb-scene07-carousel-slider"
-                          style={{ transform: `translateX(-${leaderSlideIndex * 100}%)` }}
-                        >
-                          {FOUNDERS_AND_LEADERS.map((leader, idx) => (
-                            <div key={leader.id} className="gb-scene07-carousel-slide">
-                              <img
-                                src={leader.imageUrl}
-                                alt={leader.imageAlt}
-                                className="gb-scene07-carousel-img"
-                                style={{ objectPosition: leader.objectPosition }}
-                                loading={idx === 0 ? 'eager' : 'lazy'}
-                                decoding="async"
-                              />
-                              <div className="gb-scene07-slide__scrim" />
+                        <div className="gb-scene07-carousel-slide">
+                          <img
+                            src={FOUNDERS_AND_LEADERS[0].imageUrl}
+                            alt={FOUNDERS_AND_LEADERS[0].imageAlt}
+                            className="gb-scene07-carousel-img"
+                            style={{ objectPosition: FOUNDERS_AND_LEADERS[0].objectPosition }}
+                            loading="eager"
+                            decoding="async"
+                          />
+                          <div className="gb-scene07-slide__scrim" />
 
-                              {/* Bottom Name & Designation Panel with Number Beside Text in Corner */}
-                              <div className="gb-scene07-slide__info">
-                                <div className="gb-scene07-slide__header-row">
-                                  <span className="gb-scene07-slide__kicker">PEOPLE BEHIND THIS SCHOOL</span>
-                                  <div className="gb-scene07-slide__num-badge">
-                                    <span className="gb-scene07-slide__num-current">{leader.num}</span>
-                                    <span className="gb-scene07-slide__num-sep">/</span>
-                                    <span className="gb-scene07-slide__num-total">05</span>
-                                  </div>
-                                </div>
-                                <h3 className="gb-scene07-slide__name">{leader.name}</h3>
-                                <p className="gb-scene07-slide__designation">{leader.designation}</p>
-                              </div>
+                          {/* Bottom Name & Designation Panel */}
+                          <div className="gb-scene07-slide__info">
+                            <div className="gb-scene07-slide__header-row">
+                              <span className="gb-scene07-slide__kicker">PEOPLE BEHIND THIS SCHOOL</span>
                             </div>
-                          ))}
-                        </div>
-
-                        {/* Carousel Dots Navigation (Buttons hidden as requested, smooth auto-sliding active) */}
-                        <div className="gb-scene07-carousel-controls">
-                          <div className="gb-scene07-carousel-dots" role="tablist">
-                            {FOUNDERS_AND_LEADERS.map((l, dIdx) => (
-                              <button
-                                key={l.id}
-                                type="button"
-                                className={`gb-scene07-dot ${dIdx === leaderSlideIndex ? 'is-active' : ''}`}
-                                onClick={() => setLeaderSlideIndex(dIdx)}
-                                aria-label={`View ${l.name}`}
-                              />
-                            ))}
+                            <h3 className="gb-scene07-slide__name">{FOUNDERS_AND_LEADERS[0].name}</h3>
+                            <p className="gb-scene07-slide__designation">{FOUNDERS_AND_LEADERS[0].designation}</p>
                           </div>
                         </div>
                       </div>
