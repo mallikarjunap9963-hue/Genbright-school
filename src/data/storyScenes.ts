@@ -390,7 +390,7 @@ export const LEARNING_STAGES = [
 
 export const THIRTEEN_CENTRES = [
   { num: '01', name: 'Art', tag: 'Learning Centre 01', detail: '', imageUrl: '/images/scene-08-centre-art-hd.jpg' },
-  { num: '02', name: 'Making', tag: 'Learning Centre 02', detail: '', imageUrl: '/images/scene-02-happy-craft-hd.jpg' },
+  { num: '02', name: 'Making', tag: 'Learning Centre 02', detail: '', imageUrl: '/images/scene-08-centre-making-mentor.png' },
   { num: '03', name: 'Ecology', tag: 'Learning Centre 03', detail: '', imageUrl: '/images/gallery-motion-nature.jpg' },
   { num: '04', name: 'AI', tag: 'Learning Centre 04', detail: '', imageUrl: '/images/scene-08-centre-ai-hd.jpg' },
   { num: '05', name: 'Community', tag: 'Learning Centre 05', detail: '', imageUrl: '/images/scene-08-centre-community-hd.jpg' },

@@ -100,11 +100,6 @@ const CAMPUS_SLIDESHOW = [
     imageUrl: '/images/scene-06-cricket-nets-hd.jpg',
     alt: 'Student practicing athletic skills at the campus sports cricket nets arena',
   },
-  {
-    id: 'camp-5',
-    imageUrl: '/images/scene-06-circle-assembly-hd.jpg',
-    alt: 'Students and educators gathered in an open circle for reflection and community dialogue',
-  },
 ]
 
 const COMMUNITY_IMAGE = {
@@ -193,11 +188,11 @@ const FOUNDERS_AND_LEADERS = [
   {
     id: 'leader-5',
     num: '05',
-    name: 'Sports & Campus Leadership',
-    designation: 'Director of Physical Education & Campus Sports',
+    name: 'Executive & Campus Leadership',
+    designation: 'Director of Operations & Strategic Development',
     imageUrl: '/images/scene-07-leader-05-hd.jpg',
-    objectPosition: '50% 32%',
-    imageAlt: 'GenBright World School campus building, athletics field and physical education leadership',
+    objectPosition: '50% 20%',
+    imageAlt: 'Leadership team member at GenBright World School',
   },
 ]
 
