@@ -468,7 +468,11 @@ img {
 }
 
 #scene-12.gb-scene {
-  background-color: rgba(231, 232, 226, 0.6) !important;
+  background-color: #ffffff !important;
+}
+
+#scene-13.gb-scene {
+  background-color: #eeece0 !important;
 }
 
 #scene-02.gb-scene {
@@ -761,10 +765,16 @@ img {
   width: 100%;
   height: calc(100vh - 60px);
   min-height: 600px;
-  padding-bottom: 142px;
+  padding-bottom: 64px;
   overflow: hidden;
   display: flex;
   align-items: center;
+  transition: padding-bottom 240ms ease;
+}
+
+.gb-hero-fullvideo-stage:has(.gb-hero-quick-access:hover),
+.gb-hero-fullvideo-stage:has(.gb-hero-quick-access:focus-within) {
+  padding-bottom: 142px;
 }
 
 .gb-hero-fullvideo__media {
@@ -8549,6 +8559,10 @@ img {
 
 @media (hover: none) {
   .gb-hero-fullvideo-stage {
+    padding-bottom: 92px;
+  }
+
+  .gb-hero-fullvideo-stage:has(.gb-hero-quick-access:focus-within) {
     padding-bottom: 92px;
   }
 
