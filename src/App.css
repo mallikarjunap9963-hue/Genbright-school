@@ -1355,26 +1355,6 @@ img {
   }
 }
 
-#scene-12 .gb-scene12-ref__ctas {
-  flex-wrap: nowrap !important;
-}
-
-@media (max-width: 768px) {
-  #scene-12 .gb-scene12-ref__ctas {
-    flex-direction: row !important;
-    gap: 0.5rem !important;
-  }
-
-  #scene-12 .gb-scene12-ref__ctas > .gb-btn {
-    flex: 1 1 0 !important;
-    width: auto !important;
-    min-width: 0 !important;
-    padding: 0 5px 0 0.65rem !important;
-    font-size: clamp(0.68rem, 2.4vw, 0.84rem) !important;
-    gap: 0.3rem !important;
-  }
-}
-
 .gb-btn {
   position: relative;
   overflow: hidden;
