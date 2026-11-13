@@ -293,18 +293,6 @@ export function Discover2Page({ onBackHome, onOpenModal }: Discover2PageProps) {
                               <button
                                 type="button"
                                 role="menuitem"
-                                className="gb-d2-dropdown__item is-current"
-                                onClick={() => {
-                                  setDropdownOpen(false)
-                                  window.scrollTo({ top: 0, behavior: 'smooth' })
-                                }}
-                              >
-                                <strong>Discover 2</strong>
-                                <span>Full-screen campus video showcase</span>
-                              </button>
-                              <button
-                                type="button"
-                                role="menuitem"
                                 className="gb-d2-dropdown__item"
                                 onClick={() => {
                                   setDropdownOpen(false)
@@ -313,6 +301,18 @@ export function Discover2Page({ onBackHome, onOpenModal }: Discover2PageProps) {
                               >
                                 <strong>Discover 1</strong>
                                 <span>Explore the main school story</span>
+                              </button>
+                              <button
+                                type="button"
+                                role="menuitem"
+                                className="gb-d2-dropdown__item is-current"
+                                onClick={() => {
+                                  setDropdownOpen(false)
+                                  window.scrollTo({ top: 0, behavior: 'smooth' })
+                                }}
+                              >
+                                <strong>Discover 2</strong>
+                                <span>Full-screen campus video showcase</span>
                               </button>
                             </div>
                           )}

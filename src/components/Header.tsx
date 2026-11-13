@@ -132,18 +132,6 @@ export function Header({ activeScene, onScrollTo, onOpenModal, onOpenDiscover2 }
                       <button
                         type="button"
                         role="menuitem"
-                        className="gb-d2-dropdown__item"
-                        onClick={() => {
-                          setDiscoverMenuOpen(false)
-                          onOpenDiscover2()
-                        }}
-                      >
-                        <strong>Discover 2</strong>
-                        <span>Full-screen campus video showcase</span>
-                      </button>
-                      <button
-                        type="button"
-                        role="menuitem"
                         className="gb-d2-dropdown__item is-current"
                         onClick={() => {
                           setDiscoverMenuOpen(false)
@@ -152,6 +140,18 @@ export function Header({ activeScene, onScrollTo, onOpenModal, onOpenDiscover2 }
                       >
                         <strong>Discover 1</strong>
                         <span>Explore the main school story</span>
+                      </button>
+                      <button
+                        type="button"
+                        role="menuitem"
+                        className="gb-d2-dropdown__item"
+                        onClick={() => {
+                          setDiscoverMenuOpen(false)
+                          onOpenDiscover2()
+                        }}
+                      >
+                        <strong>Discover 2</strong>
+                        <span>Full-screen campus video showcase</span>
                       </button>
                     </div>
                   )}
@@ -244,6 +244,16 @@ export function Header({ activeScene, onScrollTo, onOpenModal, onOpenDiscover2 }
               type="button"
               className="gb-mobile-menu__link"
               onClick={() => {
+                onScrollTo('scene-01')
+                setMobileMenuOpen(false)
+              }}
+            >
+              <span>Discover 1</span>
+            </button>
+            <button
+              type="button"
+              className="gb-mobile-menu__link"
+              onClick={() => {
                 setMobileMenuOpen(false)
                 onOpenDiscover2()
               }}
@@ -251,6 +261,7 @@ export function Header({ activeScene, onScrollTo, onOpenModal, onOpenDiscover2 }
               <span>Discover 2</span>
             </button>
             {NAV_ITEMS.map((item) => (
+              item.label === 'Discover' ? null :
               <button
                 key={item.label}
                 type="button"
@@ -260,7 +271,7 @@ export function Header({ activeScene, onScrollTo, onOpenModal, onOpenDiscover2 }
                   setMobileMenuOpen(false)
                 }}
               >
-                <span>{item.label === 'Discover' ? 'Discover 1' : item.label}</span>
+                <span>{item.label}</span>
               </button>
             ))}
           </div>

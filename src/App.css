@@ -776,13 +776,19 @@ img {
 .gb-hero-fullvideo__scrim {
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    140deg,
-    rgba(19, 44, 32, 0.42) 0%,
-    rgba(30, 77, 53, 0.26) 38%,
-    rgba(127, 155, 104, 0.22) 72%,
-    rgba(19, 44, 32, 0.38) 100%
-  );
+  background:
+    linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.52) 0%,
+      rgba(10, 32, 20, 0.38) 28%,
+      rgba(14, 44, 28, 0.36) 65%,
+      rgba(0, 0, 0, 0.62) 100%
+    ),
+    radial-gradient(
+      ellipse at 50% 45%,
+      rgba(19, 48, 32, 0.35) 0%,
+      rgba(0, 0, 0, 0.48) 100%
+    );
   z-index: 2;
   pointer-events: none;
 }
@@ -2080,7 +2086,7 @@ img {
   grid-template-columns: repeat(4, 1fr);
   gap: clamp(0.85rem, 1.4vw, 1.35rem);
   width: 90%;
-  margin: clamp(-1.35rem, -1.1vw, -0.65rem) auto 0;
+  margin: clamp(-2.85rem, -2.6vw, -2rem) auto 0;
   position: relative;
   z-index: 10;
 }
@@ -2114,26 +2120,34 @@ img {
 /* Cards 3 & 4 (ONLY the last 2 cards): GLASSMORPHIC */
 .gb-glass-pillar-card--over-image,
 .gb-glass-pillar-card--glass {
-  border: 1.5px solid #adc09f !important;
-  box-shadow: none !important;
+  border: 1.5px solid rgba(255, 255, 255, 0.8) !important;
+  box-shadow: 0 14px 34px rgba(19, 44, 32, 0.1), inset 0 1px 1px rgba(255, 255, 255, 0.9) !important;
 }
 
 /* Card 3 (MOVE): Glassmorphic White */
 .gb-glass-pillar-card--glass-white {
-  background: rgba(255, 255, 255, 0.74) !important;
-  backdrop-filter: blur(16px) saturate(180%) !important;
-  -webkit-backdrop-filter: blur(16px) saturate(180%) !important;
-  border: 1.5px solid #adc09f !important;
-  box-shadow: 0 10px 30px rgba(19, 44, 32, 0.08) !important;
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.58) 0%,
+    rgba(255, 255, 255, 0.38) 100%
+  ) !important;
+  backdrop-filter: blur(18px) saturate(180%) !important;
+  -webkit-backdrop-filter: blur(18px) saturate(180%) !important;
+  border: 1.5px solid rgba(255, 255, 255, 0.8) !important;
+  box-shadow: 0 14px 34px rgba(19, 44, 32, 0.1), inset 0 1px 1px rgba(255, 255, 255, 0.9) !important;
 }
 
 /* Card 4 (PAUSE): Glassmorphic Alabaster */
 .gb-glass-pillar-card--glass-alabaster {
-  background: rgba(237, 237, 230, 0.74) !important;
-  backdrop-filter: blur(16px) saturate(180%) !important;
-  -webkit-backdrop-filter: blur(16px) saturate(180%) !important;
-  border: 1.5px solid #adc09f !important;
-  box-shadow: 0 10px 30px rgba(19, 44, 32, 0.08) !important;
+  background: linear-gradient(
+    145deg,
+    rgba(240, 242, 235, 0.62) 0%,
+    rgba(235, 238, 230, 0.40) 100%
+  ) !important;
+  backdrop-filter: blur(18px) saturate(180%) !important;
+  -webkit-backdrop-filter: blur(18px) saturate(180%) !important;
+  border: 1.5px solid rgba(255, 255, 255, 0.8) !important;
+  box-shadow: 0 14px 34px rgba(19, 44, 32, 0.1), inset 0 1px 1px rgba(255, 255, 255, 0.9) !important;
 }
 
 .gb-glass-pillar-card:hover {
@@ -2143,21 +2157,29 @@ img {
 }
 
 .gb-glass-pillar-card--glass-white:hover {
-  background: rgba(255, 255, 255, 0.86) !important;
-  backdrop-filter: blur(20px) saturate(190%) !important;
-  -webkit-backdrop-filter: blur(20px) saturate(190%) !important;
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.75) 0%,
+    rgba(255, 255, 255, 0.55) 100%
+  ) !important;
+  backdrop-filter: blur(24px) saturate(190%) !important;
+  -webkit-backdrop-filter: blur(24px) saturate(190%) !important;
   border-color: #7f9b68 !important;
   transform: translateY(-8px) !important;
-  box-shadow: 0 16px 36px rgba(19, 44, 32, 0.12) !important;
+  box-shadow: 0 18px 40px rgba(19, 44, 32, 0.15), inset 0 1px 1px #ffffff !important;
 }
 
 .gb-glass-pillar-card--glass-alabaster:hover {
-  background: rgba(237, 237, 230, 0.86) !important;
-  backdrop-filter: blur(20px) saturate(190%) !important;
-  -webkit-backdrop-filter: blur(20px) saturate(190%) !important;
+  background: linear-gradient(
+    145deg,
+    rgba(240, 242, 235, 0.78) 0%,
+    rgba(235, 238, 230, 0.58) 100%
+  ) !important;
+  backdrop-filter: blur(24px) saturate(190%) !important;
+  -webkit-backdrop-filter: blur(24px) saturate(190%) !important;
   border-color: #7f9b68 !important;
   transform: translateY(-8px) !important;
-  box-shadow: 0 16px 36px rgba(19, 44, 32, 0.12) !important;
+  box-shadow: 0 18px 40px rgba(19, 44, 32, 0.15), inset 0 1px 1px #ffffff !important;
 }
 
 /* All 4 cards kept on the same horizontal line matching user request */
@@ -2460,20 +2482,44 @@ img {
   flex-wrap: wrap;
 }
 
+#scene-05 .gb-scene05-dark-split__ctas .gb-btn:first-child,
 .gb-scene05-dark-split__ctas .gb-btn:first-child {
-  background: #132c20 !important;
+  background: transparent !important;
   color: #ffffff !important;
-  border-color: #132c20 !important;
+  border: 2px solid #ffffff !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12) !important;
 }
 
+#scene-05 .gb-scene05-dark-split__ctas .gb-btn:first-child::after,
 .gb-scene05-dark-split__ctas .gb-btn:first-child::after {
   background-color: #ffffff !important;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23132c20' stroke-width='2.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cline x1='7' y1='17' x2='17' y2='7'/%3E%3Cpolyline points='7 7 17 7 17 17'/%3E%3C/svg%3E") !important;
 }
 
+#scene-05 .gb-scene05-dark-split__ctas .gb-btn:first-child:hover,
+#scene-05 .gb-scene05-dark-split__ctas .gb-btn:first-child:active,
+#scene-05 .gb-scene05-dark-split__ctas .gb-btn:first-child:focus,
+.gb-scene05-dark-split__ctas .gb-btn:first-child:hover,
+.gb-scene05-dark-split__ctas .gb-btn:first-child:active,
+.gb-scene05-dark-split__ctas .gb-btn:first-child:focus {
+  background: #ffffff !important;
+  border-color: #ffffff !important;
+  color: #132c20 !important;
+}
+
+#scene-05 .gb-scene05-dark-split__ctas .gb-btn:first-child:hover::after,
+#scene-05 .gb-scene05-dark-split__ctas .gb-btn:first-child:active::after,
+#scene-05 .gb-scene05-dark-split__ctas .gb-btn:first-child:focus::after,
+.gb-scene05-dark-split__ctas .gb-btn:first-child:hover::after,
+.gb-scene05-dark-split__ctas .gb-btn:first-child:active::after,
+.gb-scene05-dark-split__ctas .gb-btn:first-child:focus::after {
+  background-color: #132c20 !important;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='2.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cline x1='7' y1='17' x2='17' y2='7'/%3E%3Cpolyline points='7 7 17 7 17 17'/%3E%3C/svg%3E") !important;
+}
+
 .gb-scene05-dark-split__ctas .gb-btn--outline-white {
   background: transparent !important;
-  border-color: rgba(255, 255, 255, 0.85) !important;
+  border: 1.5px solid rgba(255, 255, 255, 0.85) !important;
   color: #ffffff !important;
 }
 
@@ -5967,7 +6013,7 @@ img {
 }
 
 .gb-scene10-title--gold {
-  color: #7f9b68 !important;
+  color: #F5A93F !important;
 }
 
 .gb-scene10-banner__copy {
@@ -6988,34 +7034,29 @@ img {
   text-transform: uppercase !important;
 }
 
-/* Secondary title line uses the botanical green accent across sections. */
+/* Secondary title line on light surfaces (botanical green accent) */
 .gb-ref-title__grey,
 .gb-scene04-title__green,
 .gb-scene04-title__grey,
 .gb-scene06-arch-title__grey,
 .gb-scene07-clean-heading .gb-ref-title__grey,
-.gb-scene10-title--gold,
 .gb-scene12-voices__headline-gold,
-.gb-scene12-voices__headline span,
-.gb-scene14-banner__title span,
-.gb-scene15-stage__title span {
+.gb-scene12-voices__headline span {
   display: block !important;
   color: #7f9b68 !important;
   font-weight: 700 !important;
   text-transform: uppercase !important;
 }
 
-/* Hero Section Secondary Title (Website Theme Yellow) */
-.gb-hero-overlay__title-gold {
+/* Secondary title line using the GenBright logo 'N' letter warm golden amber */
+.gb-hero-overlay__title-gold,
+.gb-scene05-dark-split__title-silver,
+.gb-scene10-title--gold,
+.gb-scene12-ref__title-gold,
+.gb-scene14-banner__title span,
+.gb-scene15-stage__title span {
   display: block !important;
-  color: var(--gb-gold-light, #f2c94c) !important;
-  font-weight: 700 !important;
-  text-transform: uppercase !important;
-}
-
-.gb-scene05-dark-split__title-silver {
-  display: block !important;
-  color: #132c20 !important;
+  color: #F5A93F !important;
   font-weight: 700 !important;
   text-transform: uppercase !important;
 }
@@ -7406,20 +7447,44 @@ img {
   white-space: nowrap;
 }
 
-.gb-scene12-ref__ctas .gb-btn:first-child {
-  background: #132c20 !important;
+#scene-12 .gb-scene12-ref__ctas .gb-btn:first-child,
+.gb-scene12-ref__card .gb-scene12-ref__ctas .gb-btn:first-child {
+  background: transparent !important;
   color: #ffffff !important;
-  border-color: #132c20 !important;
+  border: 2px solid #ffffff !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12) !important;
 }
 
-.gb-scene12-ref__ctas .gb-btn:first-child::after {
+#scene-12 .gb-scene12-ref__ctas .gb-btn:first-child::after,
+.gb-scene12-ref__card .gb-scene12-ref__ctas .gb-btn:first-child::after {
   background-color: #ffffff !important;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23132c20' stroke-width='2.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cline x1='7' y1='17' x2='17' y2='7'/%3E%3Cpolyline points='7 7 17 7 17 17'/%3E%3C/svg%3E") !important;
 }
 
+#scene-12 .gb-scene12-ref__ctas .gb-btn:first-child:hover,
+#scene-12 .gb-scene12-ref__ctas .gb-btn:first-child:active,
+#scene-12 .gb-scene12-ref__ctas .gb-btn:first-child:focus,
+.gb-scene12-ref__card .gb-scene12-ref__ctas .gb-btn:first-child:hover,
+.gb-scene12-ref__card .gb-scene12-ref__ctas .gb-btn:first-child:active,
+.gb-scene12-ref__card .gb-scene12-ref__ctas .gb-btn:first-child:focus {
+  background: #ffffff !important;
+  border-color: #ffffff !important;
+  color: #132c20 !important;
+}
+
+#scene-12 .gb-scene12-ref__ctas .gb-btn:first-child:hover::after,
+#scene-12 .gb-scene12-ref__ctas .gb-btn:first-child:active::after,
+#scene-12 .gb-scene12-ref__ctas .gb-btn:first-child:focus::after,
+.gb-scene12-ref__card .gb-scene12-ref__ctas .gb-btn:first-child:hover::after,
+.gb-scene12-ref__card .gb-scene12-ref__ctas .gb-btn:first-child:active::after,
+.gb-scene12-ref__card .gb-scene12-ref__ctas .gb-btn:first-child:focus::after {
+  background-color: #132c20 !important;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='2.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cline x1='7' y1='17' x2='17' y2='7'/%3E%3Cpolyline points='7 7 17 7 17 17'/%3E%3C/svg%3E") !important;
+}
+
 .gb-scene12-ref__ctas .gb-btn--outline-white {
   background: transparent !important;
-  border-color: rgba(255, 255, 255, 0.85) !important;
+  border: 1.5px solid rgba(255, 255, 255, 0.85) !important;
   color: #ffffff !important;
 }
 
