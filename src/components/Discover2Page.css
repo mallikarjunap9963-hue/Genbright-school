@@ -490,6 +490,42 @@
   color: #f8d86b !important;
 }
 
+/* Discover 2 Hero 1st Button: White outline, transparent default, dark text on hover */
+.gb-d2 .gb-hero-overlay__ctas .gb-hero-first-btn,
+.gb-d2-green-sheet .gb-hero-first-btn {
+  background: transparent !important;
+  color: #ffffff !important;
+  border: 2px solid #ffffff !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12) !important;
+}
+
+.gb-d2 .gb-hero-overlay__ctas .gb-hero-first-btn::after,
+.gb-d2-green-sheet .gb-hero-first-btn::after {
+  background-color: #ffffff !important;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23132c20' stroke-width='2.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cline x1='7' y1='17' x2='17' y2='7'/%3E%3Cpolyline points='7 7 17 7 17 17'/%3E%3C/svg%3E") !important;
+}
+
+.gb-d2 .gb-hero-overlay__ctas .gb-hero-first-btn:hover,
+.gb-d2 .gb-hero-overlay__ctas .gb-hero-first-btn:active,
+.gb-d2 .gb-hero-overlay__ctas .gb-hero-first-btn:focus,
+.gb-d2-green-sheet .gb-hero-first-btn:hover,
+.gb-d2-green-sheet .gb-hero-first-btn:active,
+.gb-d2-green-sheet .gb-hero-first-btn:focus {
+  background: #ffffff !important;
+  border-color: #ffffff !important;
+  color: #132c20 !important;
+}
+
+.gb-d2 .gb-hero-overlay__ctas .gb-hero-first-btn:hover::after,
+.gb-d2 .gb-hero-overlay__ctas .gb-hero-first-btn:active::after,
+.gb-d2 .gb-hero-overlay__ctas .gb-hero-first-btn:focus::after,
+.gb-d2-green-sheet .gb-hero-first-btn:hover::after,
+.gb-d2-green-sheet .gb-hero-first-btn:active::after,
+.gb-d2-green-sheet .gb-hero-first-btn:focus::after {
+  background-color: #132c20 !important;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='2.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cline x1='7' y1='17' x2='17' y2='7'/%3E%3Cpolyline points='7 7 17 7 17 17'/%3E%3C/svg%3E") !important;
+}
+
 .gb-d2-video-toggle {
   position: absolute;
   left: 1.5rem;
