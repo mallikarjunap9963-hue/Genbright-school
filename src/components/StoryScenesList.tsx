@@ -1197,19 +1197,6 @@ export const StoryScenesList = React.memo(function StoryScenesList({
                           loading="eager"
                           decoding="async"
                         />
-
-                        {/* Overlapping Bottom-Right Dark Button with Down Arrow */}
-                        <button
-                          type="button"
-                          className="gb-scene12-ref__corner-btn"
-                          onClick={() => onScrollTo('scene-13')}
-                          aria-label="Scroll to next chapter"
-                        >
-                          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round">
-                            <line x1="12" y1="5" x2="12" y2="19" />
-                            <polyline points="19 12 12 19 5 12" />
-                          </svg>
-                        </button>
                       </div>
                     </div>
                   </div>
