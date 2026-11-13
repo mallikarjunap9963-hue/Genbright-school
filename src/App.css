@@ -471,6 +471,10 @@ img {
   background-color: rgba(231, 232, 226, 0.6) !important;
 }
 
+#scene-02.gb-scene {
+  padding-block: 50px !important;
+}
+
 .gb-scene02-layout {
   display: grid;
   grid-template-columns: minmax(0, 1.1fr) minmax(320px, 0.95fr);
@@ -1338,6 +1342,26 @@ img {
     padding: 0 8px 0 1.25rem !important;
     box-sizing: border-box !important;
     flex-shrink: 1 !important;
+  }
+}
+
+#scene-12 .gb-scene12-ref__ctas {
+  flex-wrap: nowrap !important;
+}
+
+@media (max-width: 768px) {
+  #scene-12 .gb-scene12-ref__ctas {
+    flex-direction: row !important;
+    gap: 0.5rem !important;
+  }
+
+  #scene-12 .gb-scene12-ref__ctas > .gb-btn {
+    flex: 1 1 0 !important;
+    width: auto !important;
+    min-width: 0 !important;
+    padding: 0 5px 0 0.65rem !important;
+    font-size: clamp(0.68rem, 2.4vw, 0.84rem) !important;
+    gap: 0.3rem !important;
   }
 }
 
@@ -7864,6 +7888,16 @@ img {
     padding: 1.65rem 1.15rem !important;
     margin-top: -28px !important;
     border-radius: 14px !important;
+  }
+}
+
+@media (max-width: 580px) {
+  .gb-scene12-ref__media-wrap {
+    height: 240px;
+  }
+
+  .gb-scene12-ref__card {
+    padding: 1.75rem 1.15rem !important;
   }
 }
 
