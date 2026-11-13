@@ -482,18 +482,6 @@ export function Discover2Page({ onBackHome, onOpenModal }: Discover2PageProps) {
                   </button>
                 </div>
               </div>
-
-              <button
-                type="button"
-                className="gb-d2-sheet-down-btn"
-                onClick={() => scrollToDiscover2Section('scene-02')}
-                aria-label="Scroll to next story section"
-              >
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                  <line x1="12" y1="5" x2="12" y2="19" />
-                  <polyline points="19 12 12 19 5 12" />
-                </svg>
-              </button>
             </div>
           </div>
         </div>
