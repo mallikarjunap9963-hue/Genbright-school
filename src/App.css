@@ -2364,7 +2364,7 @@ img {
   margin: 0;
   border-radius: 0;
   box-shadow: none;
-  background: #162e22;
+  background: #829b70;
   align-items: stretch;
   min-height: clamp(520px, 46vw, 680px);
 }
@@ -2386,7 +2386,7 @@ img {
 }
 
 .gb-scene05-dark-split__content {
-  background: #162e22;
+  background: #829b70;
   padding: clamp(3rem, 5.5vw, 6rem) clamp(2.5rem, 5vw, 5.5rem);
   display: flex;
   flex-direction: column;
@@ -2406,14 +2406,14 @@ img {
   font-size: 0.8rem;
   font-weight: 700;
   letter-spacing: 0.14em;
-  color: #d99414;
+  color: #132c20;
 }
 
 .gb-scene05-dark-split__eyebrow-dash {
   display: inline-block;
   width: 28px;
   height: 1.5px;
-  background: #d99414;
+  background: #132c20;
 }
 
 .gb-scene05-dark-split__eyebrow-tag {
@@ -2422,7 +2422,7 @@ img {
   font-weight: 700;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: #d99414;
+  color: #132c20;
 }
 
 .gb-scene05-dark-split__title {
@@ -2439,7 +2439,7 @@ img {
 }
 
 .gb-scene05-dark-split__title-silver {
-  color: var(--gb-gold-light, #f2c94c) !important;
+  color: #132c20 !important;
   font-weight: 700 !important;
 }
 
@@ -2447,7 +2447,7 @@ img {
   font-family: var(--font-sans);
   font-size: clamp(0.94rem, 1.05vw, 1.04rem) !important;
   line-height: 1.7 !important;
-  color: rgba(255, 255, 255, 0.88) !important;
+  color: #ffffff !important;
   margin: 0 0 2rem !important;
   max-width: 520px;
 }
@@ -2458,6 +2458,23 @@ img {
   align-items: center;
   gap: 0.85rem;
   flex-wrap: wrap;
+}
+
+.gb-scene05-dark-split__ctas .gb-btn:first-child {
+  background: #132c20 !important;
+  color: #ffffff !important;
+  border-color: #132c20 !important;
+}
+
+.gb-scene05-dark-split__ctas .gb-btn:first-child::after {
+  background-color: #ffffff !important;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23132c20' stroke-width='2.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cline x1='7' y1='17' x2='17' y2='7'/%3E%3Cpolyline points='7 7 17 7 17 17'/%3E%3C/svg%3E") !important;
+}
+
+.gb-scene05-dark-split__ctas .gb-btn--outline-white {
+  background: transparent !important;
+  border-color: rgba(255, 255, 255, 0.85) !important;
+  color: #ffffff !important;
 }
 
 @media (max-width: 768px) {
@@ -6988,11 +7005,17 @@ img {
   text-transform: uppercase !important;
 }
 
-/* Hero Section & Scene 05 Dark Split Secondary Title (Website Theme Yellow) */
-.gb-hero-overlay__title-gold,
-.gb-scene05-dark-split__title-silver {
+/* Hero Section Secondary Title (Website Theme Yellow) */
+.gb-hero-overlay__title-gold {
   display: block !important;
   color: var(--gb-gold-light, #f2c94c) !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+}
+
+.gb-scene05-dark-split__title-silver {
+  display: block !important;
+  color: #132c20 !important;
   font-weight: 700 !important;
   text-transform: uppercase !important;
 }
@@ -7322,17 +7345,17 @@ img {
   transform: translateZ(0);
 }
 
-/* Horizontally Proportioned Dark Content Card placed across image */
+/* Horizontally Proportioned Sage Green Content Card placed across image */
 .gb-scene12-ref__card {
   position: absolute;
   left: 0;
   top: 50%;
   transform: translateY(-50%);
   width: clamp(500px, 48vw, 610px);
-  background: #1c3629;
+  background: #829b70;
   border-radius: 6px;
   padding: clamp(2rem, 3.2vw, 2.85rem) clamp(2.4rem, 3.6vw, 3.5rem);
-  box-shadow: 0 24px 60px rgba(10, 24, 17, 0.32);
+  box-shadow: 0 24px 60px rgba(10, 24, 17, 0.25);
   z-index: 10;
   display: flex;
   flex-direction: column;
@@ -7357,14 +7380,14 @@ img {
 
 .gb-scene12-ref__title-gold {
   display: block !important;
-  color: var(--gb-gold-light, #f2c94c) !important;
+  color: #132c20 !important;
 }
 
 .gb-scene12-ref__copy {
   font-family: var(--font-sans) !important;
   font-size: clamp(0.88rem, 0.98vw, 0.96rem) !important;
   line-height: 1.65 !important;
-  color: rgba(255, 255, 255, 0.88) !important;
+  color: #ffffff !important;
   margin: 0 0 1.25rem !important;
   max-width: 460px !important;
 }
@@ -7381,6 +7404,23 @@ img {
   padding: 0 6px 0 1.2rem;
   font-size: 0.84rem;
   white-space: nowrap;
+}
+
+.gb-scene12-ref__ctas .gb-btn:first-child {
+  background: #132c20 !important;
+  color: #ffffff !important;
+  border-color: #132c20 !important;
+}
+
+.gb-scene12-ref__ctas .gb-btn:first-child::after {
+  background-color: #ffffff !important;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23132c20' stroke-width='2.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cline x1='7' y1='17' x2='17' y2='7'/%3E%3Cpolyline points='7 7 17 7 17 17'/%3E%3C/svg%3E") !important;
+}
+
+.gb-scene12-ref__ctas .gb-btn--outline-white {
+  background: transparent !important;
+  border-color: rgba(255, 255, 255, 0.85) !important;
+  color: #ffffff !important;
 }
 
 /* Bottom-Right Corner Dark Button with Down Arrow */
