@@ -471,6 +471,10 @@ img {
   background-color: rgba(231, 232, 226, 0.6) !important;
 }
 
+#scene-02.gb-scene {
+  padding-block: 50px !important;
+}
+
 .gb-scene02-layout {
   display: grid;
   grid-template-columns: minmax(0, 1.1fr) minmax(320px, 0.95fr);
