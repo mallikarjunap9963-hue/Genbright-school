@@ -1270,11 +1270,11 @@ export const StoryScenesList = React.memo(function StoryScenesList({
                   /* SCENE 14: LIVING ARCHIVES (MATCHING USER REFERENCE BANNER WITH ARCHIVE ARTIFACT BACKGROUND) */
                   <div className="gb-scene14-banner">
                     <div className="gb-scene14-banner__card">
-                      {/* Background Visual: Authentic student athletic moments & living archives */}
+                      {/* Background Visual: Authentic campus outdoor nature pavilion & living archives */}
                       <div className="gb-scene14-banner__bg" aria-hidden="true">
                         <img
                           src="/images/scene-14-archives-campus-turf-hd.jpg"
-                          alt="GenBright students in sports uniform on the lush green athletic field with school building in background"
+                          alt="GenBright outdoor nature learning pavilion surrounded by lush tropical gardens and botanical pathway"
                           className="gb-scene14-banner__bg-img"
                           loading="lazy"
                           decoding="async"
@@ -1284,6 +1284,7 @@ export const StoryScenesList = React.memo(function StoryScenesList({
 
                       {/* Centered Content Stack matching user reference */}
                       <div className="gb-scene14-banner__content">
+                        <span className="gb-scene14-banner__eyebrow">14 · LIVING ARCHIVES</span>
                         <h2 className="gb-scene14-banner__title">
                           Some moments deserve<br />
                           <span>to be remembered.</span>

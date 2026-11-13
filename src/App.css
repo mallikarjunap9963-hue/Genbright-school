@@ -5901,13 +5901,13 @@ img {
   align-items: center;
   background-image: linear-gradient(98deg,
       rgba(10, 28, 18, 0.95) 0%,
-      rgba(13, 36, 22, 0.90) 38%,
-      rgba(16, 44, 28, 0.62) 64%,
-      rgba(12, 34, 20, 0.22) 88%,
-      rgba(12, 34, 20, 0.08) 100%),
+      rgba(13, 36, 22, 0.88) 38%,
+      rgba(16, 44, 28, 0.58) 64%,
+      rgba(12, 34, 20, 0.18) 88%,
+      rgba(12, 34, 20, 0.05) 100%),
     url('/images/section-10-growing-bg.jpg');
   background-size: cover;
-  background-position: center 36%;
+  background-position: center 65%;
   background-repeat: no-repeat;
   padding: clamp(3.5rem, 5vw, 5rem) clamp(1.5rem, 4vw, 3.5rem);
   box-sizing: border-box;
@@ -6031,11 +6031,11 @@ img {
   .gb-scene10-banner__card {
     padding: 3rem 1.75rem;
     min-height: 380px;
-    background-position: center 30%;
+    background-position: center 65%;
     background-image: linear-gradient(180deg,
-        rgba(10, 28, 18, 0.96) 0%,
-        rgba(13, 36, 22, 0.90) 65%,
-        rgba(16, 44, 28, 0.65) 100%),
+        rgba(10, 28, 18, 0.94) 0%,
+        rgba(13, 36, 22, 0.82) 65%,
+        rgba(16, 44, 28, 0.55) 100%),
       url('/images/section-10-growing-bg.jpg');
   }
 
@@ -6516,7 +6516,7 @@ img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 36%;
+  object-position: center 48%;
   display: block;
 }
 
@@ -6524,10 +6524,10 @@ img {
   position: absolute;
   inset: 0;
   background: linear-gradient(180deg,
-    rgba(12, 38, 22, 0.74) 0%,
-    rgba(14, 44, 26, 0.58) 42%,
-    rgba(12, 38, 22, 0.52) 75%,
-    rgba(12, 38, 22, 0.72) 100%);
+    rgba(10, 30, 18, 0.74) 0%,
+    rgba(12, 38, 22, 0.52) 42%,
+    rgba(12, 38, 22, 0.50) 75%,
+    rgba(10, 30, 18, 0.74) 100%);
 }
 
 .gb-scene14-banner__content {
@@ -6629,6 +6629,11 @@ img {
   gap: 1.25rem;
   flex-wrap: wrap;
   margin-top: 0.5rem;
+}
+
+.gb-scene14-banner__ctas .gb-btn--primary-forest {
+  border-color: rgba(255, 255, 255, 0.42) !important;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.32) !important;
 }
 
 @media (max-width: 600px) {
