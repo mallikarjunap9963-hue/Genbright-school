@@ -2080,7 +2080,7 @@ img {
   grid-template-columns: repeat(4, 1fr);
   gap: clamp(0.85rem, 1.4vw, 1.35rem);
   width: 90%;
-  margin: clamp(-3rem, -2.5vw, -2rem) auto 0;
+  margin: clamp(-1.35rem, -1.1vw, -0.65rem) auto 0;
   position: relative;
   z-index: 10;
 }
@@ -2284,7 +2284,7 @@ img {
 
   .gb-scene04-glass-grid {
     grid-template-columns: repeat(2, 1fr);
-    margin-top: -40px;
+    margin-top: -16px;
   }
 
   .gb-glass-pillar-card--raised {
