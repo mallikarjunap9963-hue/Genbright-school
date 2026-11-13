@@ -29,7 +29,7 @@ export const HERO_VIDEO_REELS = [
   {
     id: 'reel-1',
     label: 'Chapter I · Wonder in Nature',
-    videoUrl: '/videos/hero-background.mp4',
+    videoUrl: '/videos/Img%203304.mp4',
     fallbackUrl: 'https://assets.mixkit.co/videos/preview/mixkit-children-playing-in-the-park-4739-large.mp4',
     poster: 'https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?auto=format&fit=crop&w=1400&q=85',
     caption: 'They were so little, once. A tiny hand holding yours. A thousand questions.',
