@@ -2462,7 +2462,7 @@ img {
 }
 
 .gb-scene05-dark-split__title-silver {
-  color: #132c20 !important;
+  color: #F5A93F !important;
   font-weight: 700 !important;
 }
 
@@ -6160,7 +6160,7 @@ img {
    -------------------------------------------------------------------------- */
 .gb-scene11-pinwheel-stage {
   width: 100%;
-  max-width: 1240px;
+  max-width: 1280px;
   margin: 0 auto;
   position: relative;
   padding: 1rem 0 2rem;
@@ -6169,10 +6169,10 @@ img {
 .gb-scene11-collage-container {
   position: relative;
   width: 100%;
-  max-width: 1120px;
+  max-width: 1260px;
   margin: 0 auto;
-  min-height: 680px;
-  height: clamp(640px, 58vw, 720px);
+  min-height: 720px;
+  height: clamp(680px, 58vw, 760px);
 }
 
 /* 4 Image Slots placed around the perimeter */
@@ -6206,56 +6206,56 @@ img {
   transform: scale(1.04) translateZ(0);
 }
 
-/* Top-Left Slot: Early-years reading & wonder (Base layer behind glass card) */
+/* Top-Left Slot: Early-years reading & wonder */
 .gb-scene11-img-slot--tl {
   top: 0;
-  left: -20px;
-  width: clamp(300px, 34vw, 390px);
-  height: clamp(280px, 31vw, 350px);
+  left: 0;
+  width: clamp(280px, 29vw, 360px);
+  height: clamp(260px, 26vw, 320px);
   z-index: 1;
   border: none;
   box-shadow: 0 16px 36px rgba(19, 44, 32, 0.08), 0 4px 12px rgba(19, 44, 32, 0.04);
 }
 
 .gb-scene11-img-slot--tl .gb-scene11-img {
-  object-position: 42% 28%;
+  object-position: center 30%;
 }
 
-/* Top-Right Slot: Montessori sensory blocks & learning (Layered ON TOP of glass card on the opposite side) */
+/* Top-Right Slot: Montessori sensory blocks & learning (Placed ABOVE the card, while all other images stay under) */
 .gb-scene11-img-slot--tr {
   top: 0;
   right: 0;
-  width: clamp(290px, 33vw, 385px);
-  height: clamp(290px, 32vw, 365px);
-  z-index: 15;
+  width: clamp(290px, 30vw, 380px);
+  height: clamp(260px, 26vw, 330px);
+  z-index: 20 !important;
   border-radius: 18px;
   box-shadow: 0 24px 50px rgba(19, 44, 32, 0.22), 0 6px 18px rgba(19, 44, 32, 0.12);
   border: 3px solid rgba(255, 255, 255, 0.95);
 }
 
 .gb-scene11-img-slot--tr .gb-scene11-img {
-  object-position: center center;
+  object-position: center 42%;
 }
 
 /* Bottom-Left Slot: Nurturing educators & preschool circle */
 .gb-scene11-img-slot--bl {
   bottom: 0;
   left: 0;
-  width: clamp(280px, 32vw, 370px);
-  height: clamp(280px, 31vw, 350px);
+  width: clamp(290px, 29vw, 370px);
+  height: clamp(260px, 26vw, 320px);
   z-index: 1;
 }
 
 .gb-scene11-img-slot--bl .gb-scene11-img {
-  object-position: center 40%;
+  object-position: center center;
 }
 
 /* Bottom-Right Slot: Joyful outdoor nature play (wider landscape) */
 .gb-scene11-img-slot--br {
   bottom: 0;
   right: 0;
-  width: clamp(360px, 44vw, 510px);
-  height: clamp(280px, 31vw, 350px);
+  width: clamp(340px, 36vw, 450px);
+  height: clamp(260px, 26vw, 320px);
   z-index: 1;
 }
 
@@ -6269,8 +6269,8 @@ img {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  z-index: 10;
-  width: clamp(450px, 56vw, 650px);
+  z-index: 5;
+  width: clamp(520px, 52vw, 620px);
   background: linear-gradient(
     135deg,
     rgba(255, 255, 255, 0.78) 0%,
@@ -6279,10 +6279,10 @@ img {
   backdrop-filter: blur(16px) saturate(160%) !important;
   -webkit-backdrop-filter: blur(16px) saturate(160%) !important;
   border: 1.5px solid rgba(255, 255, 255, 0.85) !important;
-  border-radius: 24px;
-  padding: clamp(2.2rem, 3.4vw, 3.5rem);
+  border-radius: 22px;
+  padding: clamp(1.6rem, 2.3vw, 2.5rem);
   box-shadow:
-    0 24px 56px rgba(19, 44, 32, 0.14),
+    0 20px 48px rgba(19, 44, 32, 0.12),
     0 4px 14px rgba(19, 44, 32, 0.04),
     inset 0 1px 1px rgba(255, 255, 255, 0.95) !important;
   display: flex;
@@ -6350,16 +6350,18 @@ img {
   display: flex;
   gap: 0.85rem;
   align-items: center;
-  flex-wrap: wrap;
+  flex-wrap: nowrap !important;
   width: 100%;
 }
 
 .gb-scene11-center-card__ctas .gb-btn {
-  padding: 0 8px 0 1.35rem !important;
-  font-size: 0.92rem !important;
+  padding: 0 6px 0 1.25rem !important;
+  font-size: 0.88rem !important;
+  white-space: nowrap !important;
+  flex-shrink: 0 !important;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 600px) {
   .gb-scene11-center-card__ctas {
     flex-direction: column !important;
     align-items: stretch !important;
@@ -7102,10 +7104,10 @@ img {
   text-transform: uppercase !important;
 }
 
-/* Secondary title line on Scene 05 (Dark Green #132c20 on Sage Green #829b70) */
+/* Secondary title line on Scene 05 ("ACADEMICALLY PREPARED?" in logo N letter amber #F5A93F) */
 .gb-scene05-dark-split__title-silver {
   display: block !important;
-  color: #132c20 !important;
+  color: #F5A93F !important;
   font-weight: 700 !important;
   text-transform: uppercase !important;
 }
@@ -7119,10 +7121,16 @@ img {
 }
 
 /* Secondary title line using the GenBright logo 'N' letter warm golden amber */
-.gb-hero-overlay__title-gold,
-.gb-scene12-ref__title-gold {
+.gb-hero-overlay__title-gold {
   display: block !important;
   color: #F5A93F !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+}
+
+.gb-scene12-ref__title-gold {
+  display: block !important;
+  color: #7f9b68 !important;
   font-weight: 700 !important;
   text-transform: uppercase !important;
 }
@@ -7452,17 +7460,27 @@ img {
   transform: translateZ(0);
 }
 
-/* Horizontally Proportioned Sage Green Content Card placed across image */
+/* Horizontally Proportioned White Frosted Content Card placed across image (Clearly visible background image with subtle glassmorphism) */
 .gb-scene12-ref__card {
   position: absolute;
   left: 0;
   top: 50%;
   transform: translateY(-50%);
   width: clamp(500px, 48vw, 610px);
-  background: #829b70;
-  border-radius: 6px;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.48) 0%,
+    rgba(255, 255, 255, 0.32) 100%
+  ) !important;
+  backdrop-filter: blur(6px) saturate(140%) !important;
+  -webkit-backdrop-filter: blur(6px) saturate(140%) !important;
+  border: 1.5px solid rgba(255, 255, 255, 0.65) !important;
+  border-radius: 18px;
   padding: clamp(2rem, 3.2vw, 2.85rem) clamp(2.4rem, 3.6vw, 3.5rem);
-  box-shadow: 0 24px 60px rgba(10, 24, 17, 0.25);
+  box-shadow:
+    0 20px 48px rgba(19, 44, 32, 0.12),
+    0 4px 14px rgba(19, 44, 32, 0.04),
+    inset 0 1px 1px rgba(255, 255, 255, 0.9) !important;
   z-index: 10;
   display: flex;
   flex-direction: column;
@@ -7472,7 +7490,7 @@ img {
 .gb-scene12-ref__title {
   font-family: var(--font-display) !important;
   font-size: clamp(1.75rem, 2.3vw, 2.35rem) !important;
-  font-weight: 700 !important;
+  font-weight: 800 !important;
   line-height: 1.15 !important;
   letter-spacing: -0.02em !important;
   text-transform: uppercase !important;
@@ -7482,20 +7500,24 @@ img {
 
 .gb-scene12-ref__title-white {
   display: block !important;
-  color: #ffffff !important;
+  color: #10281b !important;
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.85) !important;
 }
 
 .gb-scene12-ref__title-gold {
   display: block !important;
-  color: #132c20 !important;
+  color: #4a6838 !important;
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.85) !important;
 }
 
 .gb-scene12-ref__copy {
   font-family: var(--font-sans) !important;
   font-size: clamp(0.88rem, 0.98vw, 0.96rem) !important;
-  line-height: 1.65 !important;
-  color: #ffffff !important;
-  margin: 0 0 1.25rem !important;
+  line-height: 1.68 !important;
+  color: #0d1e15 !important;
+  font-weight: 600 !important;
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.85) !important;
+  margin: 0 0 1.35rem !important;
   max-width: 460px !important;
 }
 
@@ -7503,29 +7525,30 @@ img {
   display: flex;
   gap: 0.85rem;
   align-items: center;
-  flex-wrap: nowrap;
+  flex-wrap: nowrap !important;
 }
 
 .gb-scene12-ref__ctas .gb-btn {
   height: 42px;
   padding: 0 6px 0 1.2rem;
   font-size: 0.84rem;
-  white-space: nowrap;
+  white-space: nowrap !important;
+  flex-shrink: 0 !important;
 }
 
-/* Scene 12 Primary Button ("Partner with GenBright"): Solid White with dark text & dark arrow badge */
+/* Scene 12 Primary Button ("Partner with GenBright"): Solid Sage Green with white text & white arrow badge */
 #scene-12 .gb-scene12-ref__ctas .gb-btn:first-child,
 .gb-scene12-ref__card .gb-scene12-ref__ctas .gb-btn:first-child {
-  background: #ffffff !important;
-  color: #132c20 !important;
-  border: 2px solid #ffffff !important;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12) !important;
+  background: #7f9b68 !important;
+  color: #ffffff !important;
+  border: 2px solid #7f9b68 !important;
+  box-shadow: 0 4px 16px rgba(127, 155, 104, 0.25) !important;
 }
 
 #scene-12 .gb-scene12-ref__ctas .gb-btn:first-child::after,
 .gb-scene12-ref__card .gb-scene12-ref__ctas .gb-btn:first-child::after {
-  background-color: #132c20 !important;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='2.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cline x1='7' y1='17' x2='17' y2='7'/%3E%3Cpolyline points='7 7 17 7 17 17'/%3E%3C/svg%3E") !important;
+  background-color: #ffffff !important;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23132c20' stroke-width='2.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cline x1='7' y1='17' x2='17' y2='7'/%3E%3Cpolyline points='7 7 17 7 17 17'/%3E%3C/svg%3E") !important;
 }
 
 #scene-12 .gb-scene12-ref__ctas .gb-btn:first-child:hover,
@@ -7534,9 +7557,9 @@ img {
 .gb-scene12-ref__card .gb-scene12-ref__ctas .gb-btn:first-child:hover,
 .gb-scene12-ref__card .gb-scene12-ref__ctas .gb-btn:first-child:active,
 .gb-scene12-ref__card .gb-scene12-ref__ctas .gb-btn:first-child:focus {
-  background: rgba(255, 255, 255, 0.92) !important;
-  border-color: #ffffff !important;
-  color: #132c20 !important;
+  background: #132c20 !important;
+  border-color: #132c20 !important;
+  color: #ffffff !important;
   transform: translateY(-2px) !important;
 }
 
@@ -7546,22 +7569,49 @@ img {
 .gb-scene12-ref__card .gb-scene12-ref__ctas .gb-btn:first-child:hover::after,
 .gb-scene12-ref__card .gb-scene12-ref__ctas .gb-btn:first-child:active::after,
 .gb-scene12-ref__card .gb-scene12-ref__ctas .gb-btn:first-child:focus::after {
-  background-color: #132c20 !important;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='2.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cline x1='7' y1='17' x2='17' y2='7'/%3E%3Cpolyline points='7 7 17 7 17 17'/%3E%3C/svg%3E") !important;
+  background-color: #ffffff !important;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23132c20' stroke-width='2.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cline x1='7' y1='17' x2='17' y2='7'/%3E%3Cpolyline points='7 7 17 7 17 17'/%3E%3C/svg%3E") !important;
 }
 
-/* Scene 12 Secondary Button ("Volunteer or Mentor"): default transparent on sage green, white on click/hover */
+/* Scene 12 Secondary Button ("Volunteer or Mentor"): Outline Dark with dark green text, solid on click/hover */
 #scene-12 .gb-scene12-ref__ctas .gb-btn:last-child,
 .gb-scene12-ref__card .gb-scene12-ref__ctas .gb-btn:last-child,
 .gb-scene12-ref__ctas .gb-btn--outline-white {
   background: transparent !important;
-  border: 1.5px solid rgba(255, 255, 255, 0.85) !important;
-  color: #ffffff !important;
+  border: 1.5px solid #132c20 !important;
+  color: #132c20 !important;
 }
 
 #scene-12 .gb-scene12-ref__ctas .gb-btn:last-child::after,
 .gb-scene12-ref__card .gb-scene12-ref__ctas .gb-btn:last-child::after,
 .gb-scene12-ref__ctas .gb-btn--outline-white::after {
+  background-color: #132c20 !important;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='2.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cline x1='7' y1='17' x2='17' y2='7'/%3E%3Cpolyline points='7 7 17 7 17 17'/%3E%3C/svg%3E") !important;
+}
+
+#scene-12 .gb-scene12-ref__ctas .gb-btn:last-child:hover,
+#scene-12 .gb-scene12-ref__ctas .gb-btn:last-child:active,
+#scene-12 .gb-scene12-ref__ctas .gb-btn:last-child:focus,
+.gb-scene12-ref__card .gb-scene12-ref__ctas .gb-btn:last-child:hover,
+.gb-scene12-ref__card .gb-scene12-ref__ctas .gb-btn:last-child:active,
+.gb-scene12-ref__card .gb-scene12-ref__ctas .gb-btn:last-child:focus,
+.gb-scene12-ref__ctas .gb-btn--outline-white:hover,
+.gb-scene12-ref__ctas .gb-btn--outline-white:active,
+.gb-scene12-ref__ctas .gb-btn--outline-white:focus {
+  background: #132c20 !important;
+  border-color: #132c20 !important;
+  color: #ffffff !important;
+}
+
+#scene-12 .gb-scene12-ref__ctas .gb-btn:last-child:hover::after,
+#scene-12 .gb-scene12-ref__ctas .gb-btn:last-child:active::after,
+#scene-12 .gb-scene12-ref__ctas .gb-btn:last-child:focus::after,
+.gb-scene12-ref__card .gb-scene12-ref__ctas .gb-btn:last-child:hover::after,
+.gb-scene12-ref__card .gb-scene12-ref__ctas .gb-btn:last-child:active::after,
+.gb-scene12-ref__card .gb-scene12-ref__ctas .gb-btn:last-child:focus::after,
+.gb-scene12-ref__ctas .gb-btn--outline-white:hover::after,
+.gb-scene12-ref__ctas .gb-btn--outline-white:active::after,
+.gb-scene12-ref__ctas .gb-btn--outline-white:focus::after {
   background-color: #ffffff !important;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23132c20' stroke-width='2.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cline x1='7' y1='17' x2='17' y2='7'/%3E%3Cpolyline points='7 7 17 7 17 17'/%3E%3C/svg%3E") !important;
 }
