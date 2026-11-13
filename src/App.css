@@ -5901,16 +5901,44 @@ img {
 }
 
 @media (max-width: 900px) {
+  .gb-scene09-mosaic-stage {
+    padding: 0 1rem;
+    box-sizing: border-box;
+  }
+
+  .gb-scene09-mosaic-header {
+    max-width: 100%;
+    margin-bottom: 1.5rem;
+  }
+
+  .gb-scene09-mosaic-headline {
+    font-size: clamp(2rem, 6.5vw, 2.85rem) !important;
+    line-height: 1.15;
+  }
+
+  .gb-scene09-mosaic-copy {
+    font-size: clamp(0.92rem, 2.5vw, 1rem);
+    line-height: 1.62;
+    margin-bottom: 1.25rem;
+  }
+
+  .gb-scene09-mosaic-ctas {
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+
   .gb-scene09-mosaic-grid {
     grid-template-columns: 1fr;
     height: auto;
-    gap: 1.25rem;
+    gap: 1rem;
+    width: 100%;
   }
 
   .gb-mosaic-card--big {
     height: auto;
-    aspect-ratio: 1024 / 682;
+    aspect-ratio: 16 / 10;
     width: 100%;
+    border-radius: 16px;
   }
 
   .gb-mosaic-card--big .gb-mosaic-card__img {
@@ -5925,21 +5953,48 @@ img {
   }
 
   .gb-mosaic-subgrid {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    grid-template-rows: auto !important;
+    gap: 0.85rem;
     height: auto;
-    aspect-ratio: 1 / 1;
-    min-height: 420px;
+    min-height: unset;
+    aspect-ratio: unset;
+    width: 100%;
+  }
+
+  .gb-mosaic-card--small {
+    height: auto !important;
+    aspect-ratio: 4 / 3 !important;
+    border-radius: 14px;
   }
 }
 
 @media (max-width: 580px) {
+  .gb-scene09-mosaic-stage {
+    padding: 0 0.5rem;
+  }
+
+  .gb-scene09-mosaic-ctas {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .gb-scene09-mosaic-ctas .gb-btn {
+    width: 100%;
+    justify-content: space-between;
+  }
+
   .gb-mosaic-subgrid {
-    grid-template-columns: 1fr;
-    grid-template-rows: auto;
-    height: auto;
+    gap: 0.65rem;
   }
 
   .gb-mosaic-card--small {
-    height: 240px;
+    border-radius: 10px;
+  }
+
+  .gb-mosaic-card--big {
+    border-radius: 14px;
   }
 }
 
@@ -7723,44 +7778,92 @@ img {
     flex-direction: column;
     align-items: stretch;
     padding: 1rem 0;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    overflow-x: hidden !important;
   }
 
   .gb-scene12-ref__media-outer {
-    width: 100%;
+    width: 100% !important;
     order: 1;
   }
 
   .gb-scene12-ref__media-wrap {
-    width: 100%;
-    height: 320px;
+    width: 100% !important;
+    height: clamp(260px, 55vw, 360px) !important;
+    border-radius: 16px !important;
   }
 
   .gb-scene12-ref__card {
-    position: relative;
-    transform: none;
-    width: 100%;
+    position: relative !important;
+    transform: none !important;
+    left: auto !important;
+    top: auto !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
     order: 2;
-    margin-top: -30px;
-    padding: 2.25rem 1.75rem 4.5rem;
+    margin-top: -36px !important;
+    padding: clamp(1.75rem, 5vw, 2.35rem) clamp(1.25rem, 4vw, 2rem) !important;
+    border-radius: 16px !important;
+  }
+
+  .gb-scene12-ref__title {
+    font-size: clamp(1.45rem, 5.5vw, 2rem) !important;
+    line-height: 1.18 !important;
+    max-width: 100% !important;
+    margin-bottom: 0.75rem !important;
+  }
+
+  .gb-scene12-ref__copy {
+    font-size: clamp(0.9rem, 2.5vw, 0.96rem) !important;
+    line-height: 1.62 !important;
+    max-width: 100% !important;
+    margin-bottom: 1.35rem !important;
+  }
+
+  .gb-scene12-ref__ctas {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 0.75rem !important;
+    width: 100% !important;
+  }
+
+  .gb-scene12-ref__ctas .gb-btn {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: 46px !important;
+    justify-content: space-between !important;
+    box-sizing: border-box !important;
   }
 
   .gb-scene12-ref__wireframe {
-    display: none;
+    display: none !important;
+  }
+
+  .gb-scene12-ref__corner-btn {
+    display: none !important;
+  }
+
+  .gb-scene12-ref__pagination {
+    display: none !important;
   }
 }
 
 @media (max-width: 580px) {
+  .gb-scene12-ref-stage {
+    padding: 0.5rem 0 !important;
+  }
+
   .gb-scene12-ref__media-wrap {
-    height: 240px;
+    height: 240px !important;
+    border-radius: 14px !important;
   }
 
   .gb-scene12-ref__card {
-    padding: 1.75rem 1.15rem 4.5rem !important;
-  }
-
-  .gb-scene12-ref__corner-btn {
-    width: 60px !important;
-    height: 54px !important;
+    padding: 1.65rem 1.15rem !important;
+    margin-top: -28px !important;
+    border-radius: 14px !important;
   }
 }
 
