@@ -797,7 +797,7 @@ export const StoryScenesList = React.memo(function StoryScenesList({
                         </button>
                         <button
                           type="button"
-                          className="gb-btn gb-btn--outline-dark"
+                          className="gb-btn gb-btn--outline-white"
                           onClick={() => handleCta(scene.secondaryCta)}
                         >
                           {scene.secondaryCta.label}
