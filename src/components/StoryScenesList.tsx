@@ -1317,8 +1317,8 @@ export const StoryScenesList = React.memo(function StoryScenesList({
                   <div className="gb-scene15-stage">
                     <div className="gb-scene15-stage__bg" aria-hidden="true">
                       <img
-                        src="https://images.unsplash.com/photo-1511895426328-dc8714191300?auto=format&fit=crop&w=1600&q=85"
-                        alt="Parents and family looking ahead across the sunlit green campus landscape"
+                        src="/images/scene-15-next-chapter-buses-hd.jpg"
+                        alt="GenBright World School buses and campus grounds beneath open sky"
                         className="gb-scene15-stage__bg-img"
                         loading="lazy"
                         decoding="async"

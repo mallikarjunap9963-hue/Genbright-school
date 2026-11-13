@@ -312,9 +312,8 @@ export const STORY_SCENES: StorySceneData[] = [
     titleGrey: 'begins here.',
     copy: 'One day they will have their own ideas, friendships and dreams. When you look back, we hope you remember a childhood full of curiosity, kindness, discovery and possibility. Let us help you give them a beautiful beginning. Admissions Open 2027-28, Nursery to Grade 8.',
     hasImage: true,
-    imageUrl:
-      'https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=1400&q=85',
-    imageAlt: 'Perhaps their next chapter begins here.',
+    imageUrl: '/images/scene-15-next-chapter-buses-hd.jpg',
+    imageAlt: 'GenBright World School buses and campus grounds beneath open sky',
     theme: 'white',
     primaryCta: { label: 'Begin Your GenBright Journey', actionType: 'modal', target: 'admissions' },
     secondaryCta: { label: 'Visit Our Campus', actionType: 'modal', target: 'admissions' },
