@@ -1270,11 +1270,11 @@ export const StoryScenesList = React.memo(function StoryScenesList({
                   /* SCENE 14: LIVING ARCHIVES (MATCHING USER REFERENCE BANNER WITH ARCHIVE ARTIFACT BACKGROUND) */
                   <div className="gb-scene14-banner">
                     <div className="gb-scene14-banner__card">
-                      {/* Background Visual: Handcrafted ceramic artifacts and publications */}
+                      {/* Background Visual: Authentic student athletic moments & living archives */}
                       <div className="gb-scene14-banner__bg" aria-hidden="true">
                         <img
-                          src="https://images.unsplash.com/photo-1578749556568-bc2c40e68b61?auto=format&fit=crop&w=1600&q=85"
-                          alt="Ceramic memory artifacts and publications representing living school archives"
+                          src="/images/scene-14-archives-campus-turf-hd.jpg"
+                          alt="GenBright students in sports uniform on the lush green athletic field with school building in background"
                           className="gb-scene14-banner__bg-img"
                           loading="lazy"
                           decoding="async"
