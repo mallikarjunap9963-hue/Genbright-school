@@ -14,7 +14,7 @@ const LEARNER_PROFILES = [
     tag: 'Creativity & Arts',
     description: 'Thrives in open-ended creative inquiry, visual storytelling, and connecting big ideas across disciplines.',
     imageUrl: '/images/scene-03-learner-guitar-hd.jpg',
-    objectPosition: '42% 35%',
+    objectPosition: '40% 35%',
     imageAlt: 'GenBright student happily playing an acoustic guitar',
   },
   {
@@ -23,7 +23,7 @@ const LEARNER_PROFILES = [
     tag: 'Living Ecology',
     description: 'Learns through direct physical inquiry, botanical exploration, and hands-on scientific experimentation.',
     imageUrl: '/images/scene-03-learner-pickleball-hd.jpg',
-    objectPosition: '70% 32%',
+    objectPosition: '68% 30%',
     imageAlt: 'Energetic GenBright student focused on outdoor pickleball rally',
   },
   {
@@ -41,7 +41,7 @@ const LEARNER_PROFILES = [
     tag: 'Leadership & Voice',
     description: 'Sparks intellectual dialogue with passionate questions, rallies peer teams, and turns ideas into active movement.',
     imageUrl: '/images/scene-03-learner-hands-on-hd.jpg',
-    objectPosition: 'center center',
+    objectPosition: '50% 32%',
     imageAlt: 'GenBright students collaborating hands-on on a globe making project',
   },
 ]
@@ -82,8 +82,8 @@ const CHILDHOOD_MOTION_GALLERY = [
 const CAMPUS_SLIDESHOW = [
   {
     id: 'camp-1',
-    imageUrl: '/images/scene-06-campus-sports-hd.jpg',
-    alt: 'GenBright students running and playing soccer on lush green campus turf',
+    imageUrl: '/images/scene-06-campus-building-hd.jpg',
+    alt: 'GenBright World School modern campus building facade with architectural wave entrance and landscaped grounds',
   },
   {
     id: 'camp-2',
@@ -92,8 +92,8 @@ const CAMPUS_SLIDESHOW = [
   },
   {
     id: 'camp-3',
-    imageUrl: '/images/scene-06-outdoor-craft-hd.jpg',
-    alt: 'Educators and students collaborating on hands-on project outdoors',
+    imageUrl: '/images/scene-06-sports-court-hd.jpg',
+    alt: 'GenBright students running and playing outdoor sports on campus court',
   },
   {
     id: 'camp-4',
@@ -275,6 +275,9 @@ export const StoryScenesList = React.memo(function StoryScenesList({
 }: StoryScenesListProps) {
   const mainRef = useRef<HTMLElement | null>(null)
   const videoRef = useRef<HTMLVideoElement | null>(null)
+  const centresCarouselRef = useRef<HTMLDivElement | null>(null)
+  const [canScrollCentresBack, setCanScrollCentresBack] = useState(false)
+  const [canScrollCentresForward, setCanScrollCentresForward] = useState(true)
   const [campusSlideIndex, setCampusSlideIndex] = useState(0)
   const [isCampusPaused, setIsCampusPaused] = useState(false)
 
@@ -344,6 +347,39 @@ export const StoryScenesList = React.memo(function StoryScenesList({
     })
     return () => observer.disconnect()
   }, [])
+
+  useEffect(() => {
+    const carousel = centresCarouselRef.current
+    if (!carousel) return
+
+    const updateControls = () => {
+      setCanScrollCentresBack(carousel.scrollLeft > 1)
+      setCanScrollCentresForward(
+        carousel.scrollLeft + carousel.clientWidth < carousel.scrollWidth - 1
+      )
+    }
+
+    updateControls()
+    carousel.addEventListener('scroll', updateControls, { passive: true })
+    window.addEventListener('resize', updateControls)
+
+    return () => {
+      carousel.removeEventListener('scroll', updateControls)
+      window.removeEventListener('resize', updateControls)
+    }
+  }, [])
+
+  const scrollCentres = (direction: -1 | 1) => {
+    const carousel = centresCarouselRef.current
+    const firstSlide = carousel?.querySelector<HTMLElement>('.gb-centre-slide')
+    if (!carousel || !firstSlide) return
+
+    const gap = Number.parseFloat(getComputedStyle(carousel).columnGap) || 0
+    carousel.scrollBy({
+      left: direction * (firstSlide.offsetWidth + gap),
+      behavior: 'smooth',
+    })
+  }
 
   const handleCta = (cta: SceneCTA) => {
     if (cta.actionType === 'scroll') {
@@ -470,8 +506,39 @@ export const StoryScenesList = React.memo(function StoryScenesList({
                       </div>
                     </div>
 
-                    <div className="gb-centres-carousel" role="region" aria-label="13 Learning Centres">
+                    <div className="gb-centres-carousel" role="region" aria-label="13 Learning Centres carousel">
+                      {/* TOP CONTROLS: PREVIOUS / NEXT SLIDING ICONS */}
+                      <div className="gb-centres-carousel__controls gb-centres-carousel__controls--top">
+                        <button
+                          type="button"
+                          className="gb-centres-carousel__button"
+                          onClick={() => scrollCentres(-1)}
+                          disabled={!canScrollCentresBack}
+                          aria-label="Previous learning centre"
+                          aria-controls="learning-centres-carousel"
+                        >
+                          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                            <line x1="19" y1="12" x2="5" y2="12" />
+                            <polyline points="12 19 5 12 12 5" />
+                          </svg>
+                        </button>
+                        <button
+                          type="button"
+                          className="gb-centres-carousel__button"
+                          onClick={() => scrollCentres(1)}
+                          disabled={!canScrollCentresForward}
+                          aria-label="Next learning centre"
+                          aria-controls="learning-centres-carousel"
+                        >
+                          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                            <line x1="5" y1="12" x2="19" y2="12" />
+                            <polyline points="12 5 19 12 12 19" />
+                          </svg>
+                        </button>
+                      </div>
+
                       <div
+                        ref={centresCarouselRef}
                         className="gb-centres-carousel__track"
                         id="learning-centres-carousel"
                         role="list"
@@ -654,7 +721,7 @@ export const StoryScenesList = React.memo(function StoryScenesList({
                         <div className="gb-scene04-photo-frame">
                           <img
                             src="/images/scene-04-whole-child-inquiry-hd.jpg"
-                            alt="Four GenBright students gathered together in classroom inquiry, observing and discussing a globe model"
+                            alt="GenBright students engaged in whole-child inquiry and reading in the campus outdoor sandbox learning space"
                             className="gb-scene04-photo"
                             loading="lazy"
                             decoding="async"
@@ -1177,14 +1244,13 @@ export const StoryScenesList = React.memo(function StoryScenesList({
                       </div>
                     </div>
 
-                    {/* 2 IMAGES MATCHING USER REQUEST "this section adding 2 images" */}
+                    {/* 2 IMAGES MATCHING USER REQUEST (Generous height, full images never cut) */}
                     <div className="gb-scene13-media-wrap" aria-label="Educator journey and collaboration">
                       <div className="gb-scene13-media-card gb-scene13-media-card--1">
                         <img
                           src="/images/scene-13-educator-mentoring-craft-hd.jpg"
                           alt="GenBright educator guiding students in hands-on crafting and collaborative learning outdoors"
-                          className="gb-scene13-img"
-                          style={{ objectPosition: '51% 38%' }}
+                          className="gb-scene13-img gb-scene13-img--1"
                           loading="lazy"
                           decoding="async"
                         />
@@ -1193,8 +1259,7 @@ export const StoryScenesList = React.memo(function StoryScenesList({
                         <img
                           src="/images/scene-13-educator-mentorship-hd.jpg"
                           alt="GenBright educator warmly mentoring an elementary student crafting a globe in outdoor workshop"
-                          className="gb-scene13-img"
-                          style={{ objectPosition: '50% 32%' }}
+                          className="gb-scene13-img gb-scene13-img--2"
                           loading="lazy"
                           decoding="async"
                         />
