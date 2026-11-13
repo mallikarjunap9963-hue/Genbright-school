@@ -1271,7 +1271,6 @@ export const StoryScenesList = React.memo(function StoryScenesList({
 
                       {/* Centered Content Stack matching user reference */}
                       <div className="gb-scene14-banner__content">
-                        <span className="gb-scene14-banner__eyebrow">14 · LIVING ARCHIVES</span>
                         <h2 className="gb-scene14-banner__title">
                           Some moments deserve<br />
                           <span>to be remembered.</span>
