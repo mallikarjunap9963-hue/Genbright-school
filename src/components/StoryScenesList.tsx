@@ -1150,42 +1150,30 @@ export const StoryScenesList = React.memo(function StoryScenesList({
                     </div>
                   </div>
                 ) : scene.number === '12' ? (
-                  /* SCENE 12: IT TAKES A COMMUNITY — FULL-WIDTH HERO BANNER MATCHING USER REFERENCE */
-                  <div className="gb-scene12-banner">
-                    {/* Background Community Photo */}
-                    <img
-                      src={COMMUNITY_IMAGE.imageUrl}
-                      alt={COMMUNITY_IMAGE.alt}
-                      className="gb-scene12-banner__img"
-                      loading="eager"
-                      decoding="async"
-                    />
-
-                    {/* Left Dark Gradient Overlay */}
-                    <div className="gb-scene12-banner__overlay" aria-hidden="true" />
-
-                    {/* Content Column (Left) */}
-                    <div className="gb-scene12-banner__content">
-                      <h2 className="gb-scene12-banner__title">
-                        <span className="gb-scene12-banner__title-white">{scene.titleDark}</span><br />
-                        <span className="gb-scene12-banner__title-green">{scene.titleGrey}</span>
+                  /* SCENE 12: IT TAKES A COMMUNITY — OVERLAPPING DARK CARD & IMAGE LAYOUT MATCHING USER REFERENCE */
+                  <div className="gb-scene12-ref-stage">
+                    {/* Overlapping Dark Content Card (Left) */}
+                    <div className="gb-scene12-ref__card">
+                      <h2 className="gb-scene12-ref__title">
+                        <span className="gb-scene12-ref__title-white">{scene.titleDark}</span>{' '}
+                        <span className="gb-scene12-ref__title-gold">{scene.titleGrey}</span>
                       </h2>
 
-                      <p className="gb-scene12-banner__copy">
+                      <p className="gb-scene12-ref__copy">
                         {scene.copy}
                       </p>
 
-                      <div className="gb-cta-group gb-scene12-banner__ctas">
+                      <div className="gb-cta-group gb-scene12-ref__ctas">
                         <button
                           type="button"
-                          className="gb-btn gb-scene12-btn-primary"
+                          className="gb-btn gb-btn--primary-gold"
                           onClick={() => handleCta(scene.primaryCta)}
                         >
                           {scene.primaryCta.label}
                         </button>
                         <button
                           type="button"
-                          className="gb-btn gb-scene12-btn-secondary"
+                          className="gb-btn gb-btn--outline-white"
                           onClick={() => handleCta(scene.secondaryCta)}
                         >
                           {scene.secondaryCta.label}
@@ -1193,25 +1181,24 @@ export const StoryScenesList = React.memo(function StoryScenesList({
                       </div>
                     </div>
 
-                    {/* Navigation Arrows */}
-                    <button
-                      type="button"
-                      className="gb-scene12-banner__nav-btn gb-scene12-banner__nav-btn--prev"
-                      aria-label="Previous image"
-                    >
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                        <polyline points="15 18 9 12 15 6" />
-                      </svg>
-                    </button>
-                    <button
-                      type="button"
-                      className="gb-scene12-banner__nav-btn gb-scene12-banner__nav-btn--next"
-                      aria-label="Next image"
-                    >
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                        <polyline points="9 18 15 12 9 6" />
-                      </svg>
-                    </button>
+                    {/* Main Photo Outer Container with Underlapping Wireframe Box */}
+                    <div className="gb-scene12-ref__media-outer">
+                      {/* Decorative Wireframe Box tucked directly behind photo bottom-left corner */}
+                      <div className="gb-scene12-ref__wireframe" aria-hidden="true" />
+
+                      {/* Main Photo Wrapper with Slider (Right) */}
+                      {/* Main Featured Photo (Single image, no multi-image carousel) */}
+                      <div className="gb-scene12-ref__media-wrap">
+                        <img
+                          src={COMMUNITY_IMAGE.imageUrl}
+                          alt={COMMUNITY_IMAGE.alt}
+                          className="gb-scene12-ref__img"
+                          style={{ objectPosition: 'center 26%' }}
+                          loading="eager"
+                          decoding="async"
+                        />
+                      </div>
+                    </div>
                   </div>
                 ) : scene.number === '13' ? (
                   /* SCENE 13: WHAT IF TEACHING COULD BE A JOURNEY OF DISCOVERY, TOO? (2 IMAGES LAYOUT) */
