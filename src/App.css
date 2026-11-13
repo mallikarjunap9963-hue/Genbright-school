@@ -7460,21 +7460,27 @@ img {
   transform: translateZ(0);
 }
 
-/* Fully Transparent Content Card placed across image (No glassmorphism, no blur, background image completely visible) */
+/* Horizontally Proportioned White Frosted Content Card placed across image (Clearly visible background image with subtle glassmorphism) */
 .gb-scene12-ref__card {
   position: absolute;
   left: 0;
   top: 50%;
   transform: translateY(-50%);
   width: clamp(500px, 48vw, 610px);
-  background: transparent !important;
-  background-color: transparent !important;
-  backdrop-filter: none !important;
-  -webkit-backdrop-filter: none !important;
-  border: none !important;
-  border-radius: 0 !important;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.48) 0%,
+    rgba(255, 255, 255, 0.32) 100%
+  ) !important;
+  backdrop-filter: blur(6px) saturate(140%) !important;
+  -webkit-backdrop-filter: blur(6px) saturate(140%) !important;
+  border: 1.5px solid rgba(255, 255, 255, 0.65) !important;
+  border-radius: 18px;
   padding: clamp(2rem, 3.2vw, 2.85rem) clamp(2.4rem, 3.6vw, 3.5rem);
-  box-shadow: none !important;
+  box-shadow:
+    0 20px 48px rgba(19, 44, 32, 0.12),
+    0 4px 14px rgba(19, 44, 32, 0.04),
+    inset 0 1px 1px rgba(255, 255, 255, 0.9) !important;
   z-index: 10;
   display: flex;
   flex-direction: column;
@@ -7494,25 +7500,23 @@ img {
 
 .gb-scene12-ref__title-white {
   display: block !important;
-  color: #0d2217 !important;
-  font-weight: 800 !important;
-  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.95), 0 0 10px rgba(255, 255, 255, 0.7) !important;
+  color: #10281b !important;
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.85) !important;
 }
 
 .gb-scene12-ref__title-gold {
   display: block !important;
-  color: #2e5720 !important;
-  font-weight: 800 !important;
-  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.95), 0 0 10px rgba(255, 255, 255, 0.7) !important;
+  color: #4a6838 !important;
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.85) !important;
 }
 
 .gb-scene12-ref__copy {
   font-family: var(--font-sans) !important;
-  font-size: clamp(0.9rem, 1vw, 0.98rem) !important;
+  font-size: clamp(0.88rem, 0.98vw, 0.96rem) !important;
   line-height: 1.68 !important;
-  color: #0b1a12 !important;
+  color: #0d1e15 !important;
   font-weight: 600 !important;
-  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.95), 0 0 8px rgba(255, 255, 255, 0.65) !important;
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.85) !important;
   margin: 0 0 1.35rem !important;
   max-width: 460px !important;
 }
@@ -7612,7 +7616,32 @@ img {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23132c20' stroke-width='2.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cline x1='7' y1='17' x2='17' y2='7'/%3E%3Cpolyline points='7 7 17 7 17 17'/%3E%3C/svg%3E") !important;
 }
 
+#scene-12 .gb-scene12-ref__ctas .gb-btn:last-child:hover,
+#scene-12 .gb-scene12-ref__ctas .gb-btn:last-child:active,
+#scene-12 .gb-scene12-ref__ctas .gb-btn:last-child:focus,
+.gb-scene12-ref__card .gb-scene12-ref__ctas .gb-btn:last-child:hover,
+.gb-scene12-ref__card .gb-scene12-ref__ctas .gb-btn:last-child:active,
+.gb-scene12-ref__card .gb-scene12-ref__ctas .gb-btn:last-child:focus,
+.gb-scene12-ref__ctas .gb-btn--outline-white:hover,
+.gb-scene12-ref__ctas .gb-btn--outline-white:active,
+.gb-scene12-ref__ctas .gb-btn--outline-white:focus {
+  background: #ffffff !important;
+  border-color: #ffffff !important;
+  color: #132c20 !important;
+}
 
+#scene-12 .gb-scene12-ref__ctas .gb-btn:last-child:hover::after,
+#scene-12 .gb-scene12-ref__ctas .gb-btn:last-child:active::after,
+#scene-12 .gb-scene12-ref__ctas .gb-btn:last-child:focus::after,
+.gb-scene12-ref__card .gb-scene12-ref__ctas .gb-btn:last-child:hover::after,
+.gb-scene12-ref__card .gb-scene12-ref__ctas .gb-btn:last-child:active::after,
+.gb-scene12-ref__card .gb-scene12-ref__ctas .gb-btn:last-child:focus::after,
+.gb-scene12-ref__ctas .gb-btn--outline-white:hover::after,
+.gb-scene12-ref__ctas .gb-btn--outline-white:active::after,
+.gb-scene12-ref__ctas .gb-btn--outline-white:focus::after {
+  background-color: #132c20 !important;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='2.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cline x1='7' y1='17' x2='17' y2='7'/%3E%3Cpolyline points='7 7 17 7 17 17'/%3E%3C/svg%3E") !important;
+}
 
 /* Bottom-Right Corner Dark Button with Down Arrow */
 .gb-scene12-ref__corner-btn {
