@@ -6160,7 +6160,7 @@ img {
    -------------------------------------------------------------------------- */
 .gb-scene11-pinwheel-stage {
   width: 100%;
-  max-width: 1280px;
+  max-width: 1240px;
   margin: 0 auto;
   position: relative;
   padding: 1rem 0 2rem;
@@ -6169,10 +6169,10 @@ img {
 .gb-scene11-collage-container {
   position: relative;
   width: 100%;
-  max-width: 1260px;
+  max-width: 1120px;
   margin: 0 auto;
-  min-height: 720px;
-  height: clamp(680px, 58vw, 760px);
+  min-height: 680px;
+  height: clamp(640px, 58vw, 720px);
 }
 
 /* 4 Image Slots placed around the perimeter */
@@ -6206,56 +6206,56 @@ img {
   transform: scale(1.04) translateZ(0);
 }
 
-/* Top-Left Slot: Early-years reading & wonder */
+/* Top-Left Slot: Early-years reading & wonder (Base layer behind glass card) */
 .gb-scene11-img-slot--tl {
   top: 0;
-  left: 0;
-  width: clamp(280px, 29vw, 360px);
-  height: clamp(260px, 26vw, 320px);
+  left: -20px;
+  width: clamp(300px, 34vw, 390px);
+  height: clamp(280px, 31vw, 350px);
   z-index: 1;
   border: none;
   box-shadow: 0 16px 36px rgba(19, 44, 32, 0.08), 0 4px 12px rgba(19, 44, 32, 0.04);
 }
 
 .gb-scene11-img-slot--tl .gb-scene11-img {
-  object-position: center 30%;
+  object-position: 42% 28%;
 }
 
-/* Top-Right Slot: Montessori sensory blocks & learning */
+/* Top-Right Slot: Montessori sensory blocks & learning (Layered ON TOP of glass card on the opposite side) */
 .gb-scene11-img-slot--tr {
   top: 0;
   right: 0;
-  width: clamp(290px, 30vw, 380px);
-  height: clamp(260px, 26vw, 330px);
-  z-index: 1;
+  width: clamp(290px, 33vw, 385px);
+  height: clamp(290px, 32vw, 365px);
+  z-index: 15;
   border-radius: 18px;
-  box-shadow: 0 20px 44px rgba(19, 44, 32, 0.16), 0 6px 18px rgba(19, 44, 32, 0.08);
+  box-shadow: 0 24px 50px rgba(19, 44, 32, 0.22), 0 6px 18px rgba(19, 44, 32, 0.12);
   border: 3px solid rgba(255, 255, 255, 0.95);
 }
 
 .gb-scene11-img-slot--tr .gb-scene11-img {
-  object-position: center 42%;
+  object-position: center center;
 }
 
 /* Bottom-Left Slot: Nurturing educators & preschool circle */
 .gb-scene11-img-slot--bl {
   bottom: 0;
   left: 0;
-  width: clamp(290px, 29vw, 370px);
-  height: clamp(260px, 26vw, 320px);
+  width: clamp(280px, 32vw, 370px);
+  height: clamp(280px, 31vw, 350px);
   z-index: 1;
 }
 
 .gb-scene11-img-slot--bl .gb-scene11-img {
-  object-position: center center;
+  object-position: center 40%;
 }
 
 /* Bottom-Right Slot: Joyful outdoor nature play (wider landscape) */
 .gb-scene11-img-slot--br {
   bottom: 0;
   right: 0;
-  width: clamp(340px, 36vw, 450px);
-  height: clamp(260px, 26vw, 320px);
+  width: clamp(360px, 44vw, 510px);
+  height: clamp(280px, 31vw, 350px);
   z-index: 1;
 }
 
@@ -6269,8 +6269,8 @@ img {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  z-index: 5;
-  width: clamp(400px, 46vw, 520px);
+  z-index: 10;
+  width: clamp(450px, 56vw, 650px);
   background: linear-gradient(
     135deg,
     rgba(255, 255, 255, 0.78) 0%,
@@ -6279,10 +6279,10 @@ img {
   backdrop-filter: blur(16px) saturate(160%) !important;
   -webkit-backdrop-filter: blur(16px) saturate(160%) !important;
   border: 1.5px solid rgba(255, 255, 255, 0.85) !important;
-  border-radius: 22px;
-  padding: clamp(1.6rem, 2.3vw, 2.5rem);
+  border-radius: 24px;
+  padding: clamp(2.2rem, 3.4vw, 3.5rem);
   box-shadow:
-    0 20px 48px rgba(19, 44, 32, 0.12),
+    0 24px 56px rgba(19, 44, 32, 0.14),
     0 4px 14px rgba(19, 44, 32, 0.04),
     inset 0 1px 1px rgba(255, 255, 255, 0.95) !important;
   display: flex;
