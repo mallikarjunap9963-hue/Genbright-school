@@ -132,18 +132,6 @@ export function Header({ activeScene, onScrollTo, onOpenModal, onOpenDiscover2 }
                       <button
                         type="button"
                         role="menuitem"
-                        className="gb-d2-dropdown__item is-current"
-                        onClick={() => {
-                          setDiscoverMenuOpen(false)
-                          onScrollTo(item.target)
-                        }}
-                      >
-                        <strong>Discover 1</strong>
-                        <span>Explore the main school story</span>
-                      </button>
-                      <button
-                        type="button"
-                        role="menuitem"
                         className="gb-d2-dropdown__item"
                         onClick={() => {
                           setDiscoverMenuOpen(false)
@@ -152,6 +140,18 @@ export function Header({ activeScene, onScrollTo, onOpenModal, onOpenDiscover2 }
                       >
                         <strong>Discover 2</strong>
                         <span>Full-screen campus video showcase</span>
+                      </button>
+                      <button
+                        type="button"
+                        role="menuitem"
+                        className="gb-d2-dropdown__item is-current"
+                        onClick={() => {
+                          setDiscoverMenuOpen(false)
+                          onScrollTo(item.target)
+                        }}
+                      >
+                        <strong>Discover 1</strong>
+                        <span>Explore the main school story</span>
                       </button>
                     </div>
                   )}
@@ -240,19 +240,6 @@ export function Header({ activeScene, onScrollTo, onOpenModal, onOpenDiscover2 }
       {mobileMenuOpen && (
         <div className="gb-mobile-menu">
           <div className="gb-mobile-menu__links">
-            {NAV_ITEMS.map((item) => (
-              <button
-                key={item.label}
-                type="button"
-                className="gb-mobile-menu__link"
-                onClick={() => {
-                  onScrollTo(item.target)
-                  setMobileMenuOpen(false)
-                }}
-              >
-                <span>{item.label}</span>
-              </button>
-            ))}
             <button
               type="button"
               className="gb-mobile-menu__link"
@@ -263,6 +250,19 @@ export function Header({ activeScene, onScrollTo, onOpenModal, onOpenDiscover2 }
             >
               <span>Discover 2</span>
             </button>
+            {NAV_ITEMS.map((item) => (
+              <button
+                key={item.label}
+                type="button"
+                className="gb-mobile-menu__link"
+                onClick={() => {
+                  onScrollTo(item.target)
+                  setMobileMenuOpen(false)
+                }}
+              >
+                <span>{item.label === 'Discover' ? 'Discover 1' : item.label}</span>
+              </button>
+            ))}
           </div>
           <div className="gb-mobile-menu__portals">
             <button

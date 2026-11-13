@@ -18,6 +18,16 @@ function getInitialView(): ActiveView {
   ) {
     return 'discover2'
   }
+  if (
+    window.location.pathname === '/discover-1' ||
+    window.location.hash.startsWith('#discover-1') ||
+    window.location.hash.startsWith('#scene-')
+  ) {
+    return 'home'
+  }
+  if (window.location.pathname === '/' && !window.location.hash) {
+    return 'discover2'
+  }
   return 'home'
 }
 
@@ -81,15 +91,15 @@ export function App() {
     setChatOpen(false)
     window.scrollTo({ top: 0, behavior: 'auto' })
     if (window.location.hash !== '#discover-2') {
-      window.history.pushState(null, '', '#discover-2')
+      window.history.pushState(null, '', '/#discover-2')
     }
   }, [])
 
   const handleBackHome = useCallback(
     (targetScene?: string) => {
       setActiveView('home')
-      if (window.location.hash === '#discover-2' || window.location.pathname === '/discover-2') {
-        window.history.pushState(null, '', '/')
+      if (window.location.hash !== '#discover-1') {
+        window.history.pushState(null, '', '/#discover-1')
       }
       if (targetScene && targetScene !== 'scene-01') {
         window.setTimeout(() => scrollToScene(targetScene), 60)
@@ -102,14 +112,7 @@ export function App() {
 
   useEffect(() => {
     const onNavSync = () => {
-      if (
-        window.location.pathname === '/discover-2' ||
-        window.location.hash.startsWith('#discover-2')
-      ) {
-        setActiveView('discover2')
-      } else {
-        setActiveView('home')
-      }
+      setActiveView(getInitialView())
     }
     window.addEventListener('popstate', onNavSync)
     window.addEventListener('hashchange', onNavSync)

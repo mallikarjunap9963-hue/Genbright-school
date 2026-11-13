@@ -293,18 +293,6 @@ export function Discover2Page({ onBackHome, onOpenModal }: Discover2PageProps) {
                               <button
                                 type="button"
                                 role="menuitem"
-                                className="gb-d2-dropdown__item"
-                                onClick={() => {
-                                  setDropdownOpen(false)
-                                  onBackHome('scene-01')
-                                }}
-                              >
-                                <strong>Discover 1</strong>
-                                <span>Explore the main school story</span>
-                              </button>
-                              <button
-                                type="button"
-                                role="menuitem"
                                 className="gb-d2-dropdown__item is-current"
                                 onClick={() => {
                                   setDropdownOpen(false)
@@ -313,6 +301,18 @@ export function Discover2Page({ onBackHome, onOpenModal }: Discover2PageProps) {
                               >
                                 <strong>Discover 2</strong>
                                 <span>Full-screen campus video showcase</span>
+                              </button>
+                              <button
+                                type="button"
+                                role="menuitem"
+                                className="gb-d2-dropdown__item"
+                                onClick={() => {
+                                  setDropdownOpen(false)
+                                  onBackHome('scene-01')
+                                }}
+                              >
+                                <strong>Discover 1</strong>
+                                <span>Explore the main school story</span>
                               </button>
                             </div>
                           )}
@@ -344,22 +344,6 @@ export function Discover2Page({ onBackHome, onOpenModal }: Discover2PageProps) {
 
             {mobileMenuOpen && (
               <div className="gb-d2-mobile-panel">
-                {NAV_ITEMS.map((item) => (
-                  <button
-                    key={item.label}
-                    type="button"
-                    onClick={() => {
-                      setMobileMenuOpen(false)
-                      if (item.label === 'Discover') {
-                        onBackHome(item.target)
-                      } else {
-                        scrollToDiscover2Section(item.target)
-                      }
-                    }}
-                  >
-                    {item.label === 'Discover' ? 'Discover 1' : item.label}
-                  </button>
-                ))}
                 <button
                   type="button"
                   onClick={() => {
@@ -369,6 +353,28 @@ export function Discover2Page({ onBackHome, onOpenModal }: Discover2PageProps) {
                 >
                   Discover 2
                 </button>
+                <button
+                  type="button"
+                  onClick={() => {
+                    setMobileMenuOpen(false)
+                    onBackHome('scene-01')
+                  }}
+                >
+                  Discover 1
+                </button>
+                {NAV_ITEMS.map((item) => (
+                  item.label === 'Discover' ? null :
+                  <button
+                    key={item.label}
+                    type="button"
+                    onClick={() => {
+                      setMobileMenuOpen(false)
+                      scrollToDiscover2Section(item.target)
+                    }}
+                  >
+                    {item.label}
+                  </button>
+                ))}
               </div>
             )}
           </div>
