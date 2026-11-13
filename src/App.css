@@ -2118,22 +2118,22 @@ img {
   box-shadow: none !important;
 }
 
-/* Card 3 (MOVE): Solid White */
+/* Card 3 (MOVE): Glassmorphic White */
 .gb-glass-pillar-card--glass-white {
-  background: #ffffff !important;
-  backdrop-filter: none !important;
-  -webkit-backdrop-filter: none !important;
+  background: rgba(255, 255, 255, 0.74) !important;
+  backdrop-filter: blur(16px) saturate(180%) !important;
+  -webkit-backdrop-filter: blur(16px) saturate(180%) !important;
   border: 1.5px solid #adc09f !important;
-  box-shadow: none !important;
+  box-shadow: 0 10px 30px rgba(19, 44, 32, 0.08) !important;
 }
 
-/* Card 4 (PAUSE): Solid Alabaster */
+/* Card 4 (PAUSE): Glassmorphic Alabaster */
 .gb-glass-pillar-card--glass-alabaster {
-  background: #edede6 !important;
-  backdrop-filter: none !important;
-  -webkit-backdrop-filter: none !important;
+  background: rgba(237, 237, 230, 0.74) !important;
+  backdrop-filter: blur(16px) saturate(180%) !important;
+  -webkit-backdrop-filter: blur(16px) saturate(180%) !important;
   border: 1.5px solid #adc09f !important;
-  box-shadow: none !important;
+  box-shadow: 0 10px 30px rgba(19, 44, 32, 0.08) !important;
 }
 
 .gb-glass-pillar-card:hover {
@@ -2143,23 +2143,21 @@ img {
 }
 
 .gb-glass-pillar-card--glass-white:hover {
-  background: linear-gradient(145deg,
-      rgba(255, 255, 255, 0.84) 0%,
-      rgba(255, 255, 255, 0.68) 100%) !important;
-  backdrop-filter: blur(18px) saturate(180%) !important;
-  -webkit-backdrop-filter: blur(18px) saturate(180%) !important;
+  background: rgba(255, 255, 255, 0.86) !important;
+  backdrop-filter: blur(20px) saturate(190%) !important;
+  -webkit-backdrop-filter: blur(20px) saturate(190%) !important;
   border-color: #7f9b68 !important;
   transform: translateY(-8px) !important;
+  box-shadow: 0 16px 36px rgba(19, 44, 32, 0.12) !important;
 }
 
 .gb-glass-pillar-card--glass-alabaster:hover {
-  background: linear-gradient(145deg,
-      rgba(237, 237, 230, 0.88) 0%,
-      rgba(237, 237, 230, 0.72) 100%) !important;
-  backdrop-filter: blur(18px) saturate(180%) !important;
-  -webkit-backdrop-filter: blur(18px) saturate(180%) !important;
+  background: rgba(237, 237, 230, 0.86) !important;
+  backdrop-filter: blur(20px) saturate(190%) !important;
+  -webkit-backdrop-filter: blur(20px) saturate(190%) !important;
   border-color: #7f9b68 !important;
   transform: translateY(-8px) !important;
+  box-shadow: 0 16px 36px rgba(19, 44, 32, 0.12) !important;
 }
 
 /* All 4 cards kept on the same horizontal line matching user request */
