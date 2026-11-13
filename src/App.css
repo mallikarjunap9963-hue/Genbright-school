@@ -2483,18 +2483,19 @@ img {
   flex-wrap: wrap;
 }
 
+/* Scene 05 Primary Button ("Explore Academics"): Solid White with dark text & dark arrow badge */
 #scene-05 .gb-scene05-dark-split__ctas .gb-btn:first-child,
 .gb-scene05-dark-split__ctas .gb-btn:first-child {
-  background: transparent !important;
-  color: #ffffff !important;
+  background: #ffffff !important;
+  color: #132c20 !important;
   border: 2px solid #ffffff !important;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12) !important;
 }
 
 #scene-05 .gb-scene05-dark-split__ctas .gb-btn:first-child::after,
 .gb-scene05-dark-split__ctas .gb-btn:first-child::after {
-  background-color: #ffffff !important;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23132c20' stroke-width='2.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cline x1='7' y1='17' x2='17' y2='7'/%3E%3Cpolyline points='7 7 17 7 17 17'/%3E%3C/svg%3E") !important;
+  background-color: #132c20 !important;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='2.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cline x1='7' y1='17' x2='17' y2='7'/%3E%3Cpolyline points='7 7 17 7 17 17'/%3E%3C/svg%3E") !important;
 }
 
 #scene-05 .gb-scene05-dark-split__ctas .gb-btn:first-child:hover,
@@ -2503,9 +2504,10 @@ img {
 .gb-scene05-dark-split__ctas .gb-btn:first-child:hover,
 .gb-scene05-dark-split__ctas .gb-btn:first-child:active,
 .gb-scene05-dark-split__ctas .gb-btn:first-child:focus {
-  background: #ffffff !important;
+  background: rgba(255, 255, 255, 0.92) !important;
   border-color: #ffffff !important;
   color: #132c20 !important;
+  transform: translateY(-2px) !important;
 }
 
 #scene-05 .gb-scene05-dark-split__ctas .gb-btn:first-child:hover::after,
@@ -7511,18 +7513,19 @@ img {
   white-space: nowrap;
 }
 
+/* Scene 12 Primary Button ("Partner with GenBright"): Solid White with dark text & dark arrow badge */
 #scene-12 .gb-scene12-ref__ctas .gb-btn:first-child,
 .gb-scene12-ref__card .gb-scene12-ref__ctas .gb-btn:first-child {
-  background: transparent !important;
-  color: #ffffff !important;
+  background: #ffffff !important;
+  color: #132c20 !important;
   border: 2px solid #ffffff !important;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12) !important;
 }
 
 #scene-12 .gb-scene12-ref__ctas .gb-btn:first-child::after,
 .gb-scene12-ref__card .gb-scene12-ref__ctas .gb-btn:first-child::after {
-  background-color: #ffffff !important;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23132c20' stroke-width='2.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cline x1='7' y1='17' x2='17' y2='7'/%3E%3Cpolyline points='7 7 17 7 17 17'/%3E%3C/svg%3E") !important;
+  background-color: #132c20 !important;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='2.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cline x1='7' y1='17' x2='17' y2='7'/%3E%3Cpolyline points='7 7 17 7 17 17'/%3E%3C/svg%3E") !important;
 }
 
 #scene-12 .gb-scene12-ref__ctas .gb-btn:first-child:hover,
@@ -7531,9 +7534,10 @@ img {
 .gb-scene12-ref__card .gb-scene12-ref__ctas .gb-btn:first-child:hover,
 .gb-scene12-ref__card .gb-scene12-ref__ctas .gb-btn:first-child:active,
 .gb-scene12-ref__card .gb-scene12-ref__ctas .gb-btn:first-child:focus {
-  background: #ffffff !important;
+  background: rgba(255, 255, 255, 0.92) !important;
   border-color: #ffffff !important;
   color: #132c20 !important;
+  transform: translateY(-2px) !important;
 }
 
 #scene-12 .gb-scene12-ref__ctas .gb-btn:first-child:hover::after,
