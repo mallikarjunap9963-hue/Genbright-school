@@ -152,11 +152,11 @@ export function Discover2Page({ onBackHome, onOpenModal }: Discover2PageProps) {
         aria-label="GenBright Discover 2 Hero"
       >
         <div className="gb-d2-hero-sticky">
-          {/* Textured #829b70 Sage Green Canvas Backdrop */}
+          {/* Textured #829b70 Sage Green Canvas Backdrop with Original Campus Building */}
           <div className="gb-d2-canvas-bg" aria-hidden="true">
             <img
-              src="/images/section-10-growing-bg.jpg"
-              alt=""
+              src="/images/hero-campus-building-bg.jpg"
+              alt="GenBright Campus Building"
               className="gb-d2-canvas-bg__tex"
             />
             <div className="gb-d2-canvas-bg__tint" />
