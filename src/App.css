@@ -290,9 +290,9 @@ img {
   align-items: center;
   justify-content: center;
   gap: 0.65rem;
-  background: #829b70;
-  color: #ffffff;
-  border: 1.5px solid #829b70;
+  background: #FFC548;
+  color: #132c20;
+  border: 1.5px solid #FFC548;
   padding: 0 0.35rem 0 1rem;
   height: 38px;
   border-radius: 9999px;
@@ -301,7 +301,7 @@ img {
   line-height: 1;
   text-align: center;
   cursor: pointer;
-  box-shadow: 0 4px 14px rgba(130, 155, 112, 0.28);
+  box-shadow: 0 4px 14px rgba(255, 197, 72, 0.28);
   transition: all 0.24s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
@@ -315,7 +315,7 @@ img {
   flex-shrink: 0;
   border-radius: 50%;
   background: #ffffff;
-  color: #829b70;
+  color: #132c20;
   font-size: 1rem;
   font-weight: 700;
   line-height: 1;
@@ -323,16 +323,17 @@ img {
 }
 
 .gb-apply-btn:hover {
-  background: #718a60;
-  border-color: #718a60;
-  box-shadow: 0 6px 18px rgba(113, 138, 96, 0.36);
+  background: #ffffff;
+  border-color: #ffffff;
+  color: #132c20;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
   transform: translateY(-1px);
 }
 
 .gb-apply-btn:hover::after {
   transform: translate(2px, -2px);
-  background: #ffffff;
-  color: #718a60;
+  background: #FFC548;
+  color: #132c20;
 }
 
 .gb-mobile-toggle {
@@ -454,8 +455,8 @@ img {
 }
 
 .gb-scene--alabaster {
-  background-color: rgba(231, 232, 226, 0.6);
-  color: #132c20;
+  background-color: #003469 !important;
+  color: #ffffff;
 }
 
 .gb-scene--white {
@@ -472,7 +473,7 @@ img {
 }
 
 #scene-13.gb-scene {
-  background-color: #eeece0 !important;
+  background-color: #003469 !important;
 }
 
 #scene-02.gb-scene {
@@ -629,6 +630,7 @@ img {
   gap: 1.25rem;
   margin: 1.75rem auto 0;
 }
+
 
 /* Single parent div container wrapping all four images with sticky scroll interaction */
 .gb-learner-sticky-block {
@@ -791,18 +793,14 @@ img {
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(
-      180deg,
+    linear-gradient(180deg,
       rgba(0, 0, 0, 0.52) 0%,
       rgba(10, 32, 20, 0.38) 28%,
       rgba(14, 44, 28, 0.36) 65%,
-      rgba(0, 0, 0, 0.62) 100%
-    ),
-    radial-gradient(
-      ellipse at 50% 45%,
+      rgba(0, 0, 0, 0.62) 100%),
+    radial-gradient(ellipse at 50% 45%,
       rgba(19, 48, 32, 0.35) 0%,
-      rgba(0, 0, 0, 0.48) 100%
-    );
+      rgba(0, 0, 0, 0.48) 100%);
   z-index: 2;
   pointer-events: none;
 }
@@ -883,14 +881,14 @@ img {
   gap: 1.25rem;
 }
 
-/* Use the sage-green reference color for primary homepage CTAs. */
+/* Primary homepage CTAs: Golden Yellow #FFC548 with dark text and white circular arrow badge */
 .gb-hero-overlay__ctas .gb-btn--primary-gold,
 .gb-hero-first-btn,
 .gb-scene:not(.gb-scene--hero-fullvideo) .gb-cta-group>.gb-btn:first-child {
-  background: #829b70 !important;
-  color: #ffffff !important;
-  border: 2px solid #829b70 !important;
-  box-shadow: 0 6px 20px rgba(130, 155, 112, 0.28) !important;
+  background: #FFC548 !important;
+  color: #132c20 !important;
+  border: 2px solid #FFC548 !important;
+  box-shadow: 0 6px 20px rgba(255, 197, 72, 0.28) !important;
   border-radius: 9999px !important;
   height: 54px !important;
   padding: 0 8px 0 1.65rem !important;
@@ -910,7 +908,7 @@ img {
 .gb-scene:not(.gb-scene--hero-fullvideo) .gb-cta-group>.gb-btn:first-child::after {
   content: '' !important;
   background-color: #ffffff !important;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23829b70' stroke-width='2.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cline x1='7' y1='17' x2='17' y2='7'/%3E%3Cpolyline points='7 7 17 7 17 17'/%3E%3C/svg%3E") !important;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23132c20' stroke-width='2.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cline x1='7' y1='17' x2='17' y2='7'/%3E%3Cpolyline points='7 7 17 7 17 17'/%3E%3C/svg%3E") !important;
   background-repeat: no-repeat !important;
   background-position: center !important;
   background-size: 16px 16px !important;
@@ -922,46 +920,33 @@ img {
   transition: transform 0.24s cubic-bezier(0.22, 1, 0.36, 1), background-color 0.2s ease !important;
 }
 
-/* Hero Discover Our Story: remove background on cursor hover */
+/* Hero Discover Our Story & homepage primary CTAs hover */
 .gb-hero-overlay__ctas .gb-btn--primary-gold:hover,
-.gb-hero-first-btn:hover {
-  background: transparent !important;
-  border-color: #829b70 !important;
-  color: #ffffff !important;
-  backdrop-filter: blur(12px) !important;
-  -webkit-backdrop-filter: blur(12px) !important;
+.gb-hero-first-btn:hover,
+.gb-scene:not(.gb-scene--hero-fullvideo) .gb-cta-group>.gb-btn:first-child:hover {
+  background: #ffffff !important;
+  border: 2px solid #FFC548 !important;
+  border-color: #FFC548 !important;
+  color: #132c20 !important;
   transform: translateY(-2px) !important;
-  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.24) !important;
+  box-shadow: 0 10px 24px rgba(255, 197, 72, 0.22) !important;
 }
 
 .gb-hero-overlay__ctas .gb-btn--primary-gold:hover::after,
-.gb-hero-first-btn:hover::after {
-  transform: translate(2px, -2px) !important;
-  background-color: #ffffff !important;
-}
-
-/* Primary buttons in other scenes on hover */
-.gb-scene:not(.gb-scene--hero-fullvideo) .gb-cta-group>.gb-btn:first-child:hover {
-  background: #718a60 !important;
-  border-color: #718a60 !important;
-  color: #ffffff !important;
-  transform: translateY(-2px) !important;
-  box-shadow: 0 10px 24px rgba(113, 138, 96, 0.36) !important;
-}
-
+.gb-hero-first-btn:hover::after,
 .gb-scene:not(.gb-scene--hero-fullvideo) .gb-cta-group>.gb-btn:first-child:hover::after {
   transform: translate(2px, -2px) !important;
-  background-color: #ffffff !important;
+  background-color: #FFC548 !important;
 }
 
 /* Keep the primary CTA readable and visibly focused during keyboard navigation */
 .gb-hero-overlay__ctas .gb-btn--primary-gold:active,
 .gb-hero-first-btn:active {
   background: rgba(255, 255, 255, 0.12) !important;
-  border: 2px solid #829b70 !important;
+  border: 2px solid #FFC548 !important;
   color: #ffffff !important;
   outline: none !important;
-  box-shadow: 0 0 0 3px rgba(130, 155, 112, 0.4), 0 8px 24px rgba(0, 0, 0, 0.22) !important;
+  box-shadow: 0 0 0 3px rgba(255, 197, 72, 0.4), 0 8px 24px rgba(0, 0, 0, 0.22) !important;
 }
 
 .gb-scene:not(.gb-scene--hero-fullvideo) .gb-cta-group>.gb-btn:first-child:active,
@@ -971,11 +956,11 @@ img {
 .gb-hero-overlay__ctas .gb-btn--primary-gold:focus-visible,
 .gb-hero-first-btn:focus-visible,
 .gb-scene:not(.gb-scene--hero-fullvideo) .gb-cta-group>.gb-btn:first-child:focus-visible {
-  background: #829b70 !important;
-  border: 2px solid #829b70 !important;
-  color: #ffffff !important;
+  background: #FFC548 !important;
+  border: 2px solid #FFC548 !important;
+  color: #132c20 !important;
   outline: none !important;
-  box-shadow: 0 0 0 3px rgba(130, 155, 112, 0.4), 0 8px 24px rgba(0, 0, 0, 0.22) !important;
+  box-shadow: 0 0 0 3px rgba(255, 197, 72, 0.4), 0 8px 24px rgba(255, 197, 72, 0.22) !important;
 }
 
 /* Frosted glass treatment for hero secondary CTA matching img2 */
@@ -983,7 +968,7 @@ img {
 .gb-hero-second-btn {
   background: rgba(255, 255, 255, 0.16) !important;
   color: #ffffff !important;
-  border: 2px solid #829b70 !important;
+  border: 2px solid #FFC548 !important;
   backdrop-filter: blur(14px) saturate(140%) !important;
   -webkit-backdrop-filter: blur(14px) saturate(140%) !important;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.16), inset 0 1px 1px rgba(255, 255, 255, 0.25) !important;
@@ -1004,8 +989,8 @@ img {
 .gb-hero-overlay__ctas .gb-btn--outline-light::after,
 .gb-hero-second-btn::after {
   content: '' !important;
-  background-color: #829b70 !important;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='2.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cline x1='7' y1='17' x2='17' y2='7'/%3E%3Cpolyline points='7 7 17 7 17 17'/%3E%3C/svg%3E") !important;
+  background-color: #FFC548 !important;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23132c20' stroke-width='2.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cline x1='7' y1='17' x2='17' y2='7'/%3E%3Cpolyline points='7 7 17 7 17 17'/%3E%3C/svg%3E") !important;
   background-repeat: no-repeat !important;
   background-position: center !important;
   background-size: 16px 16px !important;
@@ -1019,8 +1004,8 @@ img {
 
 .gb-hero-overlay__ctas .gb-btn--outline-light:hover,
 .gb-hero-second-btn:hover {
-  background: rgba(130, 155, 112, 0.36) !important;
-  border-color: #829b70 !important;
+  background: rgba(255, 197, 72, 0.2) !important;
+  border-color: #FFC548 !important;
   color: #ffffff !important;
   transform: translateY(-2px) !important;
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.26) !important;
@@ -1029,7 +1014,7 @@ img {
 .gb-hero-overlay__ctas .gb-btn--outline-light:hover::after,
 .gb-hero-second-btn:hover::after {
   transform: translate(2px, -2px) !important;
-  background-color: #829b70 !important;
+  background-color: #FFC548 !important;
 }
 
 .gb-hero-overlay__ctas .gb-btn--outline-light:active,
@@ -1039,18 +1024,18 @@ img {
 .gb-hero-overlay__ctas .gb-btn--outline-light:focus-visible,
 .gb-hero-second-btn:focus-visible {
   background: rgba(255, 255, 255, 0.24) !important;
-  border: 2px solid #829b70 !important;
+  border: 2px solid #FFC548 !important;
   color: #ffffff !important;
   outline: none !important;
-  box-shadow: 0 0 0 3px rgba(130, 155, 112, 0.4), 0 8px 24px rgba(0, 0, 0, 0.2) !important;
+  box-shadow: 0 0 0 3px rgba(255, 197, 72, 0.4), 0 8px 24px rgba(0, 0, 0, 0.2) !important;
 }
 
 /* Matching treatment for secondary CTAs in other sections */
 .gb-scene:not(.gb-scene--hero-fullvideo) .gb-cta-group>.gb-btn:nth-child(2) {
   background: #ffffff !important;
-  color: #718a60 !important;
-  border: 1.5px solid #829b70 !important;
-  box-shadow: 0 4px 14px rgba(130, 155, 112, 0.12) !important;
+  color: #132c20 !important;
+  border: 1.5px solid #FFC548 !important;
+  box-shadow: 0 4px 14px rgba(255, 197, 72, 0.16) !important;
   border-radius: 9999px !important;
   height: 54px !important;
   padding: 0 8px 0 1.65rem !important;
@@ -1067,8 +1052,8 @@ img {
 
 .gb-scene:not(.gb-scene--hero-fullvideo) .gb-cta-group>.gb-btn:nth-child(2)::after {
   content: '' !important;
-  background-color: #829b70 !important;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='2.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cline x1='7' y1='17' x2='17' y2='7'/%3E%3Cpolyline points='7 7 17 7 17 17'/%3E%3C/svg%3E") !important;
+  background-color: #FFC548 !important;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23132c20' stroke-width='2.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cline x1='7' y1='17' x2='17' y2='7'/%3E%3Cpolyline points='7 7 17 7 17 17'/%3E%3C/svg%3E") !important;
   background-repeat: no-repeat !important;
   background-position: center !important;
   background-size: 16px 16px !important;
@@ -1081,27 +1066,30 @@ img {
 }
 
 .gb-scene:not(.gb-scene--hero-fullvideo) .gb-cta-group>.gb-btn:nth-child(2):hover {
-  background: #718a60 !important;
-  border-color: #718a60 !important;
-  color: #ffffff !important;
+  background: #fff8e8 !important;
+  background: #FFC548 !important;
+  border-color: #FFC548 !important;
+  color: #132c20 !important;
   transform: translateY(-2px) !important;
-  box-shadow: 0 10px 24px rgba(113, 138, 96, 0.32) !important;
+  box-shadow: 0 10px 24px rgba(255, 197, 72, 0.24) !important;
+  box-shadow: 0 10px 24px rgba(255, 197, 72, 0.32) !important;
 }
 
 .gb-scene:not(.gb-scene--hero-fullvideo) .gb-cta-group>.gb-btn:nth-child(2):hover::after {
   transform: translate(2px, -2px) !important;
+  background-color: #FFC548 !important;
   background-color: #ffffff !important;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23718a60' stroke-width='2.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cline x1='7' y1='17' x2='17' y2='7'/%3E%3Cpolyline points='7 7 17 7 17 17'/%3E%3C/svg%3E") !important;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23132c20' stroke-width='2.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cline x1='7' y1='17' x2='17' y2='7'/%3E%3Cpolyline points='7 7 17 7 17 17'/%3E%3C/svg%3E") !important;
 }
 
 .gb-scene:not(.gb-scene--hero-fullvideo) .gb-cta-group>.gb-btn:nth-child(2):active,
 .gb-scene:not(.gb-scene--hero-fullvideo) .gb-cta-group>.gb-btn:nth-child(2):focus,
 .gb-scene:not(.gb-scene--hero-fullvideo) .gb-cta-group>.gb-btn:nth-child(2):focus-visible {
   background: #ffffff !important;
-  border: 1.5px solid #829b70 !important;
-  color: #718a60 !important;
+  border: 1.5px solid #FFC548 !important;
+  color: #132c20 !important;
   outline: none !important;
-  box-shadow: 0 0 0 3px rgba(130, 155, 112, 0.4), 0 8px 24px rgba(0, 0, 0, 0.18) !important;
+  box-shadow: 0 0 0 3px rgba(255, 197, 72, 0.4), 0 8px 24px rgba(0, 0, 0, 0.18) !important;
 }
 
 /* Section 04 Primary Vibrant Green Button */
@@ -1219,7 +1207,7 @@ img {
 
 .gb-ref-title__grey {
   display: block;
-  color: #7f9b68;
+  color: #ffc548;
 }
 
 .gb-lead-copy {
@@ -1768,7 +1756,7 @@ img {
 
 .gb-scene04-title__green,
 .gb-scene04-title__grey {
-  color: #7f9b68 !important;
+  color: #ffc548 !important;
   display: block !important;
   font-weight: 700 !important;
   line-height: 1.08 !important;
@@ -2107,7 +2095,7 @@ img {
 }
 
 .gb-glass-pillar-card {
-  border: 1.5px solid #adc09f !important;
+  border: 2px solid #003469 !important;
   border-radius: 18px !important;
   padding: clamp(1.3rem, 1.65vw, 1.65rem) clamp(1.15rem, 1.4vw, 1.4rem);
   box-shadow: none !important;
@@ -2121,78 +2109,70 @@ img {
 /* Card 1: Solid White background */
 .gb-glass-pillar-card--white {
   background: #ffffff !important;
-  border: 1.5px solid #adc09f !important;
+  border: 2px solid #003469 !important;
   box-shadow: none !important;
 }
 
 /* Card 2: Solid Alabaster swatch background #edede6 */
 .gb-glass-pillar-card--alabaster {
   background: #edede6 !important;
-  border: 1.5px solid #adc09f !important;
+  border: 2px solid #003469 !important;
   box-shadow: none !important;
 }
 
 /* Cards 3 & 4 (ONLY the last 2 cards): GLASSMORPHIC */
 .gb-glass-pillar-card--over-image,
 .gb-glass-pillar-card--glass {
-  border: 1.5px solid rgba(255, 255, 255, 0.8) !important;
+  border: 2px solid #003469 !important;
   box-shadow: 0 14px 34px rgba(19, 44, 32, 0.1), inset 0 1px 1px rgba(255, 255, 255, 0.9) !important;
 }
 
 /* Card 3 (MOVE): Glassmorphic White */
 .gb-glass-pillar-card--glass-white {
-  background: linear-gradient(
-    145deg,
-    rgba(255, 255, 255, 0.58) 0%,
-    rgba(255, 255, 255, 0.38) 100%
-  ) !important;
+  background: linear-gradient(145deg,
+      rgba(255, 255, 255, 0.58) 0%,
+      rgba(255, 255, 255, 0.38) 100%) !important;
   backdrop-filter: blur(18px) saturate(180%) !important;
   -webkit-backdrop-filter: blur(18px) saturate(180%) !important;
-  border: 1.5px solid rgba(255, 255, 255, 0.8) !important;
+  border: 2px solid #003469 !important;
   box-shadow: 0 14px 34px rgba(19, 44, 32, 0.1), inset 0 1px 1px rgba(255, 255, 255, 0.9) !important;
 }
 
 /* Card 4 (PAUSE): Glassmorphic Alabaster */
 .gb-glass-pillar-card--glass-alabaster {
-  background: linear-gradient(
-    145deg,
-    rgba(240, 242, 235, 0.62) 0%,
-    rgba(235, 238, 230, 0.40) 100%
-  ) !important;
+  background: linear-gradient(145deg,
+      rgba(240, 242, 235, 0.62) 0%,
+      rgba(235, 238, 230, 0.40) 100%) !important;
   backdrop-filter: blur(18px) saturate(180%) !important;
   -webkit-backdrop-filter: blur(18px) saturate(180%) !important;
-  border: 1.5px solid rgba(255, 255, 255, 0.8) !important;
+  border: 2px solid #003469 !important;
   box-shadow: 0 14px 34px rgba(19, 44, 32, 0.1), inset 0 1px 1px rgba(255, 255, 255, 0.9) !important;
 }
 
 .gb-glass-pillar-card:hover {
   transform: translateY(-8px);
-  border-color: #7f9b68 !important;
+  border-color: #003469 !important;
   box-shadow: none !important;
 }
 
 .gb-glass-pillar-card--glass-white:hover {
-  background: linear-gradient(
-    145deg,
-    rgba(255, 255, 255, 0.75) 0%,
-    rgba(255, 255, 255, 0.55) 100%
-  ) !important;
+  background: linear-gradient(145deg,
+      rgba(255, 255, 255, 0.75) 0%,
+      rgba(255, 255, 255, 0.55) 100%) !important;
   backdrop-filter: blur(24px) saturate(190%) !important;
   -webkit-backdrop-filter: blur(24px) saturate(190%) !important;
-  border-color: #7f9b68 !important;
+  border-color: #003469 !important;
   transform: translateY(-8px) !important;
   box-shadow: 0 18px 40px rgba(19, 44, 32, 0.15), inset 0 1px 1px #ffffff !important;
 }
 
 .gb-glass-pillar-card--glass-alabaster:hover {
-  background: linear-gradient(
-    145deg,
-    rgba(240, 242, 235, 0.78) 0%,
-    rgba(235, 238, 230, 0.58) 100%
-  ) !important;
+  background: linear-gradient(145deg,
+      rgba(240, 242, 235, 0.78) 0%,
+      rgba(235, 238, 230, 0.58) 100%) !important;
   backdrop-filter: blur(24px) saturate(190%) !important;
   -webkit-backdrop-filter: blur(24px) saturate(190%) !important;
-  border-color: #7f9b68 !important;
+  border-color: #003469 !important;
   transform: translateY(-8px) !important;
   box-shadow: 0 18px 40px rgba(19, 44, 32, 0.15), inset 0 1px 1px #ffffff !important;
 }
@@ -2476,7 +2456,7 @@ img {
 }
 
 .gb-scene05-dark-split__title-silver {
-  color: #F5A93F !important;
+  color: #ffc548 !important;
   font-weight: 700 !important;
 }
 
@@ -2500,16 +2480,19 @@ img {
 /* Scene 05 Primary Button ("Explore Academics"): Solid White with dark text & dark arrow badge */
 #scene-05 .gb-scene05-dark-split__ctas .gb-btn:first-child,
 .gb-scene05-dark-split__ctas .gb-btn:first-child {
-  background: #ffffff !important;
+  background: #FFC548 !important;
   color: #132c20 !important;
-  border: 2px solid #ffffff !important;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12) !important;
+  border: 2px solid #FFC548 !important;
+  box-shadow: 0 6px 20px rgba(255, 197, 72, 0.28) !important;
 }
 
 #scene-05 .gb-scene05-dark-split__ctas .gb-btn:first-child::after,
 .gb-scene05-dark-split__ctas .gb-btn:first-child::after {
-  background-color: #132c20 !important;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='2.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cline x1='7' y1='17' x2='17' y2='7'/%3E%3Cpolyline points='7 7 17 7 17 17'/%3E%3C/svg%3E") !important;
+  background-color: #ffffff !important;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23132c20' stroke-width='2.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cline x1='7' y1='17' x2='17' y2='7'/%3E%3Cpolyline points='7 7 17 7 17 17'/%3E%3C/svg%3E") !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  background-size: 16px 16px !important;
 }
 
 #scene-05 .gb-scene05-dark-split__ctas .gb-btn:first-child:hover,
@@ -2518,10 +2501,11 @@ img {
 .gb-scene05-dark-split__ctas .gb-btn:first-child:hover,
 .gb-scene05-dark-split__ctas .gb-btn:first-child:active,
 .gb-scene05-dark-split__ctas .gb-btn:first-child:focus {
-  background: rgba(255, 255, 255, 0.92) !important;
+  background: #ffffff !important;
   border-color: #ffffff !important;
   color: #132c20 !important;
   transform: translateY(-2px) !important;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.16) !important;
 }
 
 #scene-05 .gb-scene05-dark-split__ctas .gb-btn:first-child:hover::after,
@@ -2530,8 +2514,11 @@ img {
 .gb-scene05-dark-split__ctas .gb-btn:first-child:hover::after,
 .gb-scene05-dark-split__ctas .gb-btn:first-child:active::after,
 .gb-scene05-dark-split__ctas .gb-btn:first-child:focus::after {
-  background-color: #132c20 !important;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='2.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cline x1='7' y1='17' x2='17' y2='7'/%3E%3Cpolyline points='7 7 17 7 17 17'/%3E%3C/svg%3E") !important;
+  background-color: #FFC548 !important;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23132c20' stroke-width='2.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cline x1='7' y1='17' x2='17' y2='7'/%3E%3Cpolyline points='7 7 17 7 17 17'/%3E%3C/svg%3E") !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  background-size: 16px 16px !important;
 }
 
 /* Scene 05 Secondary Button ("Find Your Child's Programme"): default transparent on sage green, white on click/hover */
@@ -3366,13 +3353,11 @@ img {
   z-index: 1;
   content: '';
   inset: 0;
-  background: linear-gradient(
-    180deg,
-    transparent 0%,
-    transparent 45%,
-    rgba(0, 0, 0, 0.35) 70%,
-    rgba(0, 0, 0, 0.85) 100%
-  );
+  background: linear-gradient(180deg,
+      transparent 0%,
+      transparent 45%,
+      rgba(0, 0, 0, 0.35) 70%,
+      rgba(0, 0, 0, 0.85) 100%);
   pointer-events: none;
 }
 
@@ -3960,6 +3945,7 @@ img {
 
 .gb-ref-footer__social-link:hover {
   color: #829b70;
+  color: #FFC548;
   transform: translateY(-2px);
 }
 
@@ -3967,20 +3953,20 @@ img {
   padding: 0 8px 0 1.35rem !important;
   font-size: 0.86rem !important;
   height: 44px !important;
-  background: #829b70 !important;
-  border-color: #829b70 !important;
-  color: #ffffff !important;
+  background: #FFC548 !important;
+  border-color: #FFC548 !important;
+  color: #132c20 !important;
 }
 
 .gb-ref-footer__cta-btn::after {
   background-color: #ffffff !important;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23617b4e' stroke-width='2.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cline x1='7' y1='17' x2='17' y2='7'/%3E%3Cpolyline points='7 7 17 7 17 17'/%3E%3C/svg%3E") !important;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23132c20' stroke-width='2.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cline x1='7' y1='17' x2='17' y2='7'/%3E%3Cpolyline points='7 7 17 7 17 17'/%3E%3C/svg%3E") !important;
 }
 
 .gb-ref-footer__cta-btn:hover {
-  background: #718a60 !important;
-  border-color: #718a60 !important;
-  color: #ffffff !important;
+  background: #E8B83F !important;
+  border-color: #E8B83F !important;
+  color: #132c20 !important;
 }
 
 /* 4-COLUMN GRID LAYOUT */
@@ -4004,7 +3990,7 @@ img {
   font-weight: 700 !important;
   letter-spacing: 0.12em !important;
   text-transform: uppercase !important;
-  color: #829b70 !important;
+  color: #ffc548 !important;
   margin: 0 0 1.25rem !important;
 }
 
@@ -4027,6 +4013,7 @@ img {
 
 .gb-ref-footer__dot {
   color: #829b70;
+  color: #FFC548;
   font-size: 0.95rem;
   line-height: 1.35;
   flex-shrink: 0;
@@ -4047,6 +4034,7 @@ img {
 
 .gb-ref-footer__list button:hover {
   color: #829b70;
+  color: #FFC548;
   transform: translateX(2px);
 }
 
@@ -4090,6 +4078,7 @@ img {
 
 .gb-ref-footer__visit-link:hover {
   color: #829b70;
+  color: #FFC548;
   text-decoration: underline;
 }
 
@@ -4100,6 +4089,8 @@ img {
   background: transparent;
   border: 1.5px solid #829b70;
   color: #829b70;
+  border: 1.5px solid #FFC548;
+  color: #FFC548;
   padding: 0.45rem 1rem;
   border-radius: 9999px;
   font-family: var(--font-sans);
@@ -4112,12 +4103,16 @@ img {
 .gb-ref-footer__directions-action:hover {
   background: #829b70;
   color: #000000;
+  background: #FFC548;
+  color: #132c20;
   transform: translateY(-2px);
   box-shadow: 0 4px 14px rgba(130, 155, 112, 0.35);
+  box-shadow: 0 4px 14px rgba(255, 197, 72, 0.35);
 }
 
 .gb-ref-footer__directions-action:hover .gb-ref-footer__link-arrow {
   color: #000000;
+  color: #132c20;
   transform: translate(2px, -2px);
 }
 
@@ -5676,7 +5671,7 @@ img {
   font-size: 0.82rem;
   font-weight: 800;
   letter-spacing: 0.18em;
-  color: #7f9b68;
+  color: #ffc548;
 }
 
 .gb-scene07-clean-heading {
@@ -6122,7 +6117,7 @@ img {
 }
 
 .gb-scene10-title--gold {
-  color: #829b70 !important;
+  color: #ffc548 !important;
 }
 
 .gb-scene10-banner__copy {
@@ -6340,11 +6335,9 @@ img {
   transform: translate(-50%, -50%);
   z-index: 5;
   width: clamp(520px, 52vw, 620px);
-  background: linear-gradient(
-    135deg,
-    rgba(255, 255, 255, 0.78) 0%,
-    rgba(255, 255, 255, 0.62) 100%
-  ) !important;
+  background: linear-gradient(135deg,
+      rgba(255, 255, 255, 0.78) 0%,
+      rgba(255, 255, 255, 0.62) 100%) !important;
   backdrop-filter: blur(16px) saturate(160%) !important;
   -webkit-backdrop-filter: blur(16px) saturate(160%) !important;
   border: 1.5px solid rgba(255, 255, 255, 0.85) !important;
@@ -6390,7 +6383,7 @@ img {
 
 .gb-scene11-center-card__title .gb-ref-title__grey {
   display: block !important;
-  color: #7f9b68 !important;
+  color: #ffc548 !important;
 }
 
 .gb-scene11-center-card__kicker {
@@ -6562,7 +6555,7 @@ img {
 }
 
 .gb-scene12-center-card__title span {
-  color: #7f9b68 !important;
+  color: #ffc548 !important;
   font-weight: 400 !important;
 }
 
@@ -6701,10 +6694,10 @@ img {
   position: absolute;
   inset: 0;
   background: linear-gradient(180deg,
-    rgba(10, 30, 18, 0.74) 0%,
-    rgba(12, 38, 22, 0.52) 42%,
-    rgba(12, 38, 22, 0.50) 75%,
-    rgba(10, 30, 18, 0.74) 100%);
+      rgba(10, 30, 18, 0.74) 0%,
+      rgba(12, 38, 22, 0.52) 42%,
+      rgba(12, 38, 22, 0.50) 75%,
+      rgba(10, 30, 18, 0.74) 100%);
 }
 
 .gb-scene14-banner__content {
@@ -6739,7 +6732,7 @@ img {
 }
 
 .gb-scene14-banner__title span {
-  color: #d8e6d0;
+  color: #ffc548;
   font-weight: 400;
 }
 
@@ -6950,7 +6943,7 @@ img {
 }
 
 .gb-scene15-stage__title .gb-scene15-line2 {
-  color: #7f9b68 !important;
+  color: #ffc548 !important;
   display: block !important;
 }
 
@@ -7157,7 +7150,7 @@ img {
   text-transform: uppercase !important;
 }
 
-/* Secondary title line on light surfaces (botanical green accent) */
+/* Secondary title line on light surfaces: yellow #ffc548 accent */
 .gb-ref-title__grey,
 .gb-scene04-title__green,
 .gb-scene04-title__grey,
@@ -7168,38 +7161,38 @@ img {
 .gb-scene14-banner__title span,
 .gb-scene15-stage__title .gb-scene15-line2 {
   display: block !important;
-  color: #7f9b68 !important;
+  color: #ffc548 !important;
   font-weight: 700 !important;
   text-transform: uppercase !important;
 }
 
-/* Secondary title line on Scene 05 ("ACADEMICALLY PREPARED?" in logo N letter amber #F5A93F) */
+/* Secondary title line on Scene 05 ("ACADEMICALLY PREPARED?" in yellow #ffc548) */
 .gb-scene05-dark-split__title-silver {
   display: block !important;
-  color: #F5A93F !important;
+  color: #ffc548 !important;
   font-weight: 700 !important;
   text-transform: uppercase !important;
 }
 
-/* Scene 10 secondary line "growing at GenBright." in sage green #829b70 matching user reference */
+/* Scene 10 secondary line "growing at GenBright." in yellow #ffc548 */
 .gb-scene10-title--gold {
   display: block !important;
-  color: #829b70 !important;
+  color: #ffc548 !important;
   font-weight: 700 !important;
   text-transform: uppercase !important;
 }
 
-/* Secondary title line using the GenBright logo 'N' letter warm golden amber */
+/* Secondary title line using the yellow #ffc548 */
 .gb-hero-overlay__title-gold {
   display: block !important;
-  color: #F5A93F !important;
+  color: #ffc548 !important;
   font-weight: 700 !important;
   text-transform: uppercase !important;
 }
 
 .gb-scene12-ref__title-gold {
   display: block !important;
-  color: #7f9b68 !important;
+  color: #ffc548 !important;
   font-weight: 700 !important;
   text-transform: uppercase !important;
 }
@@ -7238,7 +7231,7 @@ img {
 }
 
 .gb-scene06-title__grey {
-  color: #7f9b68 !important;
+  color: #ffc548 !important;
 }
 
 .gb-scene06-copy {
@@ -7426,7 +7419,7 @@ img {
 
 .gb-scene09-headline__gold {
   display: inline !important;
-  color: #7f9b68 !important;
+  color: #ffc548 !important;
   font-weight: 700 !important;
   text-transform: uppercase !important;
 }
@@ -7536,11 +7529,9 @@ img {
   top: 50%;
   transform: translateY(-50%);
   width: clamp(500px, 48vw, 610px);
-  background: linear-gradient(
-    135deg,
-    rgba(84, 118, 70, 0.90) 0%,
-    rgba(65, 96, 52, 0.86) 100%
-  ) !important;
+  background: linear-gradient(135deg,
+      rgba(84, 118, 70, 0.90) 0%,
+      rgba(65, 96, 52, 0.86) 100%) !important;
   backdrop-filter: blur(8px) saturate(125%) !important;
   -webkit-backdrop-filter: blur(8px) saturate(125%) !important;
   border: 1.5px solid rgba(255, 255, 255, 0.32) !important;
@@ -7575,7 +7566,7 @@ img {
 
 .gb-scene12-ref__title-gold {
   display: block !important;
-  color: #F5A93F !important;
+  color: #ffc548 !important;
   text-shadow: 0 2px 6px rgba(0, 0, 0, 0.35) !important;
 }
 
@@ -7608,19 +7599,26 @@ img {
   flex-shrink: 0 !important;
 }
 
-/* Scene 12 Primary Button ("Partner with GenBright"): Solid White with dark forest text & dark arrow badge */
+/* Scene 12 Primary Button ("Partner with GenBright"): Golden Yellow #FFC548 pill with white circular arrow badge */
 #scene-12 .gb-scene12-ref__ctas .gb-btn:first-child,
 .gb-scene12-ref__card .gb-scene12-ref__ctas .gb-btn:first-child {
-  background: #ffffff !important;
+  background: #FFC548 !important;
   color: #132c20 !important;
-  border: 2px solid #ffffff !important;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.16) !important;
+  border: 2px solid #FFC548 !important;
+  box-shadow: 0 6px 20px rgba(255, 197, 72, 0.28) !important;
 }
 
 #scene-12 .gb-scene12-ref__ctas .gb-btn:first-child::after,
 .gb-scene12-ref__card .gb-scene12-ref__ctas .gb-btn:first-child::after {
-  background-color: #132c20 !important;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='2.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cline x1='7' y1='17' x2='17' y2='7'/%3E%3Cpolyline points='7 7 17 7 17 17'/%3E%3C/svg%3E") !important;
+  content: '' !important;
+  width: 42px !important;
+  height: 42px !important;
+  border-radius: 50% !important;
+  background-color: #ffffff !important;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23132c20' stroke-width='2.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cline x1='7' y1='17' x2='17' y2='7'/%3E%3Cpolyline points='7 7 17 7 17 17'/%3E%3C/svg%3E") !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  background-size: 16px 16px !important;
 }
 
 #scene-12 .gb-scene12-ref__ctas .gb-btn:first-child:hover,
@@ -7629,10 +7627,11 @@ img {
 .gb-scene12-ref__card .gb-scene12-ref__ctas .gb-btn:first-child:hover,
 .gb-scene12-ref__card .gb-scene12-ref__ctas .gb-btn:first-child:active,
 .gb-scene12-ref__card .gb-scene12-ref__ctas .gb-btn:first-child:focus {
-  background: rgba(255, 255, 255, 0.92) !important;
+  background: #ffffff !important;
   border-color: #ffffff !important;
   color: #132c20 !important;
   transform: translateY(-1px) !important;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.16) !important;
 }
 
 #scene-12 .gb-scene12-ref__ctas .gb-btn:first-child:hover::after,
@@ -7641,8 +7640,16 @@ img {
 .gb-scene12-ref__card .gb-scene12-ref__ctas .gb-btn:first-child:hover::after,
 .gb-scene12-ref__card .gb-scene12-ref__ctas .gb-btn:first-child:active::after,
 .gb-scene12-ref__card .gb-scene12-ref__ctas .gb-btn:first-child:focus::after {
-  background-color: #132c20 !important;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='2.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cline x1='7' y1='17' x2='17' y2='7'/%3E%3Cpolyline points='7 7 17 7 17 17'/%3E%3C/svg%3E") !important;
+  content: '' !important;
+  width: 42px !important;
+  height: 42px !important;
+  border-radius: 50% !important;
+  background-color: #FFC548 !important;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23132c20' stroke-width='2.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cline x1='7' y1='17' x2='17' y2='7'/%3E%3Cpolyline points='7 7 17 7 17 17'/%3E%3C/svg%3E") !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  background-size: 16px 16px !important;
+  transform: translate(2px, -2px) !important;
 }
 
 /* Scene 12 Secondary Button ("Volunteer or Mentor"): Transparent with white outline, white text, and white arrow badge */
@@ -8087,7 +8094,7 @@ img {
    ========================================================================== */
 .gb-scene13-layout {
   display: grid;
-  grid-template-columns: minmax(360px, 0.95fr) minmax(520px, 1.35fr);
+  grid-template-columns: minmax(480px, 1.05fr) minmax(460px, 1.15fr);
   gap: clamp(1.75rem, 3.2vw, 3.25rem);
   align-items: center;
   max-width: 1320px;
@@ -8126,10 +8133,11 @@ img {
 }
 
 .gb-scene13-ctas {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.85rem 1rem;
-  align-items: center;
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: nowrap !important;
+  gap: 1rem !important;
+  align-items: center !important;
 }
 
 .gb-scene13-ctas .gb-btn {
@@ -8619,15 +8627,18 @@ img {
 
 .gb-scene05-dark-split__ctas .gb-btn,
 #scene-05 .gb-scene05-dark-split__ctas .gb-btn {
-  background: #ffc548 !important;
-  border-color: #ffc548 !important;
-  color: #000000 !important;
+  background: #FFC548 !important;
+  border-color: #FFC548 !important;
+  color: #132c20 !important;
 }
 
 .gb-scene05-dark-split__ctas .gb-btn::after,
 #scene-05 .gb-scene05-dark-split__ctas .gb-btn::after {
-  background-color: #000000 !important;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffc548' stroke-width='2.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cline x1='7' y1='17' x2='17' y2='7'/%3E%3Cpolyline points='7 7 17 7 17 17'/%3E%3C/svg%3E") !important;
+  background-color: #ffffff !important;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23132c20' stroke-width='2.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cline x1='7' y1='17' x2='17' y2='7'/%3E%3Cpolyline points='7 7 17 7 17 17'/%3E%3C/svg%3E") !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  background-size: 16px 16px !important;
 }
 
 .gb-scene05-dark-split__ctas .gb-btn:hover,
@@ -8636,7 +8647,557 @@ img {
 #scene-05 .gb-scene05-dark-split__ctas .gb-btn:hover,
 #scene-05 .gb-scene05-dark-split__ctas .gb-btn:active,
 #scene-05 .gb-scene05-dark-split__ctas .gb-btn:focus-visible {
-  background: #ffc548 !important;
-  border-color: #ffc548 !important;
-  color: #000000 !important;
+  background: #E8B83F !important;
+  border-color: #E8B83F !important;
+  color: #132c20 !important;
 }
+
+/* ==========================================================================
+   INDEX PAGE: YELLOW BUTTONS (#FFC548) ON EVERY SECTION (SCENES 01 TO 15)
+   Only green button surfaces change to #FFC548. Layouts, structure, and original arrow size (16px) preserved.
+   ========================================================================== */
+
+/* Primary buttons across every section */
+#root body .gb-scene .gb-cta-group>.gb-btn:first-child,
+#root body .gb-scene:not(.gb-scene--hero-fullvideo) .gb-cta-group>.gb-btn:first-child,
+.gb-scene .gb-cta-group>.gb-btn:first-child,
+.gb-hero-overlay__ctas .gb-btn--primary-gold,
+.gb-hero-first-btn,
+.gb-btn--primary-forest,
+.gb-btn--primary-gold,
+.gb-ref-footer__cta-btn,
+.gb-apply-btn,
+.gb-chat-widget__action:not(.gb-chat-widget__action--secondary),
+#scene-01 .gb-cta-group>.gb-btn:first-child,
+#scene-02 .gb-cta-group>.gb-btn:first-child,
+#scene-03 .gb-cta-group>.gb-btn:first-child,
+#scene-04 .gb-cta-group>.gb-btn:first-child,
+#scene-05 .gb-cta-group>.gb-btn:first-child,
+#scene-06 .gb-cta-group>.gb-btn:first-child,
+#scene-07 .gb-cta-group>.gb-btn:first-child,
+#scene-08 .gb-cta-group>.gb-btn:first-child,
+#scene-09 .gb-cta-group>.gb-btn:first-child,
+#scene-10 .gb-cta-group>.gb-btn:first-child,
+#scene-11 .gb-cta-group>.gb-btn:first-child,
+#scene-12 .gb-cta-group>.gb-btn:first-child,
+#scene-13 .gb-cta-group>.gb-btn:first-child,
+#scene-14 .gb-cta-group>.gb-btn:first-child,
+#scene-15 .gb-cta-group>.gb-btn:first-child,
+#scene-05 .gb-scene05-dark-split__ctas .gb-btn:first-child,
+#scene-07 .gb-scene07-clean-ctas .gb-btn:first-child,
+#scene-12 .gb-scene12-ref__ctas .gb-btn:first-child,
+.gb-scene12-ref__card .gb-scene12-ref__ctas .gb-btn:first-child {
+  background: #FFC548 !important;
+  border-color: #FFC548 !important;
+  color: #132c20 !important;
+  box-shadow: 0 6px 20px rgba(255, 197, 72, 0.28) !important;
+}
+
+/* Hover / Active / Focus states for yellow buttons (1st button across Scenes 01 to 15) */
+#scene-01 .gb-cta-group > .gb-btn:first-child:hover,
+#scene-01 .gb-cta-group > .gb-btn:first-child:active,
+#scene-01 .gb-cta-group > .gb-btn:first-child:focus,
+#scene-01 .gb-cta-group > .gb-btn:first-child:focus-visible,
+#scene-02 .gb-cta-group > .gb-btn:first-child:hover,
+#scene-02 .gb-cta-group > .gb-btn:first-child:active,
+#scene-02 .gb-cta-group > .gb-btn:first-child:focus,
+#scene-02 .gb-cta-group > .gb-btn:first-child:focus-visible,
+#scene-03 .gb-cta-group > .gb-btn:first-child:hover,
+#scene-03 .gb-cta-group > .gb-btn:first-child:active,
+#scene-03 .gb-cta-group > .gb-btn:first-child:focus,
+#scene-03 .gb-cta-group > .gb-btn:first-child:focus-visible,
+#scene-04 .gb-cta-group > .gb-btn:first-child:hover,
+#scene-04 .gb-cta-group > .gb-btn:first-child:active,
+#scene-04 .gb-cta-group > .gb-btn:first-child:focus,
+#scene-04 .gb-cta-group > .gb-btn:first-child:focus-visible,
+#scene-05 .gb-cta-group > .gb-btn:first-child:hover,
+#scene-05 .gb-cta-group > .gb-btn:first-child:active,
+#scene-05 .gb-cta-group > .gb-btn:first-child:focus,
+#scene-05 .gb-cta-group > .gb-btn:first-child:focus-visible,
+#scene-06 .gb-cta-group > .gb-btn:first-child:hover,
+#scene-06 .gb-cta-group > .gb-btn:first-child:active,
+#scene-06 .gb-cta-group > .gb-btn:first-child:focus,
+#scene-06 .gb-cta-group > .gb-btn:first-child:focus-visible,
+#scene-07 .gb-cta-group > .gb-btn:first-child:hover,
+#scene-07 .gb-cta-group > .gb-btn:first-child:active,
+#scene-07 .gb-cta-group > .gb-btn:first-child:focus,
+#scene-07 .gb-cta-group > .gb-btn:first-child:focus-visible,
+#scene-08 .gb-cta-group > .gb-btn:first-child:hover,
+#scene-08 .gb-cta-group > .gb-btn:first-child:active,
+#scene-08 .gb-cta-group > .gb-btn:first-child:focus,
+#scene-08 .gb-cta-group > .gb-btn:first-child:focus-visible,
+#scene-09 .gb-cta-group > .gb-btn:first-child:hover,
+#scene-09 .gb-cta-group > .gb-btn:first-child:active,
+#scene-09 .gb-cta-group > .gb-btn:first-child:focus,
+#scene-09 .gb-cta-group > .gb-btn:first-child:focus-visible,
+#scene-10 .gb-cta-group > .gb-btn:first-child:hover,
+#scene-10 .gb-cta-group > .gb-btn:first-child:active,
+#scene-10 .gb-cta-group > .gb-btn:first-child:focus,
+#scene-10 .gb-cta-group > .gb-btn:first-child:focus-visible,
+#scene-11 .gb-cta-group > .gb-btn:first-child:hover,
+#scene-11 .gb-cta-group > .gb-btn:first-child:active,
+#scene-11 .gb-cta-group > .gb-btn:first-child:focus,
+#scene-11 .gb-cta-group > .gb-btn:first-child:focus-visible,
+#scene-12 .gb-cta-group > .gb-btn:first-child:hover,
+#scene-12 .gb-cta-group > .gb-btn:first-child:active,
+#scene-12 .gb-cta-group > .gb-btn:first-child:focus,
+#scene-12 .gb-cta-group > .gb-btn:first-child:focus-visible,
+#scene-13 .gb-cta-group > .gb-btn:first-child:hover,
+#scene-13 .gb-cta-group > .gb-btn:first-child:active,
+#scene-13 .gb-cta-group > .gb-btn:first-child:focus,
+#scene-13 .gb-cta-group > .gb-btn:first-child:focus-visible,
+#scene-14 .gb-cta-group > .gb-btn:first-child:hover,
+#scene-14 .gb-cta-group > .gb-btn:first-child:active,
+#scene-14 .gb-cta-group > .gb-btn:first-child:focus,
+#scene-14 .gb-cta-group > .gb-btn:first-child:focus-visible,
+#scene-15 .gb-cta-group > .gb-btn:first-child:hover,
+#scene-15 .gb-cta-group > .gb-btn:first-child:active,
+#scene-15 .gb-cta-group > .gb-btn:first-child:focus,
+#scene-15 .gb-cta-group > .gb-btn:first-child:focus-visible,
+#scene-05 .gb-scene05-dark-split__ctas .gb-btn:first-child:hover,
+#scene-07 .gb-scene07-clean-ctas .gb-btn:first-child:hover,
+#scene-12 .gb-scene12-ref__ctas .gb-btn:first-child:hover,
+.gb-scene12-ref__card .gb-scene12-ref__ctas .gb-btn:first-child:hover,
+#scene-13 .gb-scene13-ctas .gb-btn:first-child:hover,
+.gb-scene13-ctas .gb-btn:first-child:hover,
+.gb-hero-overlay__ctas .gb-btn--primary-gold:hover,
+.gb-hero-overlay__ctas .gb-btn--primary-gold:active,
+.gb-hero-overlay__ctas .gb-btn--primary-gold:focus,
+.gb-hero-overlay__ctas .gb-btn--primary-gold:focus-visible,
+.gb-hero-first-btn:hover,
+.gb-hero-first-btn:active,
+.gb-hero-first-btn:focus,
+.gb-hero-first-btn:focus-visible,
+.gb-btn--primary-forest:hover,
+.gb-btn--primary-forest:active,
+.gb-btn--primary-forest:focus,
+.gb-btn--primary-forest:focus-visible,
+.gb-btn--primary-gold:hover,
+.gb-btn--primary-gold:active,
+.gb-btn--primary-gold:focus,
+.gb-btn--primary-gold:focus-visible,
+.gb-scene .gb-cta-group > .gb-btn:first-child:hover,
+.gb-scene .gb-cta-group > .gb-btn:first-child:active,
+.gb-scene .gb-cta-group > .gb-btn:first-child:focus,
+.gb-scene .gb-cta-group > .gb-btn:first-child:focus-visible,
+.gb-ref-footer__cta-btn:hover,
+.gb-ref-footer__cta-btn:active,
+.gb-ref-footer__cta-btn:focus,
+.gb-apply-btn:hover,
+.gb-apply-btn:active,
+.gb-apply-btn:focus,
+.gb-chat-widget__action:not(.gb-chat-widget__action--secondary):hover {
+  background: #ffffff !important;
+  border: 2px solid #FFC548 !important;
+  border-color: #FFC548 !important;
+  color: #132c20 !important;
+  box-shadow: 0 4px 18px rgba(255, 197, 72, 0.22) !important;
+  transform: translateY(-2px) !important;
+}
+
+/* White circular arrow badge inside primary yellow buttons:
+   Keeps exact original 16px arrow size, centered, no-repeat */
+#root body .gb-scene .gb-cta-group>.gb-btn:first-child::after,
+#root body .gb-scene:not(.gb-scene--hero-fullvideo) .gb-cta-group>.gb-btn:first-child::after,
+.gb-scene .gb-cta-group>.gb-btn:first-child::after,
+.gb-hero-overlay__ctas .gb-btn--primary-gold::after,
+.gb-hero-first-btn::after,
+.gb-btn--primary-forest::after,
+.gb-btn--primary-gold::after,
+.gb-ref-footer__cta-btn::after,
+#scene-01 .gb-cta-group>.gb-btn:first-child::after,
+#scene-02 .gb-cta-group>.gb-btn:first-child::after,
+#scene-03 .gb-cta-group>.gb-btn:first-child::after,
+#scene-04 .gb-cta-group>.gb-btn:first-child::after,
+#scene-05 .gb-cta-group>.gb-btn:first-child::after,
+#scene-06 .gb-cta-group>.gb-btn:first-child::after,
+#scene-07 .gb-cta-group>.gb-btn:first-child::after,
+#scene-08 .gb-cta-group>.gb-btn:first-child::after,
+#scene-09 .gb-cta-group>.gb-btn:first-child::after,
+#scene-10 .gb-cta-group>.gb-btn:first-child::after,
+#scene-11 .gb-cta-group>.gb-btn:first-child::after,
+#scene-12 .gb-cta-group>.gb-btn:first-child::after,
+#scene-13 .gb-cta-group>.gb-btn:first-child::after,
+#scene-14 .gb-cta-group>.gb-btn:first-child::after,
+#scene-15 .gb-cta-group>.gb-btn:first-child::after,
+#scene-05 .gb-scene05-dark-split__ctas .gb-btn:first-child::after,
+#scene-07 .gb-scene07-clean-ctas .gb-btn:first-child::after,
+#scene-12 .gb-scene12-ref__ctas .gb-btn:first-child::after,
+.gb-scene12-ref__card .gb-scene12-ref__ctas .gb-btn:first-child::after {
+  content: '' !important;
+  width: 42px !important;
+  height: 42px !important;
+  border-radius: 50% !important;
+  background-color: #ffffff !important;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23132c20' stroke-width='2.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cline x1='7' y1='17' x2='17' y2='7'/%3E%3Cpolyline points='7 7 17 7 17 17'/%3E%3C/svg%3E") !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  background-size: 16px 16px !important;
+}
+
+#scene-01 .gb-cta-group > .gb-btn:first-child:hover::after,
+#scene-01 .gb-cta-group > .gb-btn:first-child:active::after,
+#scene-01 .gb-cta-group > .gb-btn:first-child:focus::after,
+#scene-02 .gb-cta-group > .gb-btn:first-child:hover::after,
+#scene-02 .gb-cta-group > .gb-btn:first-child:active::after,
+#scene-02 .gb-cta-group > .gb-btn:first-child:focus::after,
+#scene-03 .gb-cta-group > .gb-btn:first-child:hover::after,
+#scene-03 .gb-cta-group > .gb-btn:first-child:active::after,
+#scene-03 .gb-cta-group > .gb-btn:first-child:focus::after,
+#scene-04 .gb-cta-group > .gb-btn:first-child:hover::after,
+#scene-04 .gb-cta-group > .gb-btn:first-child:active::after,
+#scene-04 .gb-cta-group > .gb-btn:first-child:focus::after,
+#scene-05 .gb-cta-group > .gb-btn:first-child:hover::after,
+#scene-05 .gb-cta-group > .gb-btn:first-child:active::after,
+#scene-05 .gb-cta-group > .gb-btn:first-child:focus::after,
+#scene-06 .gb-cta-group > .gb-btn:first-child:hover::after,
+#scene-06 .gb-cta-group > .gb-btn:first-child:active::after,
+#scene-06 .gb-cta-group > .gb-btn:first-child:focus::after,
+#scene-07 .gb-cta-group > .gb-btn:first-child:hover::after,
+#scene-07 .gb-cta-group > .gb-btn:first-child:active::after,
+#scene-07 .gb-cta-group > .gb-btn:first-child:focus::after,
+#scene-08 .gb-cta-group > .gb-btn:first-child:hover::after,
+#scene-08 .gb-cta-group > .gb-btn:first-child:active::after,
+#scene-08 .gb-cta-group > .gb-btn:first-child:focus::after,
+#scene-09 .gb-cta-group > .gb-btn:first-child:hover::after,
+#scene-09 .gb-cta-group > .gb-btn:first-child:active::after,
+#scene-09 .gb-cta-group > .gb-btn:first-child:focus::after,
+#scene-10 .gb-cta-group > .gb-btn:first-child:hover::after,
+#scene-10 .gb-cta-group > .gb-btn:first-child:active::after,
+#scene-10 .gb-cta-group > .gb-btn:first-child:focus::after,
+#scene-11 .gb-cta-group > .gb-btn:first-child:hover::after,
+#scene-11 .gb-cta-group > .gb-btn:first-child:active::after,
+#scene-11 .gb-cta-group > .gb-btn:first-child:focus::after,
+#scene-12 .gb-cta-group > .gb-btn:first-child:hover::after,
+#scene-12 .gb-cta-group > .gb-btn:first-child:active::after,
+#scene-12 .gb-cta-group > .gb-btn:first-child:focus::after,
+#scene-13 .gb-cta-group > .gb-btn:first-child:hover::after,
+#scene-13 .gb-cta-group > .gb-btn:first-child:active::after,
+#scene-13 .gb-cta-group > .gb-btn:first-child:focus::after,
+#scene-14 .gb-cta-group > .gb-btn:first-child:hover::after,
+#scene-14 .gb-cta-group > .gb-btn:first-child:active::after,
+#scene-14 .gb-cta-group > .gb-btn:first-child:focus::after,
+#scene-15 .gb-cta-group > .gb-btn:first-child:hover::after,
+#scene-15 .gb-cta-group > .gb-btn:first-child:active::after,
+#scene-15 .gb-cta-group > .gb-btn:first-child:focus::after,
+#scene-05 .gb-scene05-dark-split__ctas .gb-btn:first-child:hover::after,
+#scene-07 .gb-scene07-clean-ctas .gb-btn:first-child:hover::after,
+#scene-12 .gb-scene12-ref__ctas .gb-btn:first-child:hover::after,
+.gb-scene12-ref__card .gb-scene12-ref__ctas .gb-btn:first-child:hover::after,
+#scene-13 .gb-scene13-ctas .gb-btn:first-child:hover::after,
+.gb-scene13-ctas .gb-btn:first-child:hover::after,
+.gb-hero-overlay__ctas .gb-btn--primary-gold:hover::after,
+.gb-hero-first-btn:hover::after,
+.gb-btn--primary-forest:hover::after,
+.gb-btn--primary-gold:hover::after,
+.gb-scene .gb-cta-group > .gb-btn:first-child:hover::after,
+.gb-ref-footer__cta-btn:hover::after {
+  content: '' !important;
+  width: 42px !important;
+  height: 42px !important;
+  border-radius: 50% !important;
+  background-color: #FFC548 !important;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23132c20' stroke-width='2.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cline x1='7' y1='17' x2='17' y2='7'/%3E%3Cpolyline points='7 7 17 7 17 17'/%3E%3C/svg%3E") !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  background-size: 16px 16px !important;
+  transform: translate(2px, -2px) !important;
+}
+
+/* Header apply button: preserve original dimensions (28px) and unicode arrow */
+.gb-apply-btn::after {
+  content: '↗' !important;
+  display: inline-grid !important;
+  place-items: center !important;
+  width: 28px !important;
+  height: 28px !important;
+  border-radius: 50% !important;
+  background-color: #ffffff !important;
+  color: #132c20 !important;
+  font-size: 1rem !important;
+  font-weight: 700 !important;
+  line-height: 1 !important;
+  background-image: none !important;
+}
+
+.gb-apply-btn:hover::after {
+  background-color: #FFC548 !important;
+  color: #132c20 !important;
+  transform: translate(2px, -2px) !important;
+}
+
+/* ==========================================================================
+   INDEX PAGE: SECTION TITLES YELLOW COLOR (#FFC548)
+   All green accent lines in titles across every section (Scenes 01 to 15) replaced with #ffc548
+   ========================================================================== */
+.gb-ref-title__grey,
+.gb-scene04-title__green,
+.gb-scene04-title__grey,
+.gb-scene05-dark-split__title-silver,
+.gb-scene06-title__grey,
+.gb-scene06-arch-title__grey,
+.gb-scene07-clean-heading .gb-ref-title__grey,
+.gb-scene07-kicker-sub,
+.gb-scene08-ref-title .gb-ref-title__grey,
+.gb-scene09-headline__gold,
+.gb-scene10-title--gold,
+.gb-scene11-center-card__title .gb-ref-title__grey,
+.gb-scene12-ref__title-gold,
+.gb-scene12-voices__headline-gold,
+.gb-scene12-voices__headline span,
+.gb-scene12-center-card__title span,
+.gb-scene13-ref-title .gb-ref-title__grey,
+.gb-scene14-banner__title span,
+.gb-scene15-stage__title .gb-scene15-line2,
+.gb-hero-overlay__title-gold,
+.gb-d2-expanded-title-gold,
+.gb-ref-footer__heading,
+#scene-01 .gb-hero-overlay__title-gold,
+#scene-02 .gb-ref-title__grey,
+#scene-03 .gb-ref-title__grey,
+#scene-04 .gb-scene04-title__grey,
+#scene-04 .gb-scene04-title__green,
+#scene-05 .gb-scene05-dark-split__title-silver,
+#scene-06 .gb-scene06-title__grey,
+#scene-07 .gb-ref-title__grey,
+#scene-08 .gb-ref-title__grey,
+#scene-09 .gb-scene09-headline__gold,
+#scene-10 .gb-scene10-title--gold,
+#scene-11 .gb-ref-title__grey,
+#scene-12 .gb-scene12-ref__title-gold,
+#scene-13 .gb-ref-title__grey,
+#scene-14 .gb-scene14-banner__title span,
+#scene-15 .gb-scene15-stage__title .gb-scene15-line2 {
+  color: #ffc548 !important;
+}
+
+/* ==========================================================================
+   BLUE BACKGROUND (#003469) & WHITE PARAGRAPHS FOR ALABASTER / #EEECE0 SECTIONS
+   Applied to sections where the warm alabaster / #eeece0 background was used.
+   BLUE BACKGROUND (#003469) & WHITE PARAGRAPHS FOR SCENE 03, 07, 13
+   Applied strictly to sections where the warm alabaster / #eeece0 background was used.
+   All existing layout, spacing, and designs preserved unchanged.
+   ========================================================================== */
+.gb-scene--alabaster,
+#scene-03.gb-scene,
+#scene-07.gb-scene,
+#scene-13.gb-scene {
+  background-color: #003469 !important;
+}
+
+/* White paragraph copy in these blue sections */
+.gb-scene--alabaster p,
+.gb-scene--alabaster .gb-lead-copy,
+.gb-scene--alabaster .gb-body-copy,
+.gb-scene--alabaster .gb-scene-copy,
+/* White paragraph copy strictly in these blue sections */
+#scene-03 p,
+#scene-03 .gb-body-copy,
+#scene-03 .gb-lead-copy,
+#scene-03 .gb-scene-copy,
+#scene-03 .gb-learning-profiles__intro p,
+#scene-03 .gb-learning-profiles__intro .gb-body-copy,
+#scene-07 p,
+#scene-07 .gb-scene07-clean-copy,
+#scene-07 .gb-scene07-clean-content p,
+#scene-07 .gb-body-copy,
+#scene-07 .gb-lead-copy,
+#scene-13 p,
+#scene-13 .gb-scene13-copy,
+#scene-13 .gb-scene13-text p,
+#scene-13 .gb-lead-copy,
+#scene-13 .gb-body-copy {
+  color: #ffffff !important;
+}
+
+/* White title primary line in blue sections for clear readability against #003469 */
+.gb-scene--alabaster .gb-ref-title__dark,
+#scene-03 .gb-ref-title__dark,
+#scene-07 .gb-ref-title__dark,
+#scene-13 .gb-ref-title__dark,
+#scene-13 .gb-scene13-title-line.gb-ref-title__dark {
+  color: #ffffff !important;
+}
+
+/* Scene 07 Metric adjustments for dark blue surface */
+#scene-07 .gb-scene07-clean-metric strong {
+  color: #ffffff !important;
+}
+
+#scene-07 .gb-scene07-clean-metric span {
+  color: rgba(255, 255, 255, 0.85) !important;
+}
+
+#scene-07 .gb-scene07-clean-metrics {
+  border-top-color: rgba(255, 255, 255, 0.2) !important;
+  border-bottom-color: rgba(255, 255, 255, 0.2) !important;
+}
+
+/* Scene 09: Childhood in Motion copy strictly black (previous text preserved) */
+#scene-09.gb-scene {
+  background-color: #ffffff !important;
+}
+
+#scene-09 p,
+#scene-09 .gb-scene09-mosaic-copy,
+#scene-09 .gb-scene09-mosaic-header p,
+.gb-scene09-mosaic-copy {
+  color: #000000 !important;
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+/* Scene 13: Side by side buttons on the same line */
+#scene-13 .gb-scene13-ctas,
+.gb-scene13-ctas {
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: nowrap !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  gap: 1rem !important;
+}
+
+#scene-13 .gb-scene13-ctas .gb-btn,
+.gb-scene13-ctas .gb-btn {
+  flex-shrink: 0 !important;
+  white-space: nowrap !important;
+}
+
+/* Scene 04: 4 Cards Blue Border (#003469) */
+#scene-04 .gb-glass-pillar-card,
+.gb-glass-pillar-card,
+.gb-glass-pillar-card--white,
+.gb-glass-pillar-card--alabaster,
+.gb-glass-pillar-card--over-image,
+.gb-glass-pillar-card--glass,
+.gb-glass-pillar-card--glass-white,
+.gb-glass-pillar-card--glass-alabaster {
+  border: 2px solid #003469 !important;
+}
+
+#scene-04 .gb-glass-pillar-card:hover,
+.gb-glass-pillar-card:hover,
+.gb-glass-pillar-card--glass-white:hover,
+.gb-glass-pillar-card--glass-alabaster:hover {
+  border-color: #003469 !important;
+}
+
+.gb-glass-pillar-card__concept-icon {
+  border: 1.5px solid #003469 !important;
+  color: #003469 !important;
+}
+
+/* Hero Section: Second button ("Book a Campus Visit") yellow border and white text */
+#scene-01 .gb-hero-second-btn,
+#scene-01 .gb-hero-overlay__ctas .gb-btn--outline-light,
+.gb-hero-overlay__ctas .gb-btn--outline-light,
+.gb-hero-second-btn {
+  border: 2px solid #FFC548 !important;
+  color: #ffffff !important;
+}
+
+/* ==========================================================================
+   SCENE 01 TO SCENE 15: SECOND BUTTON HOVER EFFECT
+   Normal appearance unchanged. On hover: solid yellow (#FFC548) background,
+   dark (#132c20) text, #FFC548 border, and white (#ffffff) circular badge.
+   ========================================================================== */
+#root body .gb-scene .gb-cta-group>.gb-btn:nth-child(2):hover,
+#root body .gb-scene .gb-cta-group>.gb-btn:nth-child(2):active,
+#root body .gb-scene .gb-cta-group>.gb-btn:nth-child(2):focus,
+#root body .gb-scene .gb-cta-group>.gb-btn:nth-child(2):focus-visible,
+.gb-scene .gb-cta-group>.gb-btn:nth-child(2):hover,
+.gb-scene .gb-cta-group>.gb-btn:nth-child(2):active,
+.gb-scene .gb-cta-group>.gb-btn:nth-child(2):focus,
+.gb-scene .gb-cta-group>.gb-btn:nth-child(2):focus-visible,
+#scene-01 .gb-hero-second-btn:hover,
+#scene-01 .gb-hero-second-btn:active,
+#scene-01 .gb-hero-second-btn:focus,
+#scene-01 .gb-hero-second-btn:focus-visible,
+#scene-01 .gb-hero-overlay__ctas .gb-btn--outline-light:hover,
+.gb-hero-overlay__ctas .gb-btn--outline-light:hover,
+.gb-hero-second-btn:hover {
+
+  #scene-01 .gb-hero-overlay__ctas .gb-btn--outline-light:active,
+  #scene-01 .gb-hero-overlay__ctas .gb-btn--outline-light:focus,
+  #scene-01 .gb-hero-overlay__ctas .gb-btn--outline-light:focus-visible,
+  #scene-01 .gb-hero-overlay__ctas .gb-hero-second-btn:hover,
+  #scene-01 .gb-hero-overlay__ctas .gb-hero-second-btn:active,
+  #scene-01 .gb-hero-overlay__ctas .gb-hero-second-btn:focus,
+  #scene-01 .gb-hero-overlay__ctas .gb-hero-second-btn:focus-visible,
+  #scene-01 .gb-cta-group>.gb-btn:nth-child(2):hover,
+  #scene-02 .gb-cta-group>.gb-btn:nth-child(2):hover,
+  #scene-03 .gb-cta-group>.gb-btn:nth-child(2):hover,
+  #scene-04 .gb-cta-group>.gb-btn:nth-child(2):hover,
+  #scene-05 .gb-cta-group>.gb-btn:nth-child(2):hover,
+  #scene-05 .gb-scene05-dark-split__ctas .gb-btn:nth-child(2):hover,
+  #scene-06 .gb-cta-group>.gb-btn:nth-child(2):hover,
+  #scene-07 .gb-cta-group>.gb-btn:nth-child(2):hover,
+  #scene-07 .gb-scene07-clean-ctas .gb-btn:nth-child(2):hover,
+  #scene-08 .gb-cta-group>.gb-btn:nth-child(2):hover,
+  #scene-09 .gb-cta-group>.gb-btn:nth-child(2):hover,
+  #scene-10 .gb-cta-group>.gb-btn:nth-child(2):hover,
+  #scene-11 .gb-cta-group>.gb-btn:nth-child(2):hover,
+  #scene-12 .gb-cta-group>.gb-btn:nth-child(2):hover,
+  #scene-12 .gb-scene12-ref__ctas .gb-btn:nth-child(2):hover,
+  .gb-scene12-ref__card .gb-scene12-ref__ctas .gb-btn:nth-child(2):hover,
+  #scene-13 .gb-cta-group>.gb-btn:nth-child(2):hover,
+  #scene-13 .gb-scene13-ctas .gb-btn:nth-child(2):hover,
+  .gb-scene13-ctas .gb-btn:nth-child(2):hover,
+  #scene-14 .gb-cta-group>.gb-btn:nth-child(2):hover,
+  #scene-15 .gb-cta-group>.gb-btn:nth-child(2):hover,
+  .gb-scene .gb-btn--outline-dark:hover,
+  .gb-scene .gb-btn--outline-white:hover {
+    background: #FFC548 !important;
+    border: 2px solid #FFC548 !important;
+    color: #ffffff !important;
+    border-color: #FFC548 !important;
+    color: #132c20 !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 10px 24px rgba(255, 197, 72, 0.32) !important;
+  }
+
+  #root body .gb-scene .gb-cta-group>.gb-btn:nth-child(2):hover::after,
+  #root body .gb-scene .gb-cta-group>.gb-btn:nth-child(2):active::after,
+  #root body .gb-scene .gb-cta-group>.gb-btn:nth-child(2):focus::after,
+  .gb-scene .gb-cta-group>.gb-btn:nth-child(2):hover::after,
+  .gb-scene .gb-cta-group>.gb-btn:nth-child(2):active::after,
+  .gb-scene .gb-cta-group>.gb-btn:nth-child(2):focus::after,
+  #scene-01 .gb-hero-second-btn:hover::after,
+  #scene-01 .gb-hero-overlay__ctas .gb-btn--outline-light:hover::after,
+  #scene-01 .gb-hero-overlay__ctas .gb-hero-second-btn:hover::after,
+  #scene-01 .gb-cta-group>.gb-btn:nth-child(2):hover::after,
+  #scene-02 .gb-cta-group>.gb-btn:nth-child(2):hover::after,
+  #scene-03 .gb-cta-group>.gb-btn:nth-child(2):hover::after,
+  #scene-04 .gb-cta-group>.gb-btn:nth-child(2):hover::after,
+  #scene-05 .gb-cta-group>.gb-btn:nth-child(2):hover::after,
+  #scene-05 .gb-scene05-dark-split__ctas .gb-btn:nth-child(2):hover::after,
+  #scene-06 .gb-cta-group>.gb-btn:nth-child(2):hover::after,
+  #scene-07 .gb-cta-group>.gb-btn:nth-child(2):hover::after,
+  #scene-07 .gb-scene07-clean-ctas .gb-btn:nth-child(2):hover::after,
+  #scene-08 .gb-cta-group>.gb-btn:nth-child(2):hover::after,
+  #scene-09 .gb-cta-group>.gb-btn:nth-child(2):hover::after,
+  #scene-10 .gb-cta-group>.gb-btn:nth-child(2):hover::after,
+  #scene-11 .gb-cta-group>.gb-btn:nth-child(2):hover::after,
+  #scene-12 .gb-cta-group>.gb-btn:nth-child(2):hover::after,
+  #scene-12 .gb-scene12-ref__ctas .gb-btn:nth-child(2):hover::after,
+  .gb-scene12-ref__card .gb-scene12-ref__ctas .gb-btn:nth-child(2):hover::after,
+  #scene-13 .gb-cta-group>.gb-btn:nth-child(2):hover::after,
+  #scene-13 .gb-scene13-ctas .gb-btn:nth-child(2):hover::after,
+  .gb-scene13-ctas .gb-btn:nth-child(2):hover::after,
+  #scene-14 .gb-cta-group>.gb-btn:nth-child(2):hover::after,
+  #scene-15 .gb-cta-group>.gb-btn:nth-child(2):hover::after,
+  .gb-scene .gb-btn--outline-dark:hover::after,
+  .gb-scene .gb-btn--outline-white:hover::after {
+    content: '' !important;
+    width: 40px !important;
+    height: 40px !important;
+    border-radius: 50% !important;
+    background-color: #ffffff !important;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23132c20' stroke-width='2.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cline x1='7' y1='17' x2='17' y2='7'/%3E%3Cpolyline points='7 7 17 7 17 17'/%3E%3C/svg%3E") !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    background-size: 16px 16px !important;
+    transform: translate(2px, -2px) !important;
+  }

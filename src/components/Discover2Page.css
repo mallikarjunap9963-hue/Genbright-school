@@ -65,12 +65,10 @@
 .gb-d2-canvas-bg__tint {
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    135deg,
-    rgba(130, 155, 112, 0.56) 0%,
-    rgba(104, 130, 86, 0.52) 55%,
-    rgba(72, 96, 56, 0.68) 100%
-  );
+  background: linear-gradient(135deg,
+      rgba(130, 155, 112, 0.56) 0%,
+      rgba(104, 130, 86, 0.52) 55%,
+      rgba(72, 96, 56, 0.68) 100%);
 }
 
 /* --------------------------------------------------------------------------
@@ -188,9 +186,9 @@
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  background: var(--gb-ivory);
-  color: var(--gb-forest);
-  border: 1.5px solid var(--gb-ivory);
+  background: #FFC548 !important;
+  color: #132c20 !important;
+  border: 1.5px solid #FFC548 !important;
   padding: 0 0.28rem 0 0.85rem;
   height: 32px;
   border-radius: 9999px;
@@ -198,7 +196,7 @@
   font-weight: 600;
   line-height: 1;
   cursor: pointer;
-  box-shadow: 0 4px 14px rgba(19, 44, 32, 0.16);
+  box-shadow: 0 4px 14px rgba(255, 197, 72, 0.28);
   transition: transform 200ms ease, background-color 200ms ease, border-color 200ms ease;
 }
 
@@ -209,21 +207,24 @@
   width: 24px;
   height: 24px;
   border-radius: 50%;
-  background: #829b70;
-  color: #ffffff;
+  background: #ffffff !important;
+  color: #132c20 !important;
   font-size: 0.85rem;
   font-weight: 700;
   transition: transform 200ms ease;
 }
 
 .gb-d2-apply-btn:hover {
-  background: #ffffff;
-  border-color: #ffffff;
+  background: #ffffff !important;
+  border-color: #FFC548 !important;
+  color: #132c20 !important;
   transform: translateY(-1px);
 }
 
 .gb-d2-apply-btn:hover::after {
   transform: translate(1.5px, -1.5px);
+  background: #FFC548 !important;
+  color: #132c20 !important;
 }
 
 .gb-d2-ref-main-row {
@@ -232,7 +233,7 @@
   gap: 1.55rem;
 }
 
-.gb-d2-ref-main-row > button,
+.gb-d2-ref-main-row>button,
 .gb-d2-ref-discover-btn {
   background: transparent;
   border: none;
@@ -248,7 +249,7 @@
   transition: color 180ms ease, opacity 180ms ease;
 }
 
-.gb-d2-ref-main-row > button:hover,
+.gb-d2-ref-main-row>button:hover,
 .gb-d2-ref-discover-btn:hover,
 .gb-d2-ref-discover-toggle:hover {
   color: #F5A93F !important;
@@ -310,6 +311,7 @@
     opacity: 0;
     transform: translateY(-6px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -407,11 +409,9 @@
 .gb-d2-video-vignette {
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    90deg,
-    rgba(130, 155, 112, 0.22) 0%,
-    rgba(130, 155, 112, 0) 28%
-  );
+  background: linear-gradient(90deg,
+      rgba(130, 155, 112, 0.22) 0%,
+      rgba(130, 155, 112, 0) 28%);
   opacity: calc(1 - var(--d2-expand-p));
   pointer-events: none;
 }
@@ -428,12 +428,10 @@
   flex-direction: column;
   justify-content: center;
   padding: 2.5rem 0;
-  background: linear-gradient(
-    180deg,
-    rgba(130, 155, 112, 0.85) 0%,
-    rgba(113, 138, 96, 0.9) 55%,
-    rgba(88, 114, 70, 0.94) 100%
-  ) !important;
+  background: linear-gradient(180deg,
+      rgba(130, 155, 112, 0.85) 0%,
+      rgba(113, 138, 96, 0.9) 55%,
+      rgba(88, 114, 70, 0.94) 100%) !important;
   backdrop-filter: blur(2px) !important;
   -webkit-backdrop-filter: blur(2px) !important;
   opacity: var(--d2-sheet-opacity);
@@ -487,24 +485,31 @@
 }
 
 .gb-d2-expanded-title-gold {
-  color: #F5A93F !important;
+  color: #ffc548 !important;
 }
 
-/* Discover 2 Hero 1st Button ("Discover Our Story"): Solid White pill, dark forest text & dark circular arrow badge */
+/* Discover 2 Hero 1st Button ("Discover Our Story"): Golden Yellow #FFC548 pill with white circular arrow badge */
 .gb-d2 .gb-hero-overlay__ctas .gb-hero-first-btn,
 .gb-d2-green-sheet .gb-hero-first-btn,
 #root .gb-app .gb-d2-green-sheet .gb-hero-first-btn {
-  background: #ffffff !important;
+  background: #FFC548 !important;
   color: #132c20 !important;
-  border: 2px solid #ffffff !important;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12) !important;
+  border: 2px solid #FFC548 !important;
+  box-shadow: 0 6px 20px rgba(255, 197, 72, 0.28) !important;
 }
 
 .gb-d2 .gb-hero-overlay__ctas .gb-hero-first-btn::after,
 .gb-d2-green-sheet .gb-hero-first-btn::after,
 #root .gb-app .gb-d2-green-sheet .gb-hero-first-btn::after {
-  background-color: #132c20 !important;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='2.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cline x1='7' y1='17' x2='17' y2='7'/%3E%3Cpolyline points='7 7 17 7 17 17'/%3E%3C/svg%3E") !important;
+  content: '' !important;
+  width: 42px !important;
+  height: 42px !important;
+  border-radius: 50% !important;
+  background-color: #ffffff !important;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23132c20' stroke-width='2.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cline x1='7' y1='17' x2='17' y2='7'/%3E%3Cpolyline points='7 7 17 7 17 17'/%3E%3C/svg%3E") !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  background-size: 16px 16px !important;
 }
 
 .gb-d2 .gb-hero-overlay__ctas .gb-hero-first-btn:hover,
@@ -513,10 +518,12 @@
 .gb-d2-green-sheet .gb-hero-first-btn:hover,
 .gb-d2-green-sheet .gb-hero-first-btn:active,
 .gb-d2-green-sheet .gb-hero-first-btn:focus {
-  background: rgba(255, 255, 255, 0.94) !important;
-  border-color: #ffffff !important;
+  background: #ffffff !important;
+  border: 2px solid #FFC548 !important;
+  border-color: #FFC548 !important;
   color: #132c20 !important;
   transform: translateY(-2px) !important;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.16) !important;
 }
 
 .gb-d2 .gb-hero-overlay__ctas .gb-hero-first-btn:hover::after,
@@ -525,11 +532,19 @@
 .gb-d2-green-sheet .gb-hero-first-btn:hover::after,
 .gb-d2-green-sheet .gb-hero-first-btn:active::after,
 .gb-d2-green-sheet .gb-hero-first-btn:focus::after {
-  background-color: #132c20 !important;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='2.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cline x1='7' y1='17' x2='17' y2='7'/%3E%3Cpolyline points='7 7 17 7 17 17'/%3E%3C/svg%3E") !important;
+  content: '' !important;
+  width: 42px !important;
+  height: 42px !important;
+  border-radius: 50% !important;
+  background-color: #FFC548 !important;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23132c20' stroke-width='2.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cline x1='7' y1='17' x2='17' y2='7'/%3E%3Cpolyline points='7 7 17 7 17 17'/%3E%3C/svg%3E") !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  background-size: 16px 16px !important;
+  transform: translate(2px, -2px) !important;
 }
 
-/* Discover 2 Hero 2nd Button ("Book a Campus Visit"): Transparent with white outline, black text, white badge (NO background color) */
+/* Discover 2 Hero 2nd Button ("Book a Campus Visit"): Transparent with yellow outline, white text, white badge */
 .gb-d2 .gb-hero-overlay__ctas .gb-hero-second-btn,
 .gb-d2-green-sheet .gb-hero-second-btn,
 #root .gb-app .gb-d2-green-sheet .gb-hero-second-btn {
@@ -537,8 +552,8 @@
   background-color: transparent !important;
   backdrop-filter: none !important;
   -webkit-backdrop-filter: none !important;
-  color: #000000 !important;
-  border: 2px solid #ffffff !important;
+  color: #ffffff !important;
+  border: 2px solid #FFC548 !important;
   box-shadow: none !important;
 }
 
@@ -559,8 +574,9 @@
   background-color: transparent !important;
   backdrop-filter: none !important;
   -webkit-backdrop-filter: none !important;
-  border-color: #ffffff !important;
-  color: #000000 !important;
+  border: 2px solid #FFC548 !important;
+  border-color: #FFC548 !important;
+  color: #ffffff !important;
   box-shadow: none !important;
   transform: translateY(-2px) !important;
 }

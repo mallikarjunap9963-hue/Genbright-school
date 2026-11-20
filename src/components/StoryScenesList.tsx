@@ -403,7 +403,7 @@ export const StoryScenesList = React.memo(function StoryScenesList({
         const bgSurfaceClass =
           scene.number === '01'
             ? 'gb-scene--hero-fullvideo'
-            : [3, 5, 7, 9, 12].includes(num)
+            : [3, 7, 13].includes(num)
               ? 'gb-scene--alabaster'
               : 'gb-scene--white'
 
