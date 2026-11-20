@@ -8611,3 +8611,32 @@ img {
     transition: none;
   }
 }
+
+/* Scene 05 academic section colors requested by the user. */
+.gb-scene05-dark-split__content {
+  background: #003469 !important;
+}
+
+.gb-scene05-dark-split__ctas .gb-btn,
+#scene-05 .gb-scene05-dark-split__ctas .gb-btn {
+  background: #ffc548 !important;
+  border-color: #ffc548 !important;
+  color: #000000 !important;
+}
+
+.gb-scene05-dark-split__ctas .gb-btn::after,
+#scene-05 .gb-scene05-dark-split__ctas .gb-btn::after {
+  background-color: #000000 !important;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffc548' stroke-width='2.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cline x1='7' y1='17' x2='17' y2='7'/%3E%3Cpolyline points='7 7 17 7 17 17'/%3E%3C/svg%3E") !important;
+}
+
+.gb-scene05-dark-split__ctas .gb-btn:hover,
+.gb-scene05-dark-split__ctas .gb-btn:active,
+.gb-scene05-dark-split__ctas .gb-btn:focus-visible,
+#scene-05 .gb-scene05-dark-split__ctas .gb-btn:hover,
+#scene-05 .gb-scene05-dark-split__ctas .gb-btn:active,
+#scene-05 .gb-scene05-dark-split__ctas .gb-btn:focus-visible {
+  background: #ffc548 !important;
+  border-color: #ffc548 !important;
+  color: #000000 !important;
+}
