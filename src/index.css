@@ -54,3 +54,11 @@ img {
   max-width: 100%;
   display: block;
 }
+
+@media (prefers-reduced-motion: reduce) {
+  [data-aos] {
+    opacity: 1 !important;
+    transform: none !important;
+    transition-duration: 0.01ms !important;
+  }
+}

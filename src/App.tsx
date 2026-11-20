@@ -1,4 +1,6 @@
 import { useState, useEffect, useCallback } from 'react'
+import AOS from 'aos'
+import 'aos/dist/aos.css'
 import { Header } from './components/Header'
 import { StoryScenesList } from './components/StoryScenesList'
 import { Footer } from './components/Footer'
@@ -39,6 +41,83 @@ export function App() {
   const [showLoader, setShowLoader] = useState(
     () => !window.matchMedia('(prefers-reduced-motion: reduce)').matches
   )
+
+  useEffect(() => {
+    AOS.init({
+      duration: 900,
+      easing: 'ease-out-cubic',
+      offset: 120,
+      delay: 0,
+      once: true,
+      mirror: false,
+      anchorPlacement: 'top-bottom',
+    })
+
+    return () => AOS.refreshHard()
+  }, [])
+
+  useEffect(() => {
+    window.requestAnimationFrame(() => AOS.refreshHard())
+  }, [activeView])
+
+  useEffect(() => {
+    let observer: IntersectionObserver | null = null
+    const frameId = window.requestAnimationFrame(() => {
+      const textSelectors = [
+        '.gb-scene h1',
+        '.gb-scene h2',
+        '.gb-scene h3',
+        '.gb-scene p',
+        '.gb-d2 h1',
+        '.gb-d2 h2',
+        '.gb-d2 h3',
+        '.gb-d2 p',
+        '.gb-ref-footer h1',
+        '.gb-ref-footer h2',
+        '.gb-ref-footer h3',
+        '.gb-ref-footer p',
+        '.gb-ref-footer__brand-meta',
+      ]
+
+      document.querySelectorAll(textSelectors.join(',')).forEach((element, index) => {
+        const htmlElement = element as HTMLElement
+        htmlElement.setAttribute(
+          'data-aos',
+          index % 2 === 0 ? 'fade-right' : 'fade-left'
+        )
+        htmlElement.setAttribute('data-aos-duration', '700')
+        htmlElement.setAttribute('data-aos-offset', '80')
+      })
+
+      AOS.refreshHard()
+
+      const animatedText = document.querySelectorAll<HTMLElement>('[data-aos]')
+      if (!('IntersectionObserver' in window)) {
+        animatedText.forEach((element) => element.classList.add('aos-animate'))
+        return
+      }
+
+      const textObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('aos-animate')
+              textObserver.unobserve(entry.target)
+            }
+          })
+        },
+        { rootMargin: '0px 0px -5% 0px', threshold: 0 }
+      )
+
+      observer = textObserver
+      animatedText.forEach((element) => textObserver.observe(element))
+    })
+
+    return () => {
+      window.cancelAnimationFrame(frameId)
+      observer?.disconnect()
+    }
+  }, [activeView])
 
   const handleLoaderComplete = useCallback(() => {
     setShowLoader(false)
