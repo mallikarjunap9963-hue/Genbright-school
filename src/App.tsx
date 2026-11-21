@@ -34,7 +34,7 @@ function getInitialView(): ActiveView {
     return 'home'
   }
   if (window.location.pathname === '/' && !window.location.hash) {
-    return 'discover2'
+    return 'discover3'
   }
   return 'home'
 }
@@ -47,6 +47,12 @@ export function App() {
   const [showLoader, setShowLoader] = useState(
     () => !window.matchMedia('(prefers-reduced-motion: reduce)').matches
   )
+
+  useEffect(() => {
+    if (window.location.pathname === '/' && !window.location.hash) {
+      window.history.replaceState(null, '', '/#discover-3')
+    }
+  }, [])
 
   useEffect(() => {
     AOS.init({
@@ -85,13 +91,63 @@ export function App() {
         '.gb-ref-footer__brand-meta',
       ]
 
-      document.querySelectorAll(textSelectors.join(',')).forEach((element, index) => {
+      document.querySelectorAll(textSelectors.join(',')).forEach((element) => {
         const htmlElement = element as HTMLElement
+        const scene = htmlElement.closest('.gb-scene')
+        const sceneId = scene?.id
+        const isVerticalSection =
+          sceneId === 'scene-03' ||
+          sceneId === 'scene-08' ||
+          sceneId === 'scene-09'
+        const textStartsFromRight =
+          sceneId === 'scene-05' ||
+          sceneId === 'scene-07'
+
         htmlElement.setAttribute(
           'data-aos',
-          index % 2 === 0 ? 'fade-right' : 'fade-left'
+          isVerticalSection
+            ? 'fade-down'
+            : textStartsFromRight
+              ? 'fade-left'
+              : 'fade-right'
         )
-        htmlElement.setAttribute('data-aos-duration', '2000')
+        htmlElement.setAttribute('data-aos-duration', '1400')
+        htmlElement.setAttribute('data-aos-offset', '70')
+      })
+
+      const mediaSelectors = [
+        '#scene-02 .gb-scene02-collage',
+        '#scene-03 .gb-learner-card',
+        '#scene-04 .gb-scene04-top__media',
+        '#scene-05 .gb-scene05-dark-split__media',
+        '#scene-06 .gb-scene06-media',
+        '#scene-07 .gb-scene07-carousel-container',
+        '#scene-08 .gb-centres-carousel',
+        '#scene-09 .gb-scene09-mosaic-grid',
+        '#scene-12 .gb-scene12-ref__media-outer',
+        '#scene-13 .gb-scene13-media-wrap',
+      ]
+
+      document.querySelectorAll(mediaSelectors.join(',')).forEach((element) => {
+        const htmlElement = element as HTMLElement
+        const sceneId = htmlElement.closest('.gb-scene')?.id
+        const isVerticalSection =
+          sceneId === 'scene-03' ||
+          sceneId === 'scene-08' ||
+          sceneId === 'scene-09'
+        const mediaStartsFromLeft =
+          sceneId === 'scene-05' ||
+          sceneId === 'scene-07'
+
+        htmlElement.setAttribute(
+          'data-aos',
+          isVerticalSection
+            ? 'fade-up'
+            : mediaStartsFromLeft
+              ? 'fade-right'
+              : 'fade-left'
+        )
+        htmlElement.setAttribute('data-aos-duration', '1400')
         htmlElement.setAttribute('data-aos-offset', '70')
       })
 

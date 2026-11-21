@@ -464,6 +464,11 @@ img {
   color: #132c20;
 }
 
+.gb-scene--green {
+  background-color: #00b273 !important;
+  color: #ffffff;
+}
+
 #scene-11.gb-scene {
   background-color: #ffffff;
 }
@@ -583,6 +588,7 @@ img {
   content-visibility: visible !important;
   contain: none !important;
   position: relative;
+  background: #00b273 !important;
 }
 
 #scene-03 .gb-scene__container,
@@ -675,8 +681,8 @@ img {
 }
 
 .gb-learner-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 18px 36px rgba(19, 44, 32, 0.12);
+  transform: translateY(-8px) scale(1.012);
+  box-shadow: 0 22px 38px rgba(0, 80, 60, 0.22);
 }
 
 .gb-learner-card article {
@@ -699,7 +705,7 @@ img {
 }
 
 .gb-learner-card:hover .gb-learner-card__image {
-  transform: scale(1.04);
+  transform: scale(1.08) rotate(0.35deg);
 }
 
 .gb-learner-card__num {
@@ -2377,7 +2383,7 @@ img {
 }
 
 .gb-scene05-dark-split__content {
-  background: #00B273;
+  background: #003469;
   padding: clamp(3rem, 5.5vw, 6rem) clamp(2.5rem, 5vw, 5.5rem);
   display: flex;
   flex-direction: column;
@@ -3314,27 +3320,17 @@ img {
   border: 1px solid rgba(0, 0, 0, 0.08);
   scroll-snap-align: start;
   isolation: isolate;
-  transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.25, 1), box-shadow 0.35s ease;
+  cursor: default;
+  transition: none;
 }
 
 .gb-centre-slide:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.22);
+  transform: none;
+  box-shadow: none;
 }
 
-/* Base bottom dark gradient for constant text readability */
 .gb-centre-slide::after {
-  position: absolute;
-  z-index: 1;
-  content: '';
-  inset: 0;
-  background: linear-gradient(180deg,
-      transparent 0%,
-      transparent 45%,
-      rgba(0, 0, 0, 0.35) 70%,
-      rgba(0, 0, 0, 0.85) 100%);
-  pointer-events: none;
-  border-radius: 18px;
+  content: none;
 }
 
 
@@ -3352,7 +3348,7 @@ img {
 }
 
 .gb-centre-slide:hover .gb-centre-slide__image {
-  transform: scale(1.04);
+  transform: none;
 }
 
 .gb-centre-slide__content {
@@ -8678,9 +8674,9 @@ img {
   }
 }
 
-/* Scene 05 academic section colors: Green (#00B273) replaced the blue color */
+/* Scene 05 academic section right panel */
 .gb-scene05-dark-split__content {
-  background: #00B273 !important;
+  background: #003469 !important;
 }
 
 .gb-scene05-dark-split__ctas .gb-btn,
@@ -9052,9 +9048,13 @@ img {
    All existing layout, spacing, and designs preserved unchanged.
    ========================================================================== */
   .gb-scene--alabaster,
-  #scene-03.gb-scene,
   #scene-13.gb-scene {
     background-color: #003469 !important;
+  }
+
+  #scene-03.gb-scene,
+  #scene-03.gb-scene.gb-scene--green {
+    background-color: #00b273 !important;
   }
 
   /* Scene 13: Light Gray (#F5F5F5) Background with 100% visible dark title & black copy */
@@ -9801,6 +9801,42 @@ img {
     text-shadow: 0 4px 18px rgba(0, 0, 0, 0.6), 0 2px 6px rgba(0, 0, 0, 0.8) !important;
   }
 
+/* Keep learner photos unchanged and place the one-word name on the bottom. */
+.gb-learner-card__overlay {
+  display: none !important;
+  opacity: 0 !important;
+  transform: none !important;
+}
+
+.gb-learner-card:hover {
+  transform: translateY(-8px) scale(1.012) !important;
+  box-shadow: 0 22px 38px rgba(0, 80, 60, 0.22) !important;
+}
+
+.gb-learner-card:hover .gb-learner-card__image {
+  transform: scale(1.08) rotate(0.35deg) !important;
+  transition: transform 0.55s cubic-bezier(0.22, 1, 0.36, 1) !important;
+}
+
+.gb-learner-card__word-wrap,
+.gb-learner-card:hover .gb-learner-card__word-wrap {
+  inset: auto 1rem 1rem 1rem !important;
+  z-index: 5 !important;
+  display: flex !important;
+  align-items: flex-end !important;
+  justify-content: flex-start !important;
+  padding: 0 !important;
+  opacity: 1 !important;
+  transform: none !important;
+  transition: none !important;
+}
+
+.gb-learner-card__word {
+  font-size: clamp(1.35rem, 1.8vw, 1.85rem) !important;
+  text-align: left !important;
+  letter-spacing: 0.12em !important;
+  text-shadow: 0 3px 14px rgba(0, 0, 0, 0.85) !important;
+}
 
 
 /* ==========================================================================
@@ -9831,6 +9867,28 @@ img {
 }
 
 [data-aos="fade-left"].aos-animate {
+  transform: translate3d(0, 0, 0) !important;
+  opacity: 1 !important;
+}
+
+[data-aos="fade-down"] {
+  transform: translate3d(0, -42px, 0) !important;
+  opacity: 0 !important;
+  transition-property: transform, opacity !important;
+}
+
+[data-aos="fade-down"].aos-animate {
+  transform: translate3d(0, 0, 0) !important;
+  opacity: 1 !important;
+}
+
+[data-aos="fade-up"] {
+  transform: translate3d(0, 42px, 0) !important;
+  opacity: 0 !important;
+  transition-property: transform, opacity !important;
+}
+
+[data-aos="fade-up"].aos-animate {
   transform: translate3d(0, 0, 0) !important;
   opacity: 1 !important;
 }
