@@ -2377,7 +2377,7 @@ img {
 }
 
 .gb-scene05-dark-split__content {
-  background: #829b70;
+  background: #00B273;
   padding: clamp(3rem, 5.5vw, 6rem) clamp(2.5rem, 5vw, 5.5rem);
   display: flex;
   flex-direction: column;
@@ -3435,13 +3435,13 @@ img {
   width: 48px;
   height: 48px;
   place-items: center;
-  border: 1.5px solid #2d6643;
+  border: 1.5px solid #FE73B2;
   border-radius: 50%;
   background: #ffffff;
-  color: #2d6643;
+  color: #FE73B2;
   cursor: pointer;
   transition: all 0.22s cubic-bezier(0.22, 1, 0.36, 1);
-  box-shadow: 0 4px 12px rgba(45, 102, 67, 0.1);
+  box-shadow: 0 4px 12px rgba(254, 115, 178, 0.2);
 }
 
 .gb-centres-carousel__button svg {
@@ -3450,21 +3450,28 @@ img {
   transition: transform 0.2s ease;
 }
 
+.gb-centres-carousel__button:not(:disabled) {
+  background: #FE73B2 !important;
+  border-color: #FE73B2 !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 14px rgba(254, 115, 178, 0.35);
+}
+
 .gb-centres-carousel__button:hover:not(:disabled),
 .gb-centres-carousel__button:active {
-  border-color: #2d6643;
-  background: #2d6643 !important;
+  border-color: #e55a9c !important;
+  background: #e55a9c !important;
   color: #ffffff !important;
   transform: translateY(-2px);
-  box-shadow: 0 8px 22px rgba(45, 102, 67, 0.28);
+  box-shadow: 0 8px 22px rgba(254, 115, 178, 0.45);
 }
 
 .gb-centres-carousel__button:disabled {
   cursor: not-allowed;
   opacity: 0.55;
-  border-color: rgba(19, 44, 32, 0.16);
-  background: #fafbfa;
-  color: #5d7568;
+  border-color: rgba(19, 44, 32, 0.16) !important;
+  background: #fafbfa !important;
+  color: #5d7568 !important;
   transform: none;
   box-shadow: none;
 }
@@ -8706,9 +8713,9 @@ img {
   }
 }
 
-/* Scene 05 academic section colors requested by the user. */
+/* Scene 05 academic section colors: Green (#00B273) replaced the blue color */
 .gb-scene05-dark-split__content {
-  background: #003469 !important;
+  background: #00B273 !important;
 }
 
 .gb-scene05-dark-split__ctas .gb-btn,
@@ -9081,7 +9088,6 @@ img {
    ========================================================================== */
   .gb-scene--alabaster,
   #scene-03.gb-scene,
-  #scene-07.gb-scene,
   #scene-13.gb-scene {
     background-color: #003469 !important;
   }
@@ -9109,9 +9115,9 @@ img {
     color: #000000 !important;
   }
 
-  /* Scene 07: Reverted from #0065EC to previous deep navy (#003469) */
+  /* Scene 07: Purple background (#711AC6) requested by user */
   #scene-07.gb-scene {
-    background-color: #003469 !important;
+    background-color: #711AC6 !important;
     color: #ffffff !important;
   }
 
