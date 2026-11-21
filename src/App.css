@@ -478,7 +478,7 @@ img {
 }
 
 #scene-13.gb-scene {
-  background-color: #003469 !important;
+  background-color: #0064EC !important;
 }
 
 #scene-02.gb-scene {
@@ -9168,7 +9168,7 @@ img {
    ========================================================================== */
   .gb-scene--alabaster,
   #scene-13.gb-scene {
-    background-color: #003469 !important;
+    background-color: #0064EC !important;
   }
 
   #scene-03.gb-scene,
@@ -9176,14 +9176,14 @@ img {
     background-color: #00b273 !important;
   }
 
-  /* Scene 13: Light Gray (#F5F5F5) Background with 100% visible dark title & black copy */
+  /* Scene 13: Royal Blue (#0064EC) Background with 100% visible white title & white copy */
   #scene-13.gb-scene {
-    background-color: #F5F5F5 !important;
+    background-color: #0064EC !important;
   }
 
   #scene-13 .gb-ref-title__dark,
   #scene-13 .gb-scene13-title-line.gb-ref-title__dark {
-    color: #132c20 !important;
+    color: #ffffff !important;
   }
 
   #scene-13 .gb-ref-title__grey,
@@ -9196,7 +9196,7 @@ img {
   #scene-13 .gb-scene13-text p,
   #scene-13 .gb-body-copy,
   #scene-13 .gb-lead-copy {
-    color: #000000 !important;
+    color: #ffffff !important;
   }
 
   /* Scene 07: Purple background (#711AC6) requested by user */
@@ -9356,10 +9356,24 @@ img {
   #scene-04 .gb-scene04-glass-grid > :nth-child(1) .gb-glass-pillar-card__concept-icon,
   .gb-glass-pillar-card--1 .gb-glass-pillar-card__concept-icon,
   .gb-glass-pillar-card--white .gb-glass-pillar-card__concept-icon {
-    background: #ffffff !important;
-    border: none !important;
-    color: #EA5930 !important;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+    background: #EA5930 !important;
+    background-color: #EA5930 !important;
+    border: 2px solid #ffffff !important;
+    color: #000000 !important;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.18) !important;
+  }
+  #scene-04 .gb-scene04-glass-grid > :nth-child(1) .gb-glass-pillar-card__concept-icon svg,
+  .gb-glass-pillar-card--1 .gb-glass-pillar-card__concept-icon svg,
+  .gb-glass-pillar-card--white .gb-glass-pillar-card__concept-icon svg {
+    stroke: #000000 !important;
+    color: #000000 !important;
+  }
+  #scene-04 .gb-scene04-glass-grid > :nth-child(1):hover .gb-glass-pillar-card__concept-icon,
+  .gb-glass-pillar-card--1:hover .gb-glass-pillar-card__concept-icon,
+  .gb-glass-pillar-card--white:hover .gb-glass-pillar-card__concept-icon {
+    background: #EA5930 !important;
+    background-color: #EA5930 !important;
+    border-color: #ffffff !important;
   }
 
   /* Card 2: FEEL - Vibrant Green (#00B273) */
@@ -9394,10 +9408,24 @@ img {
   #scene-04 .gb-scene04-glass-grid > :nth-child(2) .gb-glass-pillar-card__concept-icon,
   .gb-glass-pillar-card--2 .gb-glass-pillar-card__concept-icon,
   .gb-glass-pillar-card--alabaster .gb-glass-pillar-card__concept-icon {
-    background: #ffffff !important;
-    border: none !important;
-    color: #00B273 !important;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+    background: #00B273 !important;
+    background-color: #00B273 !important;
+    border: 2px solid #ffffff !important;
+    color: #000000 !important;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.18) !important;
+  }
+  #scene-04 .gb-scene04-glass-grid > :nth-child(2) .gb-glass-pillar-card__concept-icon svg,
+  .gb-glass-pillar-card--2 .gb-glass-pillar-card__concept-icon svg,
+  .gb-glass-pillar-card--alabaster .gb-glass-pillar-card__concept-icon svg {
+    stroke: #000000 !important;
+    color: #000000 !important;
+  }
+  #scene-04 .gb-scene04-glass-grid > :nth-child(2):hover .gb-glass-pillar-card__concept-icon,
+  .gb-glass-pillar-card--2:hover .gb-glass-pillar-card__concept-icon,
+  .gb-glass-pillar-card--alabaster:hover .gb-glass-pillar-card__concept-icon {
+    background: #00B273 !important;
+    background-color: #00B273 !important;
+    border-color: #ffffff !important;
   }
 
   /* Card 3: MOVE - Golden Yellow (#FFC548) */
@@ -9432,10 +9460,24 @@ img {
   #scene-04 .gb-scene04-glass-grid > :nth-child(3) .gb-glass-pillar-card__concept-icon,
   .gb-glass-pillar-card--3 .gb-glass-pillar-card__concept-icon,
   .gb-glass-pillar-card--glass-white .gb-glass-pillar-card__concept-icon {
-    background: #ffffff !important;
-    border: none !important;
-    color: #132c20 !important;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+    background: #FFC548 !important;
+    background-color: #FFC548 !important;
+    border: 2px solid #ffffff !important;
+    color: #000000 !important;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.18) !important;
+  }
+  #scene-04 .gb-scene04-glass-grid > :nth-child(3) .gb-glass-pillar-card__concept-icon svg,
+  .gb-glass-pillar-card--3 .gb-glass-pillar-card__concept-icon svg,
+  .gb-glass-pillar-card--glass-white .gb-glass-pillar-card__concept-icon svg {
+    stroke: #000000 !important;
+    color: #000000 !important;
+  }
+  #scene-04 .gb-scene04-glass-grid > :nth-child(3):hover .gb-glass-pillar-card__concept-icon,
+  .gb-glass-pillar-card--3:hover .gb-glass-pillar-card__concept-icon,
+  .gb-glass-pillar-card--glass-white:hover .gb-glass-pillar-card__concept-icon {
+    background: #FFC548 !important;
+    background-color: #FFC548 !important;
+    border-color: #ffffff !important;
   }
 
   /* Card 4: PAUSE - Teal Blue (#358DA2) */
@@ -9470,10 +9512,32 @@ img {
   #scene-04 .gb-scene04-glass-grid > :nth-child(4) .gb-glass-pillar-card__concept-icon,
   .gb-glass-pillar-card--4 .gb-glass-pillar-card__concept-icon,
   .gb-glass-pillar-card--glass-alabaster .gb-glass-pillar-card__concept-icon {
-    background: #ffffff !important;
-    border: none !important;
-    color: #358DA2 !important;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+    background: #358DA2 !important;
+    background-color: #358DA2 !important;
+    border: 2px solid #ffffff !important;
+    color: #000000 !important;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.18) !important;
+  }
+  #scene-04 .gb-scene04-glass-grid > :nth-child(4) .gb-glass-pillar-card__concept-icon svg,
+  .gb-glass-pillar-card--4 .gb-glass-pillar-card__concept-icon svg,
+  .gb-glass-pillar-card--glass-alabaster .gb-glass-pillar-card__concept-icon svg {
+    stroke: #000000 !important;
+    color: #000000 !important;
+  }
+  #scene-04 .gb-scene04-glass-grid > :nth-child(4):hover .gb-glass-pillar-card__concept-icon,
+  .gb-glass-pillar-card--4:hover .gb-glass-pillar-card__concept-icon,
+  .gb-glass-pillar-card--glass-alabaster:hover .gb-glass-pillar-card__concept-icon {
+    background: #358DA2 !important;
+    background-color: #358DA2 !important;
+    border-color: #ffffff !important;
+  }
+
+  /* Keep all icons black on THINK, FEEL, MOVE, and PAUSE cards */
+  #scene-04 .gb-glass-pillar-card__concept-icon svg,
+  .gb-glass-pillar-card .gb-glass-pillar-card__concept-icon svg,
+  .gb-glass-pillar-card:hover .gb-glass-pillar-card__concept-icon svg {
+    stroke: #000000 !important;
+    color: #000000 !important;
   }
 
   /* Hero Section: Second button ("Book a Campus Visit") yellow border and white text */
