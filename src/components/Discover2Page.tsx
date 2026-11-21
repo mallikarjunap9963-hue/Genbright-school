@@ -2,28 +2,38 @@ import { useCallback, useEffect, useRef, useState } from 'react'
 import { HERO_VIDEO_REELS, NAV_ITEMS, STORY_SCENES } from '../data/storyScenes'
 import { StoryScenesList } from './StoryScenesList'
 import { Footer } from './Footer'
+import { HeroQuickLinkIcon } from './HeroQuickAccessBar'
 import './Discover2Page.css'
 
 
 const HERO_QUICK_LINKS = [
-  { label: 'Calendar', action: 'modal:bright-times' },
-  { label: 'Learning', action: 'scroll:scene-03' },
-  { label: "Let's Talk", action: 'modal:admissions' },
-  { label: 'Campus Visit', action: 'modal:admissions' },
-  { label: 'Parent Portal', action: 'modal:parent-portal' },
-  { label: 'Admissions', action: 'scroll:scene-15' },
+  { label: 'Calendar', icon: 'calendar', action: 'modal:bright-times' },
+  { label: 'Learning', icon: 'book', action: 'scroll:scene-03' },
+  { label: "Let's Talk", icon: 'chat', action: 'modal:admissions' },
+  { label: 'Campus Visit', icon: 'campus', action: 'modal:admissions' },
+  { label: 'Parent Portal', icon: 'parent', action: 'modal:parent-portal' },
+  { label: 'Admissions', icon: 'admissions', action: 'scroll:scene-15' },
 ]
 
 interface Discover2PageProps {
   onBackHome: (targetScene?: string) => void
   onOpenModal: (modalId: string) => void
+  onOpenDiscover2: () => void
+  onOpenDiscover3: () => void
+  variant?: 'discover2' | 'discover3'
 }
 
 function clamp01(value: number): number {
   return Math.min(1, Math.max(0, value))
 }
 
-export function Discover2Page({ onBackHome, onOpenModal }: Discover2PageProps) {
+export function Discover2Page({
+  onBackHome,
+  onOpenModal,
+  onOpenDiscover2,
+  onOpenDiscover3,
+  variant = 'discover2',
+}: Discover2PageProps) {
   const stageTrackRef = useRef<HTMLDivElement | null>(null)
   const quickAccessRef = useRef<HTMLElement | null>(null)
   const videoRef = useRef<HTMLVideoElement | null>(null)
@@ -162,7 +172,7 @@ export function Discover2Page({ onBackHome, onOpenModal }: Discover2PageProps) {
   }, [])
 
   return (
-    <div className="gb-d2">
+    <div className={`gb-d2 ${variant === 'discover3' ? 'gb-d3' : ''}`}>
       {/* HERO-ONLY SCROLL-TO-FULLSCREEN EXPERIENCE */}
       <section
         ref={stageTrackRef}
@@ -323,14 +333,30 @@ export function Discover2Page({ onBackHome, onOpenModal }: Discover2PageProps) {
                               <button
                                 type="button"
                                 role="menuitem"
-                                className="gb-d2-dropdown__item is-current"
+                                className={`gb-d2-dropdown__item ${variant === 'discover2' ? 'is-current' : ''}`}
                                 onClick={() => {
                                   setDropdownOpen(false)
-                                  window.scrollTo({ top: 0, behavior: 'smooth' })
+                                  if (variant === 'discover3') {
+                                    onOpenDiscover2()
+                                  } else {
+                                    window.scrollTo({ top: 0, behavior: 'smooth' })
+                                  }
                                 }}
                               >
                                 <strong>Discover 2</strong>
                                 <span>Full-screen campus video showcase</span>
+                              </button>
+                              <button
+                                type="button"
+                                role="menuitem"
+                                className={`gb-d2-dropdown__item ${variant === 'discover3' ? 'is-current' : ''}`}
+                                onClick={() => {
+                                  setDropdownOpen(false)
+                                  onOpenDiscover3()
+                                }}
+                              >
+                                <strong>Discover 3</strong>
+                                <span>Violet campus hero showcase</span>
                               </button>
                             </div>
                           )}
@@ -366,10 +392,23 @@ export function Discover2Page({ onBackHome, onOpenModal }: Discover2PageProps) {
                   type="button"
                   onClick={() => {
                     setMobileMenuOpen(false)
-                    window.scrollTo({ top: 0, behavior: 'smooth' })
+                    if (variant === 'discover3') {
+                      onOpenDiscover2()
+                    } else {
+                      window.scrollTo({ top: 0, behavior: 'smooth' })
+                    }
                   }}
                 >
                   Discover 2
+                </button>
+                <button
+                  type="button"
+                  onClick={() => {
+                    setMobileMenuOpen(false)
+                    onOpenDiscover3()
+                  }}
+                >
+                  Discover 3
                 </button>
                 <button
                   type="button"
@@ -505,15 +544,15 @@ export function Discover2Page({ onBackHome, onOpenModal }: Discover2PageProps) {
           {/* SAGE GREEN QUICK ACCESS BAR (INSIDE HERO 2 SECTION) */}
           <nav
             ref={quickAccessRef}
-            className="gb-d2-quick-access"
+            className="gb-hero-quick-access"
             aria-label="Hero 2 quick links"
           >
-            <div className="gb-d2-quick-access__links">
+            <div className="gb-hero-quick-access__links">
               {HERO_QUICK_LINKS.map((link) => (
                 <button
                   key={link.label}
                   type="button"
-                  className="gb-d2-quick-access__link"
+                  className="gb-hero-quick-access__link"
                   onClick={() => {
                     if (link.action.startsWith('scroll:')) {
                       scrollToDiscover2Section(link.action.replace('scroll:', ''))
@@ -522,6 +561,7 @@ export function Discover2Page({ onBackHome, onOpenModal }: Discover2PageProps) {
                     }
                   }}
                 >
+                  <HeroQuickLinkIcon name={link.icon} />
                   <span>{link.label}</span>
                 </button>
               ))}

@@ -10,7 +10,7 @@ import { Discover2Page } from './components/Discover2Page'
 import { STORY_SCENES } from './data/storyScenes'
 import './App.css'
 
-type ActiveView = 'home' | 'discover2'
+type ActiveView = 'home' | 'discover2' | 'discover3'
 
 function getInitialView(): ActiveView {
   if (typeof window === 'undefined') return 'home'
@@ -19,6 +19,12 @@ function getInitialView(): ActiveView {
     window.location.hash.startsWith('#discover-2')
   ) {
     return 'discover2'
+  }
+  if (
+    window.location.pathname === '/discover-3' ||
+    window.location.hash.startsWith('#discover-3')
+  ) {
+    return 'discover3'
   }
   if (
     window.location.pathname === '/discover-1' ||
@@ -174,6 +180,15 @@ export function App() {
     }
   }, [])
 
+  const handleOpenDiscover3 = useCallback(() => {
+    setActiveView('discover3')
+    setChatOpen(false)
+    window.scrollTo({ top: 0, behavior: 'auto' })
+    if (window.location.hash !== '#discover-3') {
+      window.history.pushState(null, '', '/#discover-3')
+    }
+  }, [])
+
   const handleBackHome = useCallback(
     (targetScene?: string) => {
       setActiveView('home')
@@ -217,6 +232,16 @@ export function App() {
         <Discover2Page
           onBackHome={handleBackHome}
           onOpenModal={handleOpenModal}
+          onOpenDiscover2={handleOpenDiscover2}
+          onOpenDiscover3={handleOpenDiscover3}
+        />
+      ) : activeView === 'discover3' ? (
+        <Discover2Page
+          variant="discover3"
+          onBackHome={handleBackHome}
+          onOpenModal={handleOpenModal}
+          onOpenDiscover2={handleOpenDiscover2}
+          onOpenDiscover3={handleOpenDiscover3}
         />
       ) : (
         <>
@@ -225,6 +250,7 @@ export function App() {
             onScrollTo={scrollToScene}
             onOpenModal={handleOpenModal}
             onOpenDiscover2={handleOpenDiscover2}
+            onOpenDiscover3={handleOpenDiscover3}
           />
 
           <StoryScenesList

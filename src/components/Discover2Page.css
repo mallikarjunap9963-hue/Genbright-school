@@ -10,6 +10,41 @@
   font-family: var(--font-sans);
 }
 
+/* Discover 3: navy hero background without the campus image backdrop. */
+.gb-d3.gb-d2,
+.gb-d3 .gb-d2-hero-track,
+.gb-d3 .gb-d2-hero-sticky,
+.gb-d3 .gb-d2-canvas-bg {
+  background: #003366;
+}
+
+.gb-d3 .gb-d2-canvas-bg__tex {
+  display: none;
+}
+
+.gb-d3 .gb-d2-canvas-bg__tint {
+  background: #003366;
+}
+
+.gb-d3 .gb-d2-green-sheet {
+  background: linear-gradient(180deg,
+      rgba(0, 51, 102, 0.86) 0%,
+      rgba(0, 45, 91, 0.92) 55%,
+      rgba(0, 38, 77, 0.96) 100%) !important;
+}
+
+.gb-d3 .gb-d2-quick-access,
+.gb-d3 .gb-hero-quick-access__links {
+  background: #fe76b4;
+}
+
+.gb-d2:not(.gb-d3) .gb-d2-quick-access,
+.gb-d2:not(.gb-d3) .gb-d2-quick-access__links,
+.gb-d2:not(.gb-d3) .gb-hero-quick-access,
+.gb-d2:not(.gb-d3) .gb-hero-quick-access__links {
+  background: #003366;
+}
+
 /* --------------------------------------------------------------------------
    STICKY SPLIT-TO-FULLSCREEN HERO TRACK (ONLY SECTION ON DISCOVER 2)
    -------------------------------------------------------------------------- */
@@ -391,7 +426,7 @@
   top: calc(102px * (1 - var(--d2-expand-p)));
   left: calc(46.5% * (1 - var(--d2-expand-p)));
   right: 0;
-  bottom: calc(52px * (1 - var(--d2-expand-p)));
+  bottom: calc(64px * (1 - var(--d2-expand-p)));
   z-index: 2;
   overflow: hidden;
   background: #617b4e;
@@ -825,6 +860,13 @@
    HERO 2 SECTION: SAGE GREEN HORIZONTAL QUICK ACCESS BAR (INSIDE HERO 2)
    CALENDAR | LEARNING | LET'S TALK | CAMPUS VISIT | PARENT PORTAL | ADMISSIONS
    ========================================================================== */
+.gb-d2 .gb-hero-quick-access[data-hidden='true'] {
+  transform: translateY(100%);
+  opacity: 0;
+  pointer-events: none;
+  transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.35s ease;
+}
+
 .gb-d2-quick-access {
   position: absolute !important;
   z-index: 10 !important;
@@ -898,7 +940,7 @@
 
 @media (max-width: 768px) {
   .gb-d2-video-frame {
-    bottom: calc(88px * (1 - var(--d2-expand-p))) !important;
+    bottom: calc(92px * (1 - var(--d2-expand-p))) !important;
   }
   .gb-d2-quick-access {
     height: 88px;

@@ -6,9 +6,10 @@ interface HeaderProps {
   onScrollTo: (id: string) => void
   onOpenModal: (modalId: string) => void
   onOpenDiscover2: () => void
+  onOpenDiscover3: () => void
 }
 
-export function Header({ activeScene, onScrollTo, onOpenModal, onOpenDiscover2 }: HeaderProps) {
+export function Header({ activeScene, onScrollTo, onOpenModal, onOpenDiscover2, onOpenDiscover3 }: HeaderProps) {
   const [scrolled, setScrolled] = useState(false)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [discoverMenuOpen, setDiscoverMenuOpen] = useState(false)
@@ -152,6 +153,18 @@ export function Header({ activeScene, onScrollTo, onOpenModal, onOpenDiscover2 }
                       >
                         <strong>Discover 2</strong>
                         <span>Full-screen campus video showcase</span>
+                      </button>
+                      <button
+                        type="button"
+                        role="menuitem"
+                        className="gb-d2-dropdown__item"
+                        onClick={() => {
+                          setDiscoverMenuOpen(false)
+                          onOpenDiscover3()
+                        }}
+                      >
+                        <strong>Discover 3</strong>
+                        <span>Violet campus hero showcase</span>
                       </button>
                     </div>
                   )}

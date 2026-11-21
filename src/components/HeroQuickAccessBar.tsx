@@ -7,7 +7,7 @@ const HERO_QUICK_LINKS = [
   { label: 'Admissions', icon: 'admissions', action: 'scroll:scene-15' },
 ]
 
-function HeroQuickLinkIcon({ name }: { name: string }) {
+export function HeroQuickLinkIcon({ name }: { name: string }) {
   const paths: Record<string, string> = {
     calendar:
       'M4 5h16v16H4z M8 3v4 M16 3v4 M4 10h16 M8 14h.01 M12 14h.01 M16 14h.01 M8 17h.01 M12 17h.01',
@@ -69,4 +69,3 @@ export function HeroQuickAccessBar({ onScrollTo, onOpenModal }: HeroQuickAccessB
     </nav>
   )
 }
-
