@@ -391,7 +391,7 @@
   top: calc(102px * (1 - var(--d2-expand-p)));
   left: calc(46.5% * (1 - var(--d2-expand-p)));
   right: 0;
-  bottom: 0;
+  bottom: calc(52px * (1 - var(--d2-expand-p)));
   z-index: 2;
   overflow: hidden;
   background: #617b4e;
@@ -772,6 +772,7 @@
   .gb-d2-video-frame {
     top: calc(36% * (1 - var(--d2-expand-p)));
     left: 0;
+    bottom: 0;
   }
 
   .gb-d2-hero-type {
@@ -816,5 +817,100 @@
   .gb-d2 * {
     animation: none !important;
     transition: none !important;
+  }
+}
+
+
+/* ==========================================================================
+   HERO 2 SECTION: SAGE GREEN HORIZONTAL QUICK ACCESS BAR (INSIDE HERO 2)
+   CALENDAR | LEARNING | LET'S TALK | CAMPUS VISIT | PARENT PORTAL | ADMISSIONS
+   ========================================================================== */
+.gb-d2-quick-access {
+  position: absolute !important;
+  z-index: 10 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  height: 52px;
+  width: 100%;
+  color: #ffffff;
+  transform: translateY(0);
+  opacity: 1;
+  pointer-events: auto;
+  transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.35s ease;
+  will-change: transform, opacity;
+}
+
+.gb-d2-quick-access[data-hidden='true'] {
+  transform: translateY(100%) !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
+.gb-d2-quick-access__links {
+  display: grid;
+  width: 100%;
+  height: 52px;
+  min-height: 52px;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  align-items: stretch;
+  padding: 0 max(16px, calc((100vw - 1240px) / 2));
+  background: #829b70;
+  box-shadow: 0 -4px 20px rgba(19, 44, 32, 0.22);
+}
+
+.gb-d2-quick-access__link {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 8px;
+  border: 0;
+  background: transparent;
+  color: #ffffff;
+  cursor: pointer;
+  font-family: var(--font-display, 'Outfit', sans-serif);
+  font-size: clamp(0.72rem, 0.9vw, 0.85rem);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-align: center;
+  text-transform: uppercase;
+  transition: background-color 180ms ease, color 180ms ease;
+}
+
+.gb-d2-quick-access__link:not(:last-child)::after {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  width: 1px;
+  height: 18px;
+  background: rgba(255, 255, 255, 0.35);
+  content: '';
+  transform: translateY(-50%);
+}
+
+.gb-d2-quick-access__link:hover,
+.gb-d2-quick-access__link:focus-visible {
+  background: rgba(255, 255, 255, 0.16);
+  color: #fff9e6;
+  outline: none;
+}
+
+@media (max-width: 768px) {
+  .gb-d2-video-frame {
+    bottom: calc(88px * (1 - var(--d2-expand-p))) !important;
+  }
+  .gb-d2-quick-access {
+    height: 88px;
+  }
+  .gb-d2-quick-access__links {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    height: 88px;
+    min-height: 88px;
+  }
+  .gb-d2-quick-access__link {
+    height: 44px;
+    min-height: 44px;
+    font-size: 0.68rem;
   }
 }

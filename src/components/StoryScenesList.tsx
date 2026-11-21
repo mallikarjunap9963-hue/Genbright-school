@@ -10,6 +10,7 @@ import {
 const LEARNER_PROFILES = [
   {
     title: 'The Dreamer',
+    oneWord: 'Music',
     subtitle: 'Creative, imaginative & poetic vision',
     tag: 'Creativity & Arts',
     description: 'Thrives in open-ended creative inquiry, visual storytelling, and connecting big ideas across disciplines.',
@@ -19,6 +20,7 @@ const LEARNER_PROFILES = [
   },
   {
     title: 'The Explorer',
+    oneWord: 'Sports',
     subtitle: 'Curious, experiential & outdoor discovery',
     tag: 'Living Ecology',
     description: 'Learns through direct physical inquiry, botanical exploration, and hands-on scientific experimentation.',
@@ -28,6 +30,7 @@ const LEARNER_PROFILES = [
   },
   {
     title: 'The Quiet Observer',
+    oneWord: 'Reading',
     subtitle: 'Reflective, precise & deep analytical focus',
     tag: 'Inquiry & Rigour',
     description: 'Absorbs subtle nuances, builds deep conceptual clarity, and approaches challenges with calm, focused determination.',
@@ -37,6 +40,7 @@ const LEARNER_PROFILES = [
   },
   {
     title: 'The Energetic Questioner',
+    oneWord: 'Making',
     subtitle: 'Bold, spirited & collaborative leadership',
     tag: 'Leadership & Voice',
     description: 'Sparks intellectual dialogue with passionate questions, rallies peer teams, and turns ideas into active movement.',
@@ -613,18 +617,18 @@ export const StoryScenesList = React.memo(function StoryScenesList({
                         </figure>
                         <figure className="gb-scene02-collage__photo gb-scene02-collage__photo--blocks">
                           <img
-                            src="/images/scene-02-happy-blocks-hd.jpg"
-                            alt="GenBright student joyfully building with colorful classroom blocks"
-                            style={{ objectPosition: '50% 42%' }}
+                            src="/images/scene-02-happy-swim-hd.jpg"
+                            alt="GenBright student swimming happily with a kickboard in the pool"
+                            style={{ objectPosition: '52% 55%' }}
                             loading="lazy"
                             decoding="async"
                           />
                         </figure>
                         <figure className="gb-scene02-collage__photo gb-scene02-collage__photo--swim">
                           <img
-                            src="/images/scene-02-happy-swim-hd.jpg"
-                            alt="GenBright student swimming happily with a kickboard in the pool"
-                            style={{ objectPosition: '52% 55%' }}
+                            src="/images/scene-02-happy-blocks-hd.jpg"
+                            alt="GenBright student joyfully building with colorful classroom blocks"
+                            style={{ objectPosition: '50% 42%' }}
                             loading="lazy"
                             decoding="async"
                           />
@@ -669,17 +673,23 @@ export const StoryScenesList = React.memo(function StoryScenesList({
                         className="gb-learner-card-grid"
                         aria-label="Different ways children learn"
                       >
-                        {LEARNER_PROFILES.map((profile) => (
-                          <li className="gb-learner-card" key={profile.title}>
-                            <article>
-                              <img
-                                className="gb-learner-card__image"
-                                src={profile.imageUrl}
-                                alt={profile.imageAlt}
-                                style={{ objectPosition: profile.objectPosition }}
-                                loading="lazy"
-                                decoding="async"
-                              />
+                        {LEARNER_PROFILES.map((profile, idx) => (
+                          <li className={`gb-learner-card gb-learner-card--${idx + 1}`} key={profile.title}>
+                            <article className="gb-learner-card__article">
+                              <div className="gb-learner-card__image-wrap">
+                                <img
+                                  className="gb-learner-card__image"
+                                  src={profile.imageUrl}
+                                  alt={profile.imageAlt}
+                                  style={{ objectPosition: profile.objectPosition }}
+                                  loading="lazy"
+                                  decoding="async"
+                                />
+                                <div className="gb-learner-card__overlay" aria-hidden="true" />
+                                <div className="gb-learner-card__word-wrap">
+                                  <span className="gb-learner-card__word">{profile.oneWord}</span>
+                                </div>
+                              </div>
                             </article>
                           </li>
                         ))}
@@ -741,7 +751,7 @@ export const StoryScenesList = React.memo(function StoryScenesList({
                         return (
                           <div
                             key={pillar.key}
-                            className={`gb-glass-pillar-card ${isLastTwo ? 'gb-glass-pillar-card--over-image gb-glass-pillar-card--glass' : ''} ${variantClass}`}
+                            className={`gb-glass-pillar-card gb-glass-pillar-card--${pIdx + 1} ${isLastTwo ? 'gb-glass-pillar-card--over-image gb-glass-pillar-card--glass' : ''} ${variantClass}`}
                           >
                             <div className="gb-glass-pillar-card__head">
                               <div

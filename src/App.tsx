@@ -44,7 +44,7 @@ export function App() {
 
   useEffect(() => {
     AOS.init({
-      duration: 900,
+      duration: 2200,
       easing: 'ease-out-cubic',
       offset: 120,
       delay: 0,
@@ -85,8 +85,8 @@ export function App() {
           'data-aos',
           index % 2 === 0 ? 'fade-right' : 'fade-left'
         )
-        htmlElement.setAttribute('data-aos-duration', '700')
-        htmlElement.setAttribute('data-aos-offset', '80')
+        htmlElement.setAttribute('data-aos-duration', '2000')
+        htmlElement.setAttribute('data-aos-offset', '70')
       })
 
       AOS.refreshHard()
@@ -284,17 +284,15 @@ export function App() {
           </button>
         </section>
       )}
-      {activeView === 'home' && (
-        <button
-          type="button"
-          className={`gb-chat-widget__toggle ${chatOpen ? 'is-open' : ''}`}
-          onClick={() => setChatOpen((open) => !open)}
-          aria-expanded={chatOpen}
-          aria-label={chatOpen ? 'Close GenBright chat' : 'Open GenBright chat'}
-        >
-          <img src="/images/chat%20bot%20img.avif" alt="" aria-hidden="true" />
-        </button>
-      )}
+      <button
+        type="button"
+        className={`gb-chat-widget__toggle ${chatOpen ? 'is-open' : ''}`}
+        onClick={() => setChatOpen((open) => !open)}
+        aria-expanded={chatOpen}
+        aria-label={chatOpen ? 'Close GenBright chat' : 'Open GenBright chat'}
+      >
+        <img src="/images/chat%20bot%20img.avif" alt="" aria-hidden="true" />
+      </button>
 
     </div>
   )

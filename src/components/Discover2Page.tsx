@@ -4,6 +4,16 @@ import { StoryScenesList } from './StoryScenesList'
 import { Footer } from './Footer'
 import './Discover2Page.css'
 
+
+const HERO_QUICK_LINKS = [
+  { label: 'Calendar', action: 'modal:bright-times' },
+  { label: 'Learning', action: 'scroll:scene-03' },
+  { label: "Let's Talk", action: 'modal:admissions' },
+  { label: 'Campus Visit', action: 'modal:admissions' },
+  { label: 'Parent Portal', action: 'modal:parent-portal' },
+  { label: 'Admissions', action: 'scroll:scene-15' },
+]
+
 interface Discover2PageProps {
   onBackHome: (targetScene?: string) => void
   onOpenModal: (modalId: string) => void
@@ -15,6 +25,7 @@ function clamp01(value: number): number {
 
 export function Discover2Page({ onBackHome, onOpenModal }: Discover2PageProps) {
   const stageTrackRef = useRef<HTMLDivElement | null>(null)
+  const quickAccessRef = useRef<HTMLElement | null>(null)
   const videoRef = useRef<HTMLVideoElement | null>(null)
   const [isPlaying, setIsPlaying] = useState(true)
   const [dropdownOpen, setDropdownOpen] = useState(false)
@@ -88,6 +99,13 @@ export function Discover2Page({ onBackHome, onOpenModal }: Discover2PageProps) {
       track.style.setProperty('--d2-sheet-opacity', sheetOpacity.toFixed(4))
       track.dataset.textHidden = textOpacity < 0.08 ? 'true' : 'false'
       track.dataset.fullHidden = sheetOpacity < 0.08 ? 'true' : 'false'
+
+      // When the video is fully visible on the screen, hide the bottom navigation bar by moving it downward out of view.
+      // It should remain hidden while the video is playing and appear again when at the top.
+      const isVideoVisible = scrolled > 0.03
+      if (quickAccessRef.current) {
+        quickAccessRef.current.dataset.hidden = isVideoVisible ? 'true' : 'false'
+      }
     }
 
     const onScroll = () => {
@@ -484,6 +502,31 @@ export function Discover2Page({ onBackHome, onOpenModal }: Discover2PageProps) {
               </div>
             </div>
           </div>
+          {/* SAGE GREEN QUICK ACCESS BAR (INSIDE HERO 2 SECTION) */}
+          <nav
+            ref={quickAccessRef}
+            className="gb-d2-quick-access"
+            aria-label="Hero 2 quick links"
+          >
+            <div className="gb-d2-quick-access__links">
+              {HERO_QUICK_LINKS.map((link) => (
+                <button
+                  key={link.label}
+                  type="button"
+                  className="gb-d2-quick-access__link"
+                  onClick={() => {
+                    if (link.action.startsWith('scroll:')) {
+                      scrollToDiscover2Section(link.action.replace('scroll:', ''))
+                    } else if (link.action.startsWith('modal:')) {
+                      onOpenModal(link.action.replace('modal:', ''))
+                    }
+                  }}
+                >
+                  <span>{link.label}</span>
+                </button>
+              ))}
+            </div>
+          </nav>
         </div>
       </section>
 
