@@ -18,6 +18,16 @@
   background: #003366;
 }
 
+/* Discover 3: remove all horizontal divider lines / borders across sections */
+.gb-d3 .gb-scene,
+.gb-d3 .gb-scene:not(.gb-scene--hero-fullvideo),
+.gb-d3 .gb-d2-hero-track,
+.gb-d3 .gb-hero-quick-access {
+  border-bottom: none !important;
+  border-top: none !important;
+  border: none !important;
+}
+
 .gb-d3 .gb-d2-canvas-bg__tex {
   display: none;
 }
