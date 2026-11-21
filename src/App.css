@@ -8306,7 +8306,7 @@ img {
 
 /* Keep a consistent heading-to-copy gap throughout the homepage sections. */
 .gb-scene:not(.gb-scene--hero-fullvideo) {
-  --gb-heading-copy-gap: 2rem;
+  --gb-heading-copy-gap: 0.75rem;
 }
 
 .gb-scene .gb-ref-header {
@@ -8326,6 +8326,39 @@ img {
 
 .gb-scene .gb-scene13-copy {
   margin-top: 0 !important;
+}
+
+/* Tight, consistent spacing between section headings and descriptions */
+.gb-scene .gb-ref-header,
+.gb-scene .gb-scene04-title,
+.gb-scene .gb-scene05-dark-split__title,
+.gb-scene .gb-scene06-title,
+.gb-scene .gb-scene07-clean-heading,
+.gb-scene .gb-scene09-mosaic-headline,
+.gb-scene .gb-scene10-banner__title,
+.gb-scene .gb-scene11-center-card__title,
+.gb-scene .gb-scene12-ref__title,
+.gb-scene .gb-scene13-ref-title,
+.gb-scene .gb-scene14-banner__title,
+.gb-scene .gb-scene15-stage__title {
+  margin-bottom: 0.75rem !important;
+}
+
+.gb-scene .gb-lead-copy,
+.gb-scene .gb-body-copy,
+.gb-scene .gb-scene05-dark-split__copy,
+.gb-scene .gb-scene06-copy,
+.gb-scene .gb-scene07-clean-copy,
+.gb-scene .gb-scene08-lead-copy-centered,
+.gb-scene .gb-scene09-mosaic-copy,
+.gb-scene .gb-scene10-banner__copy,
+.gb-scene .gb-scene11-center-card__copy,
+.gb-scene .gb-scene12-ref__copy,
+.gb-scene .gb-scene13-copy,
+.gb-scene .gb-scene14-banner__copy,
+.gb-scene .gb-scene15-stage__copy {
+  margin-top: 0.4rem !important;
+  margin-bottom: 1.25rem !important;
 }
 
 @media (max-width: 768px) {
