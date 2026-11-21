@@ -435,7 +435,12 @@ img {
 .gb-scene:not(.gb-scene--hero-fullvideo) {
   padding: var(--gb-section-gap) 0 !important;
   position: relative;
-  border-bottom: 1px solid rgba(19, 44, 32, 0.1);
+  border-bottom: none !important;
+}
+
+.gb-scene {
+  border-bottom: none !important;
+  border-top: none !important;
 }
 
 .gb-scene.gb-scene--hero-fullvideo,
@@ -1584,7 +1589,7 @@ img {
   justify-content: space-between;
   margin-bottom: 1.1rem;
   padding-bottom: 0.75rem;
-  border-bottom: 1px solid rgba(19, 44, 32, 0.1);
+  border-bottom: none !important;
 }
 
 .gb-typo-card__num {
@@ -2167,7 +2172,7 @@ img {
 .gb-glass-pillar-card__head {
   display: flex !important;
   align-items: center !important;
-  justify-content: center !important;
+  justify-content: flex-start !important;
   margin-bottom: 1.15rem !important;
   width: 100% !important;
 }
@@ -2309,7 +2314,7 @@ img {
   background-repeat: no-repeat;
   overflow: hidden;
   padding: clamp(4.75rem, 6.5vw, 6rem) 0;
-  border-bottom: 1px solid rgba(19, 44, 32, 0.1);
+  border-bottom: none !important;
 }
 
 .gb-scene--academics-bg::before {
@@ -2673,7 +2678,7 @@ img {
   align-items: center;
   margin-bottom: 1.15rem;
   padding-bottom: 0.75rem;
-  border-bottom: 1px solid rgba(19, 44, 32, 0.1);
+  border-bottom: none !important;
 }
 
 .gb-pillar-badge-num {
@@ -3183,7 +3188,7 @@ img {
   gap: 0.5rem;
   margin-bottom: 0.9rem;
   padding-bottom: 0.7rem;
-  border-bottom: 1px solid rgba(19, 44, 32, 0.1);
+  border-bottom: none !important;
 }
 
 .gb-centre-badge-num {
@@ -3350,33 +3355,74 @@ img {
 }
 
 .gb-centre-slide__content {
-  position: absolute;
-  z-index: 3 !important;
-  right: 1rem;
-  bottom: 1rem;
-  left: 1rem;
-  color: #ffffff;
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+  display: none !important;
 }
 
 .gb-centre-slide__number {
-  display: block;
-  margin-bottom: 0.35rem;
-  color: #f2c94c;
-  font-size: 0.75rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
+  display: none !important;
 }
 
-.gb-centre-slide__content h3 {
-  color: #ffffff;
-  font-size: clamp(0.92rem, 1.1vw, 1.1rem);
-  font-weight: 800;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  line-height: 1.2;
-  margin: 0;
-  text-wrap: balance;
+/* Glassmorphism Badge Card at bottom center of each Learning Centre slide (Increased Size) */
+.gb-centre-slide__glass-card {
+  position: absolute !important;
+  bottom: 1.25rem !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  z-index: 4 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 0.5rem !important;
+  padding: 0.9rem 1.65rem !important;
+  min-width: 135px !important;
+  max-width: calc(100% - 1.6rem) !important;
+  width: max-content !important;
+  background: rgba(12, 28, 20, 0.38) !important;
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.32) 0%, rgba(12, 28, 20, 0.46) 100%) !important;
+  backdrop-filter: blur(24px) saturate(200%) !important;
+  -webkit-backdrop-filter: blur(24px) saturate(200%) !important;
+  border: 1.5px solid rgba(255, 255, 255, 0.5) !important;
+  border-radius: 20px !important;
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.36), inset 0 1.5px 1.5px rgba(255, 255, 255, 0.7) !important;
+  pointer-events: none !important;
+  transition: transform 0.28s cubic-bezier(0.22, 1, 0.36, 1), background 0.24s ease, box-shadow 0.28s ease !important;
+}
+
+.gb-centre-slide:hover .gb-centre-slide__glass-card {
+  transform: translateX(-50%) translateY(-5px) scale(1.04) !important;
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.42) 0%, rgba(12, 28, 20, 0.52) 100%) !important;
+  box-shadow: 0 18px 44px rgba(0, 0, 0, 0.42), inset 0 1.5px 1.5px rgba(255, 255, 255, 0.9) !important;
+}
+
+.gb-centre-slide__icon {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  color: #ffffff !important;
+  flex-shrink: 0 !important;
+}
+
+.gb-centre-slide__icon svg {
+  width: 28px !important;
+  height: 28px !important;
+  stroke: #ffffff !important;
+  display: block !important;
+  filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.65)) !important;
+}
+
+.gb-centre-slide__title {
+  color: #ffffff !important;
+  font-family: var(--font-sans) !important;
+  font-size: clamp(0.95rem, 1.15vw, 1.12rem) !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.08em !important;
+  text-transform: uppercase !important;
+  line-height: 1.15 !important;
+  white-space: normal !important;
+  text-align: center !important;
+  text-wrap: balance !important;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.75), 0 1px 3px rgba(0, 0, 0, 0.9) !important;
 }
 
 .gb-centres-carousel__controls {
@@ -3764,7 +3810,7 @@ img {
   justify-content: space-between;
   margin-bottom: 0.9rem;
   padding-bottom: 0.65rem;
-  border-bottom: 1px solid rgba(19, 44, 32, 0.1);
+  border-bottom: none !important;
 }
 
 .gb-community-badge-num {
@@ -5678,7 +5724,7 @@ img {
   margin-bottom: 2.25rem;
   padding: 1.25rem 0;
   border-top: 1px solid rgba(19, 44, 32, 0.1);
-  border-bottom: 1px solid rgba(19, 44, 32, 0.1);
+  border-bottom: none !important;
 }
 
 .gb-scene07-clean-metric strong {
@@ -6742,10 +6788,10 @@ img {
   position: absolute;
   inset: 0;
   background: linear-gradient(180deg,
-      rgba(10, 30, 18, 0.74) 0%,
-      rgba(12, 38, 22, 0.52) 42%,
-      rgba(12, 38, 22, 0.50) 75%,
-      rgba(10, 30, 18, 0.74) 100%);
+      rgba(20, 26, 32, 0.46) 0%,
+      rgba(20, 26, 32, 0.28) 42%,
+      rgba(20, 26, 32, 0.32) 72%,
+      rgba(20, 26, 32, 0.50) 100%);
 }
 
 .gb-scene14-banner__content {
@@ -6765,8 +6811,9 @@ img {
   font-weight: 700;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: #a3c28f;
+  color: #ffc548;
   margin-bottom: 0.95rem;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.7);
 }
 
 .gb-scene14-banner__title {
@@ -6777,20 +6824,23 @@ img {
   letter-spacing: -0.02em;
   color: #ffffff;
   margin: 0 0 1.15rem;
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.75), 0 1px 3px rgba(0, 0, 0, 0.9);
 }
 
 .gb-scene14-banner__title span {
   color: #ffc548;
   font-weight: 400;
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.75), 0 1px 3px rgba(0, 0, 0, 0.9);
 }
 
 .gb-scene14-banner__copy {
   font-family: var(--font-sans);
   font-size: clamp(0.95rem, 1.1vw, 1.05rem);
   line-height: 1.68;
-  color: rgba(255, 255, 255, 0.92);
+  color: #ffffff;
   margin: 0 0 1.85rem;
   max-width: 640px;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.8), 0 1px 2px rgba(0, 0, 0, 0.9);
 }
 
 /* White Pill Bar matching user reference */
@@ -9564,18 +9614,18 @@ img {
     color: #000000 !important;
   }
 
-  /* Place card icon top center (not left and right) */
+  /* Restore card icon to previous place (top-left) */
   #scene-04 .gb-glass-pillar-card__head,
   .gb-glass-pillar-card__head {
     display: flex !important;
     align-items: center !important;
-    justify-content: center !important;
+    justify-content: flex-start !important;
     margin-bottom: 1.15rem !important;
     width: 100% !important;
   }
   #scene-04 .gb-glass-pillar-card__concept-icon,
   .gb-glass-pillar-card__concept-icon {
-    margin: 0 auto !important;
+    margin: 0 !important;
   }
 
   /* Hero Section: Second button ("Book a Campus Visit") yellow border and white text */
@@ -9954,112 +10004,71 @@ img {
   }
 
   
-  /* Default state: Starts at bottom (translateY(100%)), opacity 0 */
-  .gb-learner-card__overlay {
-    position: absolute !important;
-    inset: 0 !important;
-    pointer-events: none !important;
-    transform: translateY(100%) !important;
-    opacity: 0 !important;
-    transition: transform 0.48s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.32s ease !important;
-    border-radius: 19px !important;
-    will-change: transform, opacity;
-  }
-
-  /* Hover state: Thick layer rises up smoothly from bottom to top */
-  .gb-learner-card:hover .gb-learner-card__overlay {
-    transform: translateY(0) !important;
-    opacity: 1 !important;
-  }
-
-  /* 2 Thick Rich Color Layers: Coral Orange (#EA5930) and Teal Blue (#358DA2) */
-  /* Card 1 & 3: Thick Rich Coral Orange (#EA5930) Layer */
+  /* Subtle dark gradient overlay ONLY at the bottom of each image behind the text */
+  .gb-learner-card__overlay,
+  .gb-learner-card:hover .gb-learner-card__overlay,
   .gb-learner-card--1 .gb-learner-card__overlay,
-  .gb-learner-card--3 .gb-learner-card__overlay {
-    background: linear-gradient(180deg, rgba(234, 89, 48, 0.72) 0%, rgba(234, 89, 48, 0.94) 100%) !important;
-  }
-
-  /* Card 2 & 4: Thick Rich Teal Blue (#358DA2) Layer */
   .gb-learner-card--2 .gb-learner-card__overlay,
+  .gb-learner-card--3 .gb-learner-card__overlay,
   .gb-learner-card--4 .gb-learner-card__overlay {
-    background: linear-gradient(180deg, rgba(53, 141, 162, 0.72) 0%, rgba(53, 141, 162, 0.94) 100%) !important;
+    display: block !important;
+    position: absolute !important;
+    inset: auto 0 0 0 !important;
+    height: 48% !important;
+    width: 100% !important;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.76) 0%, rgba(0, 0, 0, 0.42) 50%, rgba(0, 0, 0, 0) 100%) !important;
+    pointer-events: none !important;
+    z-index: 3 !important;
+    opacity: 1 !important;
+    transform: none !important;
+    border-radius: 0 0 20px 20px !important;
+    transition: opacity 0.3s ease !important;
   }
 
-  /* Dedicated caption bar strictly UNDER the image */
+  /* Dedicated caption bar strictly UNDER the image (hidden) */
   .gb-learner-card__caption {
     display: none !important;
   }
 
-  /* 1-Word Text Overlay Above the Color (Reveals on hover over the thick color layer) */
-  .gb-learner-card__word-wrap {
+  /* Text positioned at the bottom center of each image */
+  .gb-learner-card__word-wrap,
+  .gb-learner-card:hover .gb-learner-card__word-wrap {
     position: absolute !important;
+    inset: auto 0 1.25rem 0 !important;
     z-index: 4 !important;
-    inset: 0 !important;
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
-    padding: 1rem !important;
+    padding: 0 1rem !important;
     pointer-events: none !important;
-    opacity: 0 !important;
-    transform: translateY(16px) !important;
-    transition: opacity 0.35s ease 0.08s, transform 0.42s cubic-bezier(0.22, 1, 0.36, 1) 0.08s !important;
-  }
-
-  /* Reveal text above the color on hover */
-  .gb-learner-card:hover .gb-learner-card__word-wrap {
     opacity: 1 !important;
-    transform: translateY(0) !important;
+    transform: none !important;
+    text-align: center !important;
+    transition: none !important;
   }
 
   .gb-learner-card__word {
     color: #ffffff !important;
     font-family: var(--font-display, 'Outfit', sans-serif) !important;
-    font-size: clamp(1.4rem, 1.85vw, 2rem) !important;
+    font-size: clamp(1.25rem, 1.65vw, 1.85rem) !important;
     font-weight: 800 !important;
-    letter-spacing: 0.14em !important;
+    letter-spacing: 0.12em !important;
     text-transform: uppercase !important;
     text-align: center !important;
     line-height: 1 !important;
     margin: 0 !important;
-    text-shadow: 0 4px 18px rgba(0, 0, 0, 0.6), 0 2px 6px rgba(0, 0, 0, 0.8) !important;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8), 0 1px 3px rgba(0, 0, 0, 0.9) !important;
   }
 
-/* Keep learner photos unchanged and place the one-word name on the bottom. */
-.gb-learner-card__overlay {
-  display: none !important;
-  opacity: 0 !important;
-  transform: none !important;
-}
+  .gb-learner-card:hover {
+    transform: translateY(-6px) !important;
+    box-shadow: 0 18px 36px rgba(0, 0, 0, 0.16) !important;
+  }
 
-.gb-learner-card:hover {
-  transform: translateY(-8px) scale(1.012) !important;
-  box-shadow: 0 22px 38px rgba(0, 80, 60, 0.22) !important;
-}
-
-.gb-learner-card:hover .gb-learner-card__image {
-  transform: scale(1.08) rotate(0.35deg) !important;
-  transition: transform 0.55s cubic-bezier(0.22, 1, 0.36, 1) !important;
-}
-
-.gb-learner-card__word-wrap,
-.gb-learner-card:hover .gb-learner-card__word-wrap {
-  inset: auto 1rem 1rem 1rem !important;
-  z-index: 5 !important;
-  display: flex !important;
-  align-items: flex-end !important;
-  justify-content: flex-start !important;
-  padding: 0 !important;
-  opacity: 1 !important;
-  transform: none !important;
-  transition: none !important;
-}
-
-.gb-learner-card__word {
-  font-size: clamp(1.35rem, 1.8vw, 1.85rem) !important;
-  text-align: left !important;
-  letter-spacing: 0.12em !important;
-  text-shadow: 0 3px 14px rgba(0, 0, 0, 0.85) !important;
-}
+  .gb-learner-card:hover .gb-learner-card__image {
+    transform: scale(1.05) !important;
+    transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1) !important;
+  }
 
 
 /* ==========================================================================
@@ -10194,4 +10203,17 @@ img {
     transform: none !important;
     align-self: center !important;
   }
+}
+
+/* ==========================================================================
+   INDEXPAGE: REMOVE SECTION DIVIDER LINES
+   ========================================================================== */
+.gb-story-main,
+.gb-story-main .gb-scene,
+.gb-scene,
+#scene-01, #scene-02, #scene-03, #scene-04, #scene-05,
+#scene-06, #scene-07, #scene-08, #scene-09, #scene-10,
+#scene-11, #scene-12, #scene-13, #scene-14, #scene-15 {
+  border-bottom: none !important;
+  border-top: none !important;
 }
